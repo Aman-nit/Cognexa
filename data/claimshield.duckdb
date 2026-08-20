@@ -1,0 +1,2 @@
+# PLACEHOLDER: generated DuckDB database; run backend/build_index.py after adding the source XLSX.
+# Purpose: local structured store for fast claim and policy SQL retrieval.

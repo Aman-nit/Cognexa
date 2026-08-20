@@ -1,0 +1,14 @@
+# Purpose: human-editable fraud rules and their semantics for the MVP evaluator.
+rules:
+  - id: RULE-HIGH-AMOUNT
+    name: High claim amount
+    description: Claims above the configured threshold require manual review.
+    condition: claim_amount > 100000
+    action: REVIEW
+    severity: high
+  - id: RULE-REPEAT-CLAIM
+    name: Repeated recent claims
+    description: Multiple recent claims for one customer require investigation.
+    condition: recent_claim_count >= 3
+    action: INVESTIGATE
+    severity: medium

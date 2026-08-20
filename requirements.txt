@@ -1,0 +1,13 @@
+# Purpose: Python dependencies for the ClaimShield API, retrieval, indexing, and UI.
+fastapi
+uvicorn[standard]
+pydantic
+streamlit
+pandas
+openpyxl
+duckdb
+rank-bm25
+faiss-cpu
+sentence-transformers
+pyyaml
+python-dotenv

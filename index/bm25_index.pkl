@@ -1,2 +1,0 @@
-# PLACEHOLDER: generated binary BM25 index; created by backend/build_index.py.
-# Purpose: exact and keyword-oriented retrieval for IDs, codes, and terms.

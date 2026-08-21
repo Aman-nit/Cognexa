@@ -1,2 +1,0 @@
-# PLACEHOLDER: generated binary FAISS index; created by backend/build_index.py.
-# Purpose: local semantic vector search over claim and rule documents.

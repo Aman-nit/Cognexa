@@ -1,0 +1,38 @@
+# Insurance Claims Data Project
+
+## Overview
+
+This project focuses on cleaning and storing insurance claims data using Python and DuckDB.
+
+The dataset contains five relational tables:
+
+- insured
+- policy
+- vehicle
+- incident
+- claim
+
+The data was cleaned using Python and then stored in DuckDB while maintaining relationships between the tables.
+
+## Technologies Used
+
+- Python
+- Pandas
+- OpenPyXL
+- DuckDB
+
+## Installation
+
+Install the required libraries:
+
+pip install -r requirements.txt
+
+## Running the Project
+
+Run:
+
+python load_cleaned_data_to_duckdb.py
+
+This will create the DuckDB database:
+
+insurance_project.duckdb

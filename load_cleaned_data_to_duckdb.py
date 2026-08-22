@@ -1,11 +1,10 @@
 import pandas as pd
 import duckdb
 
-# Input and output files
 excel_file = "cleaned_insurance_dataset.xlsx"
 database_file = "insurance_project.duckdb"
 
-# Read cleaned relational data
+
 tables = pd.read_excel(
     excel_file,
     sheet_name=["insured", "policy", "vehicle", "incident", "claim"]
@@ -13,7 +12,7 @@ tables = pd.read_excel(
 
 con = duckdb.connect(database_file)
 
-# Create relational tables
+
 con.execute("""
 CREATE OR REPLACE TABLE insured (
     insured_id BIGINT PRIMARY KEY,
@@ -86,13 +85,13 @@ CREATE OR REPLACE TABLE claim (
 )
 """)
 
-# Insert data in parent-to-child order
+
 for table_name in ["insured", "policy", "vehicle", "incident", "claim"]:
     con.register("temp_data", tables[table_name])
     con.execute(f"INSERT INTO {table_name} SELECT * FROM temp_data")
     con.unregister("temp_data")
 
-# Create an analytical view joining all related tables
+
 con.execute("""
 CREATE OR REPLACE VIEW insurance_claim_analysis AS
 SELECT
@@ -116,7 +115,7 @@ JOIN incident inc ON p.policy_number = inc.policy_number
 JOIN claim c ON inc.incident_id = c.incident_id
 """)
 
-# Validate data
+
 print("DuckDB database created successfully!\n")
 for table_name in ["insured", "policy", "vehicle", "incident", "claim"]:
     count = con.execute(f"SELECT COUNT(*) FROM {table_name}").fetchone()[0]

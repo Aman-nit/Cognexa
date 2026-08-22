@@ -1,0 +1,1001 @@
+incident_id,policy_number,incident_date,incident_type,collision_type,incident_severity,authorities_contacted,incident_state,incident_city,incident_location,incident_hour_of_day,vehicles_involved,property_damage,bodily_injuries,witnesses,police_report_available
+1,521585,2015-01-25,Single Vehicle Collision,Side Collision,Major Damage,Police,SC,Columbus,9935 4th Drive,5,1,YES,1,2,YES
+2,342868,2015-01-21,Vehicle Theft,,Minor Damage,Police,VA,Riverwood,6608 MLK Hwy,8,1,,0,0,
+3,687698,2015-02-22,Multi-vehicle Collision,Rear Collision,Minor Damage,Police,NY,Columbus,7121 Francis Lane,7,3,NO,2,3,NO
+4,227811,2015-01-10,Single Vehicle Collision,Front Collision,Major Damage,Police,OH,Arlington,6956 Maple Drive,5,1,,1,2,NO
+5,367455,2015-02-17,Vehicle Theft,,Minor Damage,,NY,Arlington,3041 3rd Ave,20,1,NO,0,1,NO
+6,104594,2015-01-02,Multi-vehicle Collision,Rear Collision,Major Damage,Fire,SC,Arlington,8973 Washington St,19,3,NO,0,2,NO
+7,413978,2015-01-13,Multi-vehicle Collision,Front Collision,Minor Damage,Police,NY,Springfield,5846 Weaver Drive,0,3,,0,0,
+8,429027,2015-02-27,Multi-vehicle Collision,Front Collision,Total Loss,Police,VA,Columbus,3525 3rd Hwy,23,3,,2,2,YES
+9,485665,2015-01-30,Single Vehicle Collision,Front Collision,Total Loss,Police,WV,Arlington,4872 Rock Ridge,21,1,NO,1,1,YES
+10,636550,2015-01-05,Single Vehicle Collision,Rear Collision,Total Loss,Other,NC,Hillsdale,3066 Francis Ave,14,1,NO,2,1,
+11,543610,2015-01-06,Single Vehicle Collision,Front Collision,Total Loss,Police,NY,Northbend,1558 1st Ridge,22,1,YES,2,2,
+12,214618,2015-02-15,Multi-vehicle Collision,Front Collision,Major Damage,Fire,SC,Springfield,5971 5th Hwy,21,3,YES,1,2,YES
+13,842643,2015-01-22,Single Vehicle Collision,Rear Collision,Total Loss,Ambulance,SC,Northbend,6655 5th Drive,9,1,YES,1,0,NO
+14,626808,2015-01-08,Parked Car,,Minor Damage,,SC,Springfield,6582 Elm Lane,5,1,NO,1,1,NO
+15,644081,2015-01-15,Single Vehicle Collision,Rear Collision,Total Loss,Police,SC,Springfield,6851 3rd Drive,12,1,NO,0,2,YES
+16,892874,2015-01-29,Multi-vehicle Collision,Side Collision,Major Damage,Other,WV,Hillsdale,9573 Weaver Ave,12,4,YES,0,0,NO
+17,558938,2015-02-22,Multi-vehicle Collision,Rear Collision,Major Damage,Other,NY,Riverwood,5074 3rd St,0,3,,1,2,YES
+18,275265,2015-01-06,Single Vehicle Collision,Side Collision,Total Loss,Police,WV,Northbend,4546 Tree St,9,1,NO,0,2,YES
+19,921202,2015-01-19,Single Vehicle Collision,Side Collision,Total Loss,Other,NY,Northbrook,3842 Solo Ridge,19,1,YES,1,0,NO
+20,143972,2015-02-22,Multi-vehicle Collision,Side Collision,Major Damage,Police,VA,Columbus,8101 3rd Ridge,8,3,,2,0,NO
+21,183430,2015-01-01,Multi-vehicle Collision,Rear Collision,Minor Damage,Police,NY,Columbus,5380 Pine St,20,3,NO,1,0,
+22,431876,2015-02-10,Multi-vehicle Collision,Side Collision,Total Loss,Police,SC,Arlington,8957 Weaver Drive,15,3,,1,2,
+23,285496,2015-01-11,Multi-vehicle Collision,Rear Collision,Major Damage,Ambulance,SC,Hillsdale,2526 Embaracadero Ave,20,3,NO,0,0,YES
+24,115399,2015-01-19,Single Vehicle Collision,Front Collision,Total Loss,Ambulance,WV,Northbend,5667 4th Drive,15,1,,2,2,
+25,736882,2015-02-24,Single Vehicle Collision,Rear Collision,Minor Damage,Other,VA,Riverwood,2502 Apache Hwy,6,1,NO,1,3,NO
+26,699044,2015-01-09,Multi-vehicle Collision,Rear Collision,Major Damage,Other,OH,Arlington,3418 Texas Lane,16,3,NO,1,3,YES
+27,863236,2015-01-28,Parked Car,,Minor Damage,Police,PA,Arlington,2533 Elm St,4,1,YES,1,3,YES
+28,608513,2015-01-07,Vehicle Theft,,Minor Damage,,VA,Northbrook,3790 Andromedia Hwy,5,1,YES,2,1,
+29,914088,2015-01-08,Single Vehicle Collision,Side Collision,Minor Damage,Other,SC,Northbend,3220 Rock Drive,21,1,NO,1,0,YES
+30,596785,2015-02-15,Single Vehicle Collision,Rear Collision,Minor Damage,Police,SC,Northbrook,2100 Francis Drive,5,1,NO,2,2,NO
+31,908616,2015-01-18,Multi-vehicle Collision,Side Collision,Major Damage,Ambulance,SC,Columbus,4687 5th Drive,22,4,NO,0,0,
+32,666333,2015-02-28,Multi-vehicle Collision,Side Collision,Major Damage,Police,WV,Riverwood,9038 2nd Lane,10,3,NO,2,2,
+33,336614,2015-02-24,Multi-vehicle Collision,Front Collision,Total Loss,Police,NY,Arlington,6092 5th Ave,16,3,YES,2,3,NO
+34,584859,2015-01-09,Multi-vehicle Collision,Front Collision,Major Damage,Ambulance,NY,Hillsdale,8353 Britain Ridge,1,3,NO,1,2,
+35,990493,2015-02-12,Single Vehicle Collision,Side Collision,Total Loss,Fire,WV,Hillsdale,3540 Maple St,17,1,YES,0,1,YES
+36,129872,2015-01-24,Single Vehicle Collision,Front Collision,Major Damage,Other,WV,Springfield,3104 Sky Drive,15,1,YES,2,0,YES
+37,200152,2015-01-09,Single Vehicle Collision,Rear Collision,Total Loss,Police,NY,Northbrook,4981 Weaver St,3,1,,1,1,YES
+38,933293,2015-01-18,Parked Car,,Minor Damage,,WV,Arlington,6676 Tree Lane,16,1,NO,1,1,YES
+39,485664,2015-01-21,Multi-vehicle Collision,Rear Collision,Major Damage,Police,NY,Hillsdale,3930 Embaracadero St,4,3,,2,0,
+40,982871,2015-01-08,Single Vehicle Collision,Front Collision,Major Damage,Ambulance,NC,Columbus,3422 Flute St,4,1,,0,3,NO
+41,206213,2015-01-03,Single Vehicle Collision,Rear Collision,Minor Damage,Ambulance,WV,Columbus,4862 Lincoln Hwy,19,1,NO,2,2,
+42,616337,2015-01-01,Single Vehicle Collision,Side Collision,Major Damage,Police,WV,Northbrook,5719 2nd Lane,1,1,,1,1,
+43,448961,2015-01-16,Multi-vehicle Collision,Side Collision,Minor Damage,Other,SC,Springfield,3221 Solo Ridge,17,3,YES,1,0,NO
+44,790442,2015-02-10,Single Vehicle Collision,Rear Collision,Total Loss,Other,NC,Arlington,6660 MLK Drive,23,1,NO,2,2,NO
+45,108844,2015-02-14,Single Vehicle Collision,Front Collision,Minor Damage,Other,SC,Springfield,1699 Oak Drive,14,1,YES,0,2,
+46,430029,2015-02-21,Multi-vehicle Collision,Rear Collision,Total Loss,Other,NY,Arlington,4234 Cherokee Lane,17,3,NO,2,3,
+47,529112,2015-02-18,Multi-vehicle Collision,Rear Collision,Total Loss,Fire,NC,Northbend,7476 4th St,11,3,YES,1,1,
+48,939631,2015-01-10,Multi-vehicle Collision,Front Collision,Major Damage,Fire,WV,Arlington,8907 Tree Ave,19,3,NO,2,1,NO
+49,866931,2015-02-26,Vehicle Theft,,Trivial Damage,Police,NY,Arlington,6619 Flute Ave,5,1,,2,0,YES
+50,582011,2015-01-01,Single Vehicle Collision,Rear Collision,Total Loss,Other,WV,Springfield,6011 Britain St,19,1,NO,0,0,
+51,691189,2015-01-03,Multi-vehicle Collision,Front Collision,Minor Damage,Fire,NY,Riverwood,5104 Francis Drive,19,3,,0,3,YES
+52,537546,2015-01-17,Vehicle Theft,,Trivial Damage,,NY,Arlington,2280 4th Ave,4,1,,1,2,
+53,394975,2015-02-22,Vehicle Theft,,Minor Damage,,WV,Northbend,2644 Elm Drive,8,1,,2,1,YES
+54,729634,2015-01-27,Multi-vehicle Collision,Side Collision,Major Damage,Police,NC,Columbus,7466 MLK Ridge,7,3,YES,1,0,
+55,282195,2015-02-27,Parked Car,,Minor Damage,Police,VA,Northbend,5821 2nd St,5,1,NO,0,1,YES
+56,420810,2015-01-06,Single Vehicle Collision,Rear Collision,Minor Damage,Fire,NY,Arlington,6723 Best Drive,3,1,YES,1,2,NO
+57,524836,2015-02-28,Multi-vehicle Collision,Front Collision,Major Damage,Fire,SC,Columbus,4866 4th Hwy,12,3,,2,3,
+58,307195,2015-02-22,Parked Car,,Minor Damage,,VA,Riverwood,5418 Britain Ave,19,1,NO,1,3,NO
+59,623648,2015-01-07,Single Vehicle Collision,Front Collision,Total Loss,Ambulance,WV,Riverwood,4296 Pine Hwy,22,1,YES,0,1,NO
+60,485372,2015-01-06,Multi-vehicle Collision,Side Collision,Minor Damage,Police,VA,Hillsdale,2299 1st St,12,3,NO,1,1,NO
+61,598554,2015-01-10,Multi-vehicle Collision,Rear Collision,Major Damage,Police,NY,Springfield,6618 Cherokee Drive,15,3,YES,2,1,
+62,303987,2015-02-11,Multi-vehicle Collision,Side Collision,Total Loss,Other,OH,Springfield,7459 Flute St,23,3,NO,0,3,NO
+63,343161,2015-01-12,Single Vehicle Collision,Side Collision,Minor Damage,Other,WV,Hillsdale,3567 4th Drive,12,1,NO,0,3,YES
+64,519312,2015-02-06,Multi-vehicle Collision,Front Collision,Major Damage,Fire,WV,Northbend,2457 Washington Ave,20,3,YES,2,2,YES
+65,132902,2015-01-20,Multi-vehicle Collision,Rear Collision,Total Loss,Fire,VA,Riverwood,1269 Flute Drive,16,3,NO,0,0,NO
+66,332867,2015-02-22,Multi-vehicle Collision,Front Collision,Minor Damage,Ambulance,NY,Arlington,1218 Sky Hwy,6,3,YES,2,2,NO
+67,356590,2015-01-30,Single Vehicle Collision,Side Collision,Minor Damage,Fire,SC,Springfield,9169 Pine Ridge,12,1,YES,0,1,NO
+68,346002,2015-02-02,Multi-vehicle Collision,Side Collision,Minor Damage,Fire,WV,Hillsdale,8538 Texas Lane,17,3,NO,1,1,NO
+69,500533,2015-01-10,Single Vehicle Collision,Front Collision,Major Damage,Ambulance,WV,Northbrook,5783 Oak Ave,8,1,NO,0,3,NO
+70,348209,2015-02-27,Parked Car,,Minor Damage,,NC,Riverwood,7721 Washington Ridge,13,1,NO,0,1,
+71,486676,2015-02-20,Multi-vehicle Collision,Side Collision,Major Damage,Other,SC,Hillsdale,8006 Maple Hwy,12,2,,2,3,
+72,260845,2015-02-08,Single Vehicle Collision,Front Collision,Total Loss,Other,WV,Northbrook,6751 Pine Ridge,7,1,NO,0,2,NO
+73,657045,2015-02-11,Single Vehicle Collision,Rear Collision,Minor Damage,Ambulance,NC,Arlington,2324 Texas Ridge,10,1,NO,1,2,NO
+74,761189,2015-02-23,Multi-vehicle Collision,Rear Collision,Minor Damage,Fire,SC,Riverwood,7923 Elm Ave,7,3,NO,2,0,YES
+75,175177,2015-03-01,Multi-vehicle Collision,Side Collision,Minor Damage,Ambulance,VA,Springfield,4755 Best Lane,18,3,YES,1,0,YES
+76,116700,2015-01-15,Multi-vehicle Collision,Front Collision,Total Loss,Ambulance,SC,Riverwood,5053 Tree Drive,22,3,NO,2,0,NO
+77,166264,2015-01-14,Multi-vehicle Collision,Front Collision,Minor Damage,Fire,NY,Springfield,2078 3rd Ave,18,3,NO,1,1,YES
+78,527945,2015-02-17,Multi-vehicle Collision,Front Collision,Total Loss,Police,WV,Northbrook,2804 Best St,22,3,NO,0,2,
+79,627540,2015-01-24,Vehicle Theft,,Minor Damage,,SC,Springfield,7877 Sky Lane,15,1,YES,2,2,YES
+80,279422,2015-01-21,Single Vehicle Collision,Rear Collision,Major Damage,Fire,SC,Northbrook,6530 Weaver Ave,16,1,,1,2,
+81,484200,2015-02-19,Multi-vehicle Collision,Side Collision,Minor Damage,Ambulance,NC,Arlington,3087 Oak Hwy,6,3,NO,1,2,NO
+82,645258,2015-01-03,Vehicle Theft,,Trivial Damage,,NC,Northbrook,7098 Lincoln Hwy,10,1,,2,1,
+83,694662,2015-01-29,Vehicle Theft,,Minor Damage,Police,NY,Northbrook,5124 Maple St,3,1,YES,2,2,NO
+84,960680,2015-01-19,Vehicle Theft,,Trivial Damage,,VA,Hillsdale,2333 Maple Lane,13,1,NO,0,3,YES
+85,498140,2015-01-19,Multi-vehicle Collision,Side Collision,Major Damage,Ambulance,NY,Hillsdale,1012 5th Lane,16,2,,2,3,NO
+86,498875,2015-02-02,Multi-vehicle Collision,Front Collision,Major Damage,Fire,NY,Northbrook,7477 MLK Drive,13,3,YES,0,1,
+87,798177,2015-01-30,Multi-vehicle Collision,Front Collision,Minor Damage,Other,SC,Columbus,9489 3rd St,9,3,NO,2,1,
+88,614763,2015-01-08,Single Vehicle Collision,Side Collision,Total Loss,Fire,VA,Springfield,2087 Apache Ave,2,1,,2,1,YES
+89,679370,2015-01-30,Parked Car,,Trivial Damage,,WV,Arlington,5540 Sky St,9,1,NO,0,1,YES
+90,958857,2015-01-07,Multi-vehicle Collision,Side Collision,Major Damage,Other,SC,Columbus,7238 2nd St,12,3,YES,2,0,
+91,686816,2015-02-24,Multi-vehicle Collision,Front Collision,Total Loss,Fire,SC,Arlington,8442 Britain Hwy,12,2,YES,1,1,
+92,127754,2015-02-02,Single Vehicle Collision,Side Collision,Major Damage,Police,NY,Columbus,1331 Britain Hwy,14,1,NO,0,3,
+93,918629,2015-02-28,Parked Car,,Trivial Damage,,WV,Springfield,5260 Francis Drive,9,1,NO,0,1,NO
+94,731450,2015-02-09,Multi-vehicle Collision,Front Collision,Major Damage,Ambulance,NC,Riverwood,1135 Solo Lane,3,3,NO,1,1,
+95,307447,2015-01-19,Multi-vehicle Collision,Rear Collision,Total Loss,Ambulance,SC,Northbend,9737 Solo Hwy,21,3,NO,1,0,NO
+96,992145,2015-02-21,Vehicle Theft,,Minor Damage,,OH,Northbrook,3289 Britain Drive,5,1,NO,2,0,YES
+97,900628,2015-01-14,Single Vehicle Collision,Side Collision,Major Damage,Fire,VA,Springfield,6550 Andromedia St,11,1,YES,0,3,NO
+98,235220,2015-01-22,Multi-vehicle Collision,Rear Collision,Minor Damage,Other,SC,Hillsdale,1679 2nd Hwy,4,4,YES,1,2,YES
+99,740019,2015-02-22,Parked Car,,Trivial Damage,,WV,Columbus,3998 Flute St,6,1,,1,2,YES
+100,246882,2015-01-26,Vehicle Theft,,Trivial Damage,,NC,Northbrook,2430 MLK Ave,10,1,NO,0,0,
+101,797613,2015-01-24,Single Vehicle Collision,Rear Collision,Minor Damage,Police,SC,Northbend,7717 Britain Hwy,23,1,YES,0,0,
+102,193442,2015-02-19,Single Vehicle Collision,Side Collision,Major Damage,Police,WV,Northbend,7773 Tree Hwy,13,1,YES,1,0,YES
+103,389238,2015-01-29,Multi-vehicle Collision,Front Collision,Minor Damage,Fire,NC,Northbrook,2199 Texas Drive,16,3,,2,3,NO
+104,760179,2015-02-15,Parked Car,,Minor Damage,Police,WV,Northbend,1028 Sky Lane,3,1,NO,1,1,NO
+105,939905,2015-02-12,Multi-vehicle Collision,Side Collision,Total Loss,Police,SC,Northbend,4154 Lincoln Hwy,15,3,NO,0,0,
+106,872814,2015-01-01,Vehicle Theft,,Minor Damage,,WV,Columbus,8085 Andromedia St,4,1,YES,1,3,YES
+107,632627,2015-01-13,Multi-vehicle Collision,Rear Collision,Major Damage,Police,VA,Northbend,4793 4th Ridge,6,3,,0,2,YES
+108,283414,2015-03-01,Multi-vehicle Collision,Front Collision,Major Damage,Ambulance,WV,Columbus,7428 Sky Hwy,22,2,NO,1,0,
+109,163161,2015-02-02,Single Vehicle Collision,Front Collision,Major Damage,Fire,NY,Northbrook,2306 5th Lane,1,1,,0,0,
+110,853360,2015-01-27,Multi-vehicle Collision,Rear Collision,Major Damage,Fire,NY,Springfield,3052 Weaver Ridge,16,3,NO,0,3,YES
+111,776860,2015-01-12,Single Vehicle Collision,Rear Collision,Minor Damage,Police,SC,Riverwood,5211 Weaver Drive,18,1,,1,2,YES
+112,149367,2015-01-06,Single Vehicle Collision,Front Collision,Major Damage,Fire,NC,Springfield,7253 MLK St,0,1,YES,0,0,
+113,395269,2015-01-30,Multi-vehicle Collision,Rear Collision,Total Loss,Other,WV,Columbus,1454 5th Ridge,12,3,,2,0,NO
+114,981123,2015-03-01,Multi-vehicle Collision,Side Collision,Major Damage,Other,VA,Hillsdale,5622 Best Ridge,13,2,,1,1,
+115,143626,2015-02-24,Vehicle Theft,,Minor Damage,,VA,Northbrook,4574 Britain Hwy,9,1,YES,1,1,YES
+116,648397,2015-01-24,Multi-vehicle Collision,Side Collision,Total Loss,Other,NY,Riverwood,4539 Texas St,14,3,NO,0,1,
+117,154982,2015-02-26,Single Vehicle Collision,Rear Collision,Minor Damage,Police,SC,Hillsdale,8118 Elm Ridge,16,1,NO,0,3,NO
+118,330591,2015-01-19,Multi-vehicle Collision,Side Collision,Major Damage,Police,NY,Northbend,3814 Britain Drive,20,3,,2,2,NO
+119,319232,2015-01-17,Single Vehicle Collision,Rear Collision,Minor Damage,Fire,NY,Hillsdale,4614 MLK Ave,4,1,NO,1,3,YES
+120,531640,2015-02-20,Multi-vehicle Collision,Rear Collision,Minor Damage,Police,NY,Arlington,1628 Best Drive,7,3,,0,1,
+121,368050,2015-02-22,Single Vehicle Collision,Side Collision,Minor Damage,Fire,SC,Hillsdale,8381 Solo Hwy,22,1,NO,2,0,
+122,253791,2015-01-23,Single Vehicle Collision,Front Collision,Major Damage,Ambulance,NY,Northbrook,2100 MLK St,11,1,NO,2,1,NO
+123,155724,2015-01-31,Single Vehicle Collision,Front Collision,Major Damage,Ambulance,VA,Columbus,5071 Flute Ridge,7,1,,0,1,YES
+124,824540,2015-01-05,Multi-vehicle Collision,Front Collision,Total Loss,Other,NC,Arlington,7551 Britain Lane,0,4,YES,1,0,NO
+125,717392,2015-02-03,Single Vehicle Collision,Rear Collision,Total Loss,Ambulance,WV,Northbend,2275 Best Lane,1,1,YES,1,1,
+126,965768,2015-02-17,Multi-vehicle Collision,Rear Collision,Total Loss,Ambulance,NY,Hillsdale,1598 3rd Drive,12,3,NO,2,3,YES
+127,414779,2015-01-09,Single Vehicle Collision,Side Collision,Total Loss,Other,WV,Columbus,7740 MLK St,8,1,NO,0,0,
+128,428230,2015-02-08,Parked Car,,Minor Damage,Police,PA,Northbrook,1240 Tree Lane,9,1,,2,0,
+129,517240,2015-02-06,Single Vehicle Collision,Front Collision,Major Damage,Fire,NY,Northbend,8983 Francis Ridge,22,1,YES,0,3,YES
+130,469874,2015-01-14,Multi-vehicle Collision,Front Collision,Major Damage,Fire,SC,Northbend,7756 Solo Drive,0,3,,1,2,
+131,718428,2015-01-22,Multi-vehicle Collision,Front Collision,Minor Damage,Other,NY,Arlington,9034 Weaver Ridge,0,3,YES,1,2,NO
+132,620215,2015-02-23,Multi-vehicle Collision,Front Collision,Major Damage,Other,WV,Columbus,1126 Texas Hwy,3,3,,2,2,NO
+133,618659,2015-02-22,Multi-vehicle Collision,Front Collision,Major Damage,Ambulance,NC,Arlington,2808 Elm St,21,3,,0,1,
+134,649082,2015-01-24,Single Vehicle Collision,Side Collision,Total Loss,Police,WV,Northbend,5061 Francis Ave,0,1,,2,1,NO
+135,437573,2015-02-09,Single Vehicle Collision,Side Collision,Minor Damage,Ambulance,WV,Northbend,4965 MLK Drive,16,1,,1,1,
+136,964657,2015-01-19,Single Vehicle Collision,Rear Collision,Major Damage,Police,NY,Springfield,8668 Flute St,14,1,NO,1,2,
+137,932502,2015-01-01,Vehicle Theft,,Minor Damage,Police,VA,Riverwood,2577 Washington Drive,9,1,,0,0,NO
+138,434507,2015-01-07,Multi-vehicle Collision,Rear Collision,Minor Damage,Fire,SC,Springfield,7709 Rock Lane,9,3,NO,0,3,
+139,935277,2015-02-01,Multi-vehicle Collision,Rear Collision,Minor Damage,Fire,NC,Springfield,9358 Texas Ridge,21,3,,1,2,YES
+140,756054,2015-02-21,Multi-vehicle Collision,Front Collision,Total Loss,Other,VA,Springfield,8080 Oak Lane,19,3,NO,0,2,YES
+141,682387,2015-01-21,Single Vehicle Collision,Rear Collision,Total Loss,Police,NY,Northbend,6408 Weaver Ridge,2,1,YES,0,1,
+142,456604,2015-01-19,Vehicle Theft,,Trivial Damage,,SC,Northbrook,5532 Weaver Ridge,9,1,,2,3,
+143,139872,2015-02-27,Parked Car,,Minor Damage,,SC,Northbend,9101 2nd Hwy,5,1,,2,1,YES
+144,354105,2015-02-14,Single Vehicle Collision,Rear Collision,Major Damage,Ambulance,SC,Springfield,8576 Andromedia St,14,1,,2,3,
+145,165485,2015-02-01,Multi-vehicle Collision,Rear Collision,Total Loss,Police,WV,Springfield,6315 2nd Lane,20,3,,0,3,YES
+146,515050,2015-02-02,Single Vehicle Collision,Front Collision,Major Damage,Police,NC,Northbrook,1536 Flute Drive,18,1,YES,2,1,
+147,795686,2015-02-01,Multi-vehicle Collision,Side Collision,Major Damage,Fire,NC,Northbend,4672 MLK St,13,3,,2,0,NO
+148,395983,2015-01-19,Single Vehicle Collision,Front Collision,Minor Damage,Fire,WV,Northbrook,2204 Washington Lane,21,1,,1,1,
+149,119513,2015-02-18,Single Vehicle Collision,Rear Collision,Major Damage,Other,SC,Springfield,9484 Pine Drive,14,1,NO,2,3,
+150,217938,2015-02-08,Single Vehicle Collision,Side Collision,Major Damage,Other,SC,Springfield,5431 3rd Ridge,1,1,,1,0,YES
+151,203914,2015-01-09,Single Vehicle Collision,Side Collision,Total Loss,Other,NY,Columbus,7121 Britain Drive,17,1,,1,0,
+152,565157,2015-02-27,Multi-vehicle Collision,Rear Collision,Major Damage,Fire,NC,Hillsdale,8586 1st Ridge,4,3,,2,1,
+153,904191,2015-01-08,Multi-vehicle Collision,Rear Collision,Total Loss,Police,NY,Riverwood,7582 Pine Drive,23,3,YES,1,3,YES
+154,419510,2015-01-08,Multi-vehicle Collision,Rear Collision,Total Loss,Fire,WV,Columbus,1388 Embaracadero Hwy,13,3,NO,2,3,
+155,575000,2015-02-24,Multi-vehicle Collision,Rear Collision,Minor Damage,Ambulance,NC,Northbrook,5621 4th Ave,20,3,NO,1,3,
+156,120485,2015-02-12,Single Vehicle Collision,Front Collision,Major Damage,Police,NY,Riverwood,8150 Washington Ridge,16,1,YES,2,3,NO
+157,781181,2015-02-18,Multi-vehicle Collision,Rear Collision,Minor Damage,Police,NY,Columbus,4268 2nd Ave,10,3,,2,1,YES
+158,299796,2015-02-06,Parked Car,,Minor Damage,,WV,Northbend,6375 2nd Lane,8,1,,2,3,NO
+159,589749,2015-02-14,Multi-vehicle Collision,Front Collision,Total Loss,Ambulance,WV,Springfield,3770 Flute Drive,17,3,,2,0,
+160,854021,2015-02-05,Vehicle Theft,,Minor Damage,Police,NY,Columbus,1562 Britain St,9,1,,2,0,
+161,454086,2015-01-25,Parked Car,,Minor Damage,Police,VA,Springfield,1681 Cherokee Hwy,0,1,YES,2,3,
+162,139484,2015-01-16,Single Vehicle Collision,Front Collision,Total Loss,Ambulance,SC,Northbrook,7523 Oak Lane,12,1,,2,0,
+163,678849,2015-01-28,Multi-vehicle Collision,Side Collision,Total Loss,Ambulance,NY,Hillsdale,1815 Cherokee Drive,20,2,NO,2,1,YES
+164,346940,2015-01-21,Single Vehicle Collision,Front Collision,Major Damage,Fire,SC,Arlington,9316 Pine Ave,3,1,YES,2,0,NO
+165,985436,2015-01-07,Multi-vehicle Collision,Rear Collision,Total Loss,Fire,PA,Columbus,2733 Texas Drive,18,3,NO,2,0,YES
+166,237418,2015-02-23,Multi-vehicle Collision,Side Collision,Minor Damage,Ambulance,WV,Columbus,7684 Francis Ridge,4,3,NO,2,2,YES
+167,335780,2015-02-14,Single Vehicle Collision,Rear Collision,Major Damage,Fire,WV,Riverwood,8991 Embaracadero Ave,18,1,,2,1,YES
+168,491392,2015-02-27,Multi-vehicle Collision,Front Collision,Minor Damage,Ambulance,NY,Northbend,4905 Francis Ave,18,3,NO,0,0,NO
+169,140880,2015-02-21,Parked Car,,Trivial Damage,Police,SC,Hillsdale,7783 Lincoln Hwy,7,1,,0,1,NO
+170,962591,2015-01-05,Parked Car,,Minor Damage,,NY,Hillsdale,8749 Tree St,18,1,NO,1,0,NO
+171,922565,2015-01-30,Multi-vehicle Collision,Rear Collision,Minor Damage,Police,NY,Arlington,4985 Sky Lane,23,3,YES,0,0,
+172,288580,2015-02-26,Single Vehicle Collision,Rear Collision,Total Loss,Ambulance,PA,Riverwood,7534 MLK Hwy,1,1,,0,1,YES
+173,154280,2015-01-10,Multi-vehicle Collision,Rear Collision,Total Loss,Other,SC,Arlington,8689 Maple Hwy,15,3,YES,1,0,
+174,425973,2015-02-23,Multi-vehicle Collision,Front Collision,Major Damage,Fire,PA,Hillsdale,9153 3rd Hwy,2,3,,0,2,YES
+175,477177,2015-02-05,Vehicle Theft,,Trivial Damage,,WV,Riverwood,5904 1st Drive,3,1,NO,0,1,NO
+176,648509,2015-01-21,Single Vehicle Collision,Rear Collision,Minor Damage,Other,PA,Hillsdale,4519 Embaracadero St,13,1,,1,0,YES
+177,914815,2015-01-07,Single Vehicle Collision,Front Collision,Minor Damage,Ambulance,OH,Hillsdale,9706 MLK Lane,1,1,NO,1,1,YES
+178,249048,2015-01-11,Single Vehicle Collision,Rear Collision,Minor Damage,Fire,SC,Columbus,6012 Texas Hwy,16,1,YES,0,1,
+179,144323,2015-02-06,Single Vehicle Collision,Front Collision,Total Loss,Other,WV,Northbend,4098 Weaver Ridge,0,1,YES,0,1,NO
+180,651861,2015-01-24,Vehicle Theft,,Trivial Damage,,NY,Hillsdale,6193 1st Hwy,1,1,,2,1,NO
+181,125324,2015-02-18,Multi-vehicle Collision,Side Collision,Major Damage,Fire,VA,Riverwood,4053 Sky Lane,17,3,,2,0,YES
+182,398102,2015-01-12,Single Vehicle Collision,Side Collision,Minor Damage,Police,SC,Springfield,8964 Francis St,13,1,YES,2,3,
+183,514065,2015-01-17,Single Vehicle Collision,Side Collision,Total Loss,Police,VA,Springfield,9748 Sky Drive,12,1,YES,2,3,NO
+184,391652,2015-01-12,Single Vehicle Collision,Rear Collision,Minor Damage,Police,SC,Northbend,2293 Washington Ave,11,1,,1,1,YES
+185,922167,2015-01-06,Single Vehicle Collision,Front Collision,Major Damage,Ambulance,NY,Northbend,3656 Solo Ave,18,1,,0,2,NO
+186,442795,2015-02-25,Single Vehicle Collision,Front Collision,Total Loss,Fire,NY,Northbend,8579 Apache Drive,17,1,YES,2,3,NO
+187,226330,2015-02-16,Multi-vehicle Collision,Front Collision,Total Loss,Ambulance,NC,Riverwood,2003 Maple Hwy,22,3,,1,1,NO
+188,134430,2015-02-25,Vehicle Theft,,Minor Damage,Police,NY,Northbrook,5445 Tree Hwy,9,1,YES,1,3,YES
+189,524230,2015-02-21,Multi-vehicle Collision,Rear Collision,Major Damage,Other,WV,Hillsdale,9730 2nd Hwy,11,3,,1,0,
+190,438817,2015-02-16,Single Vehicle Collision,Rear Collision,Total Loss,Ambulance,VA,Columbus,7819 Oak St,11,1,NO,0,2,YES
+191,293794,2015-02-09,Parked Car,,Minor Damage,,SC,Riverwood,1845 Best St,8,1,YES,0,1,YES
+192,868283,2015-02-13,Single Vehicle Collision,Side Collision,Minor Damage,Police,SC,Springfield,2500 Tree St,18,1,,1,2,
+193,828890,2015-01-11,Single Vehicle Collision,Front Collision,Total Loss,Police,SC,Arlington,6955 Pine Drive,13,1,NO,0,3,NO
+194,882920,2015-01-02,Vehicle Theft,,Minor Damage,Police,VA,Hillsdale,6165 Rock Ridge,8,1,YES,1,1,YES
+195,918777,2015-02-12,Multi-vehicle Collision,Rear Collision,Total Loss,Other,VA,Northbrook,3653 Elm Drive,9,3,,0,1,YES
+196,212580,2015-02-05,Multi-vehicle Collision,Side Collision,Total Loss,Fire,NC,Columbus,5812 3rd Hwy,17,2,YES,2,3,NO
+197,602410,2015-01-24,Vehicle Theft,,Trivial Damage,Police,WV,Springfield,4939 Best St,3,1,,1,1,NO
+198,976971,2015-01-12,Parked Car,,Trivial Damage,,WV,Arlington,4964 Elm Lane,6,1,YES,0,3,
+199,630226,2015-01-16,Single Vehicle Collision,Front Collision,Major Damage,Ambulance,NY,Riverwood,9588 Solo St,17,1,YES,2,1,NO
+200,171254,2015-01-13,Vehicle Theft,,Minor Damage,Police,SC,Arlington,8718 Apache Lane,7,1,,1,1,
+201,247116,2015-02-02,Vehicle Theft,,Trivial Damage,Police,NY,Hillsdale,3590 Best Hwy,9,1,NO,2,1,YES
+202,505969,2015-02-28,Single Vehicle Collision,Rear Collision,Minor Damage,Fire,WV,Hillsdale,6149 Best Ridge,3,1,,2,0,YES
+203,653864,2015-01-18,Parked Car,,Trivial Damage,Police,NY,Springfield,4116 Embaracadero Lane,6,1,NO,0,2,NO
+204,586367,2015-02-15,Multi-vehicle Collision,Rear Collision,Major Damage,Fire,SC,Riverwood,3486 Flute Ave,7,3,YES,0,3,
+205,896890,2015-01-31,Multi-vehicle Collision,Rear Collision,Total Loss,Ambulance,WV,Northbend,5994 5th Ave,21,3,NO,1,2,
+206,650026,2015-02-10,Single Vehicle Collision,Rear Collision,Minor Damage,Police,SC,Springfield,9138 3rd St,14,1,NO,2,1,NO
+207,547744,2015-02-26,Single Vehicle Collision,Rear Collision,Total Loss,Fire,SC,Columbus,3743 Andromedia Ridge,0,1,,1,0,NO
+208,598124,2015-02-25,Multi-vehicle Collision,Side Collision,Major Damage,Police,VA,Springfield,7644 Tree Ridge,14,3,,0,3,YES
+209,436126,2015-01-08,Multi-vehicle Collision,Side Collision,Total Loss,Police,SC,Riverwood,3167 2nd St,13,4,NO,2,3,NO
+210,739447,2015-01-14,Parked Car,,Trivial Damage,Police,WV,Columbus,3327 Lincoln Drive,8,1,NO,0,1,NO
+211,427484,2015-02-03,Vehicle Theft,,Minor Damage,Police,NC,Hillsdale,8621 Best Ridge,7,1,NO,2,0,NO
+212,218684,2015-01-05,Vehicle Theft,,Trivial Damage,,OH,Columbus,3878 Tree Lane,9,1,,1,2,
+213,565564,2015-01-24,Multi-vehicle Collision,Side Collision,Minor Damage,Ambulance,NY,Riverwood,9760 Solo Lane,12,3,YES,2,3,YES
+214,743163,2015-01-26,Multi-vehicle Collision,Side Collision,Major Damage,Other,SC,Springfield,9138 1st St,6,3,,1,0,
+215,604614,2015-01-21,Single Vehicle Collision,Side Collision,Total Loss,Other,NC,Columbus,3414 Elm Ave,11,1,YES,1,3,
+216,509928,2015-02-06,Multi-vehicle Collision,Side Collision,Minor Damage,Ambulance,NC,Springfield,3172 Tree Ridge,5,3,,1,2,YES
+217,593390,2015-01-07,Single Vehicle Collision,Front Collision,Minor Damage,Fire,NY,Columbus,6104 Oak Ave,14,1,NO,2,2,NO
+218,970607,2015-02-10,Vehicle Theft,,Trivial Damage,,NC,Springfield,9742 5th Ridge,17,1,,2,1,NO
+219,174701,2015-02-23,Single Vehicle Collision,Rear Collision,Total Loss,Other,WV,Hillsdale,8782 3rd St,0,1,,2,3,
+220,529398,2015-01-09,Multi-vehicle Collision,Side Collision,Minor Damage,Fire,SC,Northbrook,9798 Sky Ridge,21,3,NO,1,0,NO
+221,940942,2015-02-22,Single Vehicle Collision,Front Collision,Major Damage,Other,NY,Hillsdale,5483 Francis Drive,18,1,YES,1,2,YES
+222,442677,2015-02-21,Single Vehicle Collision,Front Collision,Minor Damage,Ambulance,NY,Springfield,2005 Texas Hwy,17,1,NO,2,2,NO
+223,365364,2015-02-04,Single Vehicle Collision,Side Collision,Total Loss,Fire,NY,Hillsdale,6634 Texas Ridge,19,1,YES,0,0,NO
+224,114839,2015-01-07,Multi-vehicle Collision,Side Collision,Total Loss,Fire,NY,Columbus,8655 Cherokee Lane,17,3,,1,1,NO
+225,872734,2015-01-17,Multi-vehicle Collision,Side Collision,Major Damage,Fire,VA,Arlington,4955 Lincoln Ridge,23,3,,0,3,YES
+226,267885,2015-01-28,Single Vehicle Collision,Front Collision,Total Loss,Ambulance,NY,Springfield,7705 Best Ridge,4,1,YES,0,1,YES
+227,740505,2015-02-22,Multi-vehicle Collision,Rear Collision,Minor Damage,Other,NY,Riverwood,5838 Pine Lane,2,2,YES,2,0,
+228,629663,2015-02-16,Single Vehicle Collision,Front Collision,Major Damage,Other,NY,Arlington,7331 Sky Hwy,2,1,,0,2,NO
+229,839884,2015-02-17,Multi-vehicle Collision,Front Collision,Total Loss,Fire,WV,Hillsdale,5640 Embaracadero Lane,10,3,YES,1,3,NO
+230,241562,2015-01-09,Single Vehicle Collision,Rear Collision,Minor Damage,Other,SC,Columbus,9610 Cherokee St,2,1,,0,3,NO
+231,405533,2015-02-09,Single Vehicle Collision,Side Collision,Total Loss,Other,NY,Columbus,3550 Washington Ave,18,1,NO,0,2,YES
+232,667021,2015-02-16,Single Vehicle Collision,Side Collision,Minor Damage,Police,SC,Arlington,5277 Texas Lane,18,1,NO,2,3,YES
+233,511621,2015-02-18,Multi-vehicle Collision,Side Collision,Total Loss,Other,WV,Springfield,3654 Cherokee Ave,7,4,,2,1,YES
+234,476923,2015-01-11,Multi-vehicle Collision,Rear Collision,Major Damage,Police,OH,Hillsdale,7380 5th Hwy,19,3,,2,0,NO
+235,735822,2015-02-04,Multi-vehicle Collision,Front Collision,Major Damage,Other,PA,Riverwood,2539 Embaracadero Ridge,10,3,,0,2,YES
+236,492745,2015-01-22,Multi-vehicle Collision,Side Collision,Minor Damage,Fire,NY,Riverwood,4693 Lincoln Hwy,16,3,NO,1,0,
+237,130930,2015-01-10,Single Vehicle Collision,Front Collision,Total Loss,Fire,NY,Arlington,2376 Sky Ridge,17,1,YES,1,1,NO
+238,261119,2015-01-10,Multi-vehicle Collision,Rear Collision,Total Loss,Fire,SC,Columbus,1273 Rock Lane,2,3,NO,2,3,NO
+239,280709,2015-02-16,Single Vehicle Collision,Side Collision,Major Damage,Other,NY,Springfield,8281 Lincoln Lane,19,1,,1,1,
+240,898573,2015-02-08,Single Vehicle Collision,Front Collision,Minor Damage,Fire,WV,Northbrook,6429 4th Hwy,0,1,YES,1,1,
+241,547802,2015-01-26,Single Vehicle Collision,Front Collision,Major Damage,Fire,SC,Riverwood,2201 4th Lane,16,1,,0,0,YES
+242,600845,2015-02-01,Single Vehicle Collision,Front Collision,Major Damage,Other,VA,Columbus,5506 Best St,20,1,YES,2,0,NO
+243,390381,2015-02-02,Parked Car,,Trivial Damage,,SC,Hillsdale,8404 Embaracadero St,10,1,,2,1,YES
+244,629918,2015-02-06,Multi-vehicle Collision,Rear Collision,Total Loss,Ambulance,NY,Riverwood,2117 Lincoln Hwy,21,3,,2,2,NO
+245,208298,2015-01-01,Vehicle Theft,,Trivial Damage,,PA,Springfield,6359 MLK Ridge,3,1,YES,1,2,NO
+246,513099,2015-01-19,Single Vehicle Collision,Rear Collision,Major Damage,Fire,NY,Arlington,9751 Sky Ridge,7,1,YES,0,3,YES
+247,184938,2015-01-17,Single Vehicle Collision,Side Collision,Minor Damage,Fire,NY,Northbend,9020 Elm Ave,19,1,YES,0,2,YES
+248,187775,2015-02-01,Multi-vehicle Collision,Rear Collision,Total Loss,Ambulance,SC,Columbus,1830 Sky St,15,3,,0,1,
+249,326322,2015-01-02,Parked Car,,Minor Damage,,SC,Hillsdale,6067 Weaver Ridge,7,1,,0,3,NO
+250,146138,2015-02-20,Single Vehicle Collision,Rear Collision,Major Damage,Fire,NC,Arlington,1840 Embaracadero Ave,19,1,,1,3,YES
+251,336047,2015-02-05,Multi-vehicle Collision,Rear Collision,Total Loss,Fire,SC,Springfield,4058 Tree Drive,13,2,YES,0,1,
+252,532330,2015-02-27,Multi-vehicle Collision,Side Collision,Major Damage,Police,SC,Northbend,4983 MLK Ridge,2,3,NO,1,2,NO
+253,118137,2015-01-27,Vehicle Theft,,Trivial Damage,Police,WV,Springfield,9744 Texas Drive,5,1,YES,1,1,NO
+254,212674,2015-01-26,Single Vehicle Collision,Side Collision,Major Damage,Fire,OH,Riverwood,8821 Elm St,21,1,,2,3,NO
+255,935596,2015-01-13,Multi-vehicle Collision,Rear Collision,Major Damage,Fire,SC,Northbrook,2886 Tree Ridge,21,3,NO,2,2,NO
+256,737593,2015-01-14,Multi-vehicle Collision,Side Collision,Major Damage,Ambulance,NY,Hillsdale,5236 Weaver Drive,7,3,NO,0,1,
+257,812025,2015-02-22,Multi-vehicle Collision,Side Collision,Total Loss,Other,SC,Arlington,5862 Apache Ridge,16,3,YES,1,0,YES
+258,168151,2015-01-17,Single Vehicle Collision,Side Collision,Major Damage,Police,SC,Columbus,7859 4th Ridge,13,1,YES,0,1,NO
+259,594739,2015-02-02,Vehicle Theft,,Trivial Damage,Police,NY,Springfield,6259 Weaver St,2,1,YES,1,3,YES
+260,843227,2015-01-07,Multi-vehicle Collision,Rear Collision,Major Damage,Fire,SC,Northbend,9980 Lincoln Ave,19,3,,0,2,YES
+261,283925,2015-02-02,Parked Car,,Trivial Damage,,SC,Riverwood,7828 Cherokee Ave,17,1,,0,1,NO
+262,475588,2015-02-07,Single Vehicle Collision,Front Collision,Major Damage,Police,NC,Arlington,5812 Oak St,3,1,,2,0,
+263,751905,2015-01-18,Multi-vehicle Collision,Rear Collision,Major Damage,Ambulance,NY,Arlington,2318 Washington Hwy,17,3,NO,0,1,
+264,226725,2015-01-10,Multi-vehicle Collision,Side Collision,Minor Damage,Police,SC,Hillsdale,8809 Flute St,5,3,,1,1,
+265,942504,2015-01-30,Single Vehicle Collision,Side Collision,Minor Damage,Police,SC,Northbend,3184 Oak Ave,9,1,NO,1,0,YES
+266,395572,2015-01-25,Vehicle Theft,,Trivial Damage,Police,NC,Hillsdale,6493 Lincoln Lane,9,1,NO,1,0,NO
+267,889883,2015-01-29,Multi-vehicle Collision,Side Collision,Major Damage,Fire,PA,Columbus,7162 Maple Ave,9,3,,2,2,
+268,818167,2015-02-24,Multi-vehicle Collision,Rear Collision,Minor Damage,Fire,SC,Springfield,5455 Tree Ridge,22,3,NO,0,0,
+269,277767,2015-01-04,Multi-vehicle Collision,Rear Collision,Major Damage,Ambulance,PA,Springfield,5778 Pine Ridge,15,3,YES,0,3,NO
+270,842618,2015-02-25,Multi-vehicle Collision,Front Collision,Total Loss,Fire,SC,Hillsdale,3797 Solo Lane,14,3,YES,2,3,YES
+271,577810,2015-01-27,Multi-vehicle Collision,Rear Collision,Minor Damage,Police,VA,Arlington,9373 Pine Hwy,6,3,,2,0,YES
+272,873114,2015-02-19,Parked Car,,Minor Damage,,NY,Hillsdale,1365 Francis Ave,6,1,NO,0,0,NO
+273,994538,2015-01-31,Multi-vehicle Collision,Front Collision,Major Damage,Police,WV,Arlington,9239 Washington Ridge,22,4,YES,2,0,
+274,727792,2015-01-18,Multi-vehicle Collision,Rear Collision,Minor Damage,Ambulance,NY,Arlington,3416 Washington Drive,14,3,,1,0,NO
+275,522506,2015-01-10,Multi-vehicle Collision,Front Collision,Minor Damage,Fire,NY,Columbus,1923 2nd Hwy,16,3,NO,0,2,
+276,367595,2015-01-28,Multi-vehicle Collision,Front Collision,Major Damage,Ambulance,SC,Riverwood,6451 1st Hwy,10,3,,0,1,NO
+277,586104,2015-02-16,Multi-vehicle Collision,Side Collision,Total Loss,Ambulance,WV,Columbus,1267 Francis Hwy,9,3,YES,1,2,NO
+278,424862,2015-02-08,Single Vehicle Collision,Rear Collision,Minor Damage,Other,PA,Northbrook,4158 Washington Lane,4,1,NO,1,0,
+279,512813,2015-01-20,Multi-vehicle Collision,Side Collision,Major Damage,Police,WV,Northbend,3796 Cherokee Drive,6,3,,0,1,YES
+280,356768,2015-02-06,Multi-vehicle Collision,Side Collision,Minor Damage,Police,SC,Northbend,7434 Oak Hwy,15,3,YES,2,1,YES
+281,330506,2015-01-24,Multi-vehicle Collision,Side Collision,Minor Damage,Fire,PA,Columbus,5178 Weaver Hwy,12,3,NO,1,3,
+282,779075,2015-01-14,Vehicle Theft,,Trivial Damage,Police,NY,Arlington,8477 Francis Hwy,3,1,NO,2,1,
+283,799501,2015-02-18,Vehicle Theft,,Minor Damage,Police,SC,Northbrook,7693 Britain Lane,14,1,YES,0,0,YES
+284,987905,2015-01-10,Single Vehicle Collision,Rear Collision,Major Damage,Police,WV,Riverwood,3658 Rock Drive,10,1,,0,2,
+285,967756,2015-02-13,Multi-vehicle Collision,Side Collision,Major Damage,Police,WV,Riverwood,2617 Andromedia Drive,17,3,,1,3,YES
+286,830414,2015-02-17,Single Vehicle Collision,Front Collision,Total Loss,Other,VA,Northbrook,9279 Oak Hwy,8,1,YES,0,1,
+287,127313,2015-01-07,Multi-vehicle Collision,Rear Collision,Total Loss,Ambulance,SC,Hillsdale,3439 Andromedia Hwy,14,3,YES,2,0,NO
+288,786957,2015-01-29,Vehicle Theft,,Trivial Damage,,SC,Riverwood,5901 Elm Drive,6,1,,1,0,NO
+289,332892,2015-02-13,Single Vehicle Collision,Rear Collision,Major Damage,Ambulance,SC,Northbrook,3982 Washington Hwy,6,1,YES,1,2,YES
+290,448642,2015-02-01,Parked Car,,Minor Damage,Police,VA,Northbrook,3376 5th Drive,8,1,NO,0,2,
+291,526039,2015-01-29,Single Vehicle Collision,Side Collision,Major Damage,Ambulance,NC,Arlington,3936 Tree Drive,13,1,YES,0,1,
+292,444422,2015-02-06,Multi-vehicle Collision,Front Collision,Total Loss,Ambulance,OH,Springfield,6605 Tree Ave,0,3,,0,2,NO
+293,689500,2015-01-28,Multi-vehicle Collision,Rear Collision,Major Damage,Fire,NC,Northbend,3102 Apache St,14,3,,1,0,NO
+294,806081,2015-01-21,Single Vehicle Collision,Side Collision,Minor Damage,Fire,NY,Columbus,7756 Pine Hwy,13,1,YES,2,2,
+295,384618,2015-01-16,Multi-vehicle Collision,Rear Collision,Minor Damage,Police,NC,Columbus,7142 5th Lane,16,4,,1,2,YES
+296,756459,2015-02-17,Single Vehicle Collision,Side Collision,Total Loss,Fire,SC,Northbrook,2914 Oak Drive,13,1,,1,2,NO
+297,655787,2015-02-01,Multi-vehicle Collision,Front Collision,Minor Damage,Police,PA,Hillsdale,6522 Apache Drive,15,3,YES,2,2,YES
+298,419954,2015-02-25,Parked Car,,Trivial Damage,Police,SC,Northbend,5279 Pine Ridge,3,1,,2,3,
+299,275092,2015-02-26,Parked Car,,Minor Damage,,WV,Northbend,8078 Britain Hwy,7,1,YES,1,0,
+300,515698,2015-02-06,Multi-vehicle Collision,Rear Collision,Major Damage,Other,PA,Northbend,1133 Apache St,16,2,NO,1,0,
+301,132871,2015-02-03,Vehicle Theft,,Trivial Damage,Police,SC,Riverwood,2873 Flute Ave,15,1,NO,1,3,NO
+302,714929,2015-01-27,Multi-vehicle Collision,Side Collision,Total Loss,Police,NY,Riverwood,8509 Apache St,21,3,YES,1,2,
+303,297816,2015-01-21,Multi-vehicle Collision,Rear Collision,Major Damage,Police,NC,Arlington,8245 4th Hwy,23,3,YES,0,2,
+304,426708,2015-01-24,Parked Car,,Trivial Damage,Police,NY,Columbus,3094 Best Lane,5,1,,0,2,NO
+305,615047,2015-01-17,Multi-vehicle Collision,Rear Collision,Minor Damage,Other,NY,Springfield,8188 Tree Ave,15,3,YES,0,0,NO
+306,771236,2015-02-23,Single Vehicle Collision,Front Collision,Major Damage,Other,NY,Arlington,5224 5th Lane,14,1,,2,1,YES
+307,235869,2015-01-09,Single Vehicle Collision,Side Collision,Major Damage,Fire,SC,Riverwood,2230 1st St,1,1,,1,1,YES
+308,931625,2015-02-15,Multi-vehicle Collision,Rear Collision,Total Loss,Fire,SC,Arlington,6719 Flute St,14,3,NO,1,2,YES
+309,371635,2015-01-16,Multi-vehicle Collision,Rear Collision,Total Loss,Other,NY,Northbrook,8064 4th Ave,17,3,,1,1,YES
+310,427199,2015-01-14,Multi-vehicle Collision,Side Collision,Total Loss,Fire,NY,Northbend,2469 Francis Lane,20,3,NO,2,2,NO
+311,261315,2015-01-01,Multi-vehicle Collision,Rear Collision,Major Damage,Other,SC,Springfield,4671 5th Ridge,10,3,NO,2,2,YES
+312,582973,2015-02-16,Multi-vehicle Collision,Front Collision,Major Damage,Ambulance,SC,Northbrook,6985 Maple Lane,3,3,,0,3,
+313,278091,2015-01-04,Single Vehicle Collision,Side Collision,Total Loss,Other,SC,Hillsdale,7791 Britain Ridge,0,1,,0,0,
+314,153154,2015-01-12,Multi-vehicle Collision,Side Collision,Total Loss,Police,WV,Hillsdale,6355 4th Hwy,10,3,,2,2,NO
+315,515217,2015-01-08,Multi-vehicle Collision,Side Collision,Minor Damage,Other,SC,Northbend,3495 Britain Drive,13,3,YES,2,0,
+316,860497,2015-01-22,Single Vehicle Collision,Rear Collision,Minor Damage,Police,WV,Northbend,2980 Sky Ridge,14,1,NO,2,1,
+317,351741,2015-01-13,Multi-vehicle Collision,Side Collision,Total Loss,Other,WV,Riverwood,5914 Oak Ave,22,3,NO,1,3,
+318,403737,2015-01-18,Multi-vehicle Collision,Side Collision,Total Loss,Ambulance,VA,Northbend,3835 5th Ave,8,3,YES,1,1,
+319,162004,2015-01-19,Multi-vehicle Collision,Rear Collision,Minor Damage,Police,NY,Northbend,5925 Tree Hwy,1,3,,1,0,
+320,740384,2015-01-31,Single Vehicle Collision,Side Collision,Major Damage,Other,NY,Springfield,6250 1st Ridge,19,1,YES,0,1,YES
+321,876714,2015-02-06,Single Vehicle Collision,Front Collision,Total Loss,Fire,NY,Columbus,1346 5th Lane,17,1,YES,0,2,YES
+322,951543,2015-02-04,Multi-vehicle Collision,Rear Collision,Major Damage,Other,SC,Hillsdale,1128 Maple Lane,13,3,YES,0,3,YES
+323,576723,2015-01-02,Single Vehicle Collision,Front Collision,Total Loss,Police,WV,Riverwood,6309 Cherokee Ave,4,1,,1,2,YES
+324,391003,2015-02-26,Multi-vehicle Collision,Rear Collision,Total Loss,Police,PA,Northbend,4618 Flute Ave,14,3,NO,0,2,NO
+325,225865,2015-02-08,Multi-vehicle Collision,Rear Collision,Major Damage,Other,VA,Springfield,6191 Oak Lane,4,2,YES,2,2,NO
+326,984948,2015-02-07,Multi-vehicle Collision,Side Collision,Total Loss,Police,NY,Northbend,1316 Britain Ridge,23,3,YES,1,1,YES
+327,890328,2015-02-17,Multi-vehicle Collision,Front Collision,Total Loss,Fire,NY,Hillsdale,5924 Maple Drive,21,3,YES,0,2,
+328,803294,2015-01-12,Multi-vehicle Collision,Rear Collision,Minor Damage,Police,NY,Arlington,8917 Tree Ridge,23,3,YES,0,0,
+329,414913,2015-02-01,Multi-vehicle Collision,Side Collision,Major Damage,Other,NY,Columbus,3966 Francis Ridge,6,3,,0,2,YES
+330,414519,2015-02-03,Single Vehicle Collision,Front Collision,Major Damage,Other,WV,Springfield,1507 Solo Ave,21,1,NO,1,0,NO
+331,818413,2015-02-21,Single Vehicle Collision,Side Collision,Major Damage,Fire,NY,Springfield,4272 Oak Ridge,23,1,,2,3,
+332,487356,2015-01-09,Multi-vehicle Collision,Front Collision,Major Damage,Ambulance,NY,Riverwood,4434 Lincoln Ave,3,3,,1,3,NO
+333,159768,2015-02-16,Parked Car,,Trivial Damage,,SC,Northbend,7529 Solo Ridge,8,1,NO,2,2,
+334,865839,2015-02-04,Parked Car,,Trivial Damage,,VA,Arlington,8096 Apache Hwy,4,1,,2,2,
+335,406567,2015-02-24,Single Vehicle Collision,Side Collision,Total Loss,Fire,NC,Arlington,9417 Tree Hwy,22,1,,0,0,YES
+336,623032,2015-02-01,Single Vehicle Collision,Rear Collision,Minor Damage,Police,WV,Hillsdale,3809 Texas Lane,16,1,NO,0,1,YES
+337,935442,2015-02-05,Multi-vehicle Collision,Side Collision,Minor Damage,Fire,SC,Columbus,1540 Apache Lane,14,3,NO,2,1,NO
+338,106873,2015-01-07,Single Vehicle Collision,Rear Collision,Total Loss,Police,NY,Springfield,2337 Lincoln Hwy,13,1,YES,2,0,NO
+339,563878,2015-02-06,Single Vehicle Collision,Front Collision,Minor Damage,Other,NY,Hillsdale,6770 1st St,20,1,,1,1,YES
+340,620855,2015-01-21,Multi-vehicle Collision,Front Collision,Total Loss,Fire,NY,Columbus,4119 Texas St,0,3,,1,3,
+341,583169,2015-03-01,Multi-vehicle Collision,Side Collision,Total Loss,Police,VA,Arlington,4347 2nd Ridge,23,3,YES,2,2,NO
+342,337677,2015-02-24,Single Vehicle Collision,Rear Collision,Minor Damage,Other,SC,Columbus,1091 1st Drive,13,1,YES,1,3,NO
+343,445973,2015-02-02,Single Vehicle Collision,Rear Collision,Major Damage,Police,NY,Northbend,8203 Lincoln Ave,8,1,,2,2,YES
+344,156694,2015-01-31,Vehicle Theft,,Minor Damage,,WV,Northbend,9154 MLK Hwy,3,1,,0,3,NO
+345,421940,2015-01-09,Single Vehicle Collision,Rear Collision,Total Loss,Police,VA,Columbus,5780 4th Ave,16,1,,2,3,NO
+346,613226,2015-02-23,Single Vehicle Collision,Side Collision,Minor Damage,Police,VA,Hillsdale,6945 Texas Hwy,19,1,YES,0,2,YES
+347,804410,2015-01-28,Single Vehicle Collision,Rear Collision,Minor Damage,Ambulance,WV,Springfield,5639 1st Ridge,0,1,YES,2,0,YES
+348,553565,2015-01-14,Single Vehicle Collision,Front Collision,Total Loss,Other,VA,Arlington,3834 Pine St,12,1,,2,2,YES
+349,399524,2015-02-03,Multi-vehicle Collision,Side Collision,Total Loss,Other,SC,Arlington,1358 Maple St,21,3,YES,1,0,
+350,331595,2015-02-17,Single Vehicle Collision,Front Collision,Major Damage,Fire,SC,Riverwood,7460 Apache Lane,0,1,,1,3,NO
+351,380067,2015-01-30,Single Vehicle Collision,Side Collision,Minor Damage,Other,VA,Columbus,5771 Sky Ave,22,1,YES,1,3,NO
+352,701521,2015-02-03,Multi-vehicle Collision,Rear Collision,Major Damage,Ambulance,NC,Northbend,2865 Maple Lane,20,3,,1,0,NO
+353,360770,2015-02-03,Single Vehicle Collision,Rear Collision,Minor Damage,Fire,VA,Riverwood,8940 Elm Ave,0,1,NO,1,3,
+354,958785,2015-01-31,Single Vehicle Collision,Front Collision,Minor Damage,Police,SC,Hillsdale,1215 Pine Hwy,20,1,,0,2,NO
+355,797934,2015-02-06,Multi-vehicle Collision,Front Collision,Minor Damage,Ambulance,NY,Springfield,6874 Maple Ridge,1,3,YES,0,0,
+356,883980,2015-02-06,Single Vehicle Collision,Rear Collision,Total Loss,Fire,WV,Hillsdale,8834 Elm Drive,11,1,NO,0,0,
+357,340614,2015-01-29,Multi-vehicle Collision,Side Collision,Major Damage,Other,WV,Columbus,8542 Lincoln Ridge,14,3,YES,1,1,YES
+358,435784,2015-01-07,Multi-vehicle Collision,Side Collision,Minor Damage,Police,NY,Springfield,9397 Francis St,20,3,YES,0,2,
+359,563837,2015-01-20,Single Vehicle Collision,Side Collision,Major Damage,Ambulance,SC,Springfield,4907 Andromedia Drive,22,1,,1,3,
+360,200827,2015-02-28,Single Vehicle Collision,Side Collision,Total Loss,Other,SC,Columbus,4429 Washington St,12,1,NO,1,0,YES
+361,533941,2015-02-04,Multi-vehicle Collision,Rear Collision,Major Damage,Ambulance,OH,Columbus,2651 MLK Lane,3,3,YES,2,1,YES
+362,265026,2015-01-12,Multi-vehicle Collision,Rear Collision,Major Damage,Ambulance,SC,Northbend,2942 1st Lane,15,3,YES,2,1,
+363,354481,2015-02-28,Parked Car,,Trivial Damage,,VA,Arlington,6317 Best St,8,1,YES,0,2,NO
+364,566720,2015-01-08,Multi-vehicle Collision,Side Collision,Major Damage,Other,WV,Northbend,1555 Washington Lane,13,3,NO,0,2,
+365,832746,2015-01-25,Parked Car,,Minor Damage,Police,SC,Hillsdale,1919 4th Lane,8,1,NO,2,2,YES
+366,386690,2015-02-26,Parked Car,,Minor Damage,,NC,Arlington,5480 3rd Ridge,7,1,,0,0,NO
+367,979285,2015-02-03,Vehicle Theft,,Trivial Damage,,SC,Northbrook,8864 Tree Ridge,9,1,,2,0,
+368,594722,2015-01-31,Single Vehicle Collision,Front Collision,Minor Damage,Ambulance,VA,Northbend,2777 Solo Drive,15,1,NO,1,0,YES
+369,216738,2015-02-01,Single Vehicle Collision,Side Collision,Minor Damage,Police,NC,Northbend,9929 Rock Drive,5,1,,0,2,
+370,369048,2015-02-21,Multi-vehicle Collision,Rear Collision,Major Damage,Other,WV,Northbend,4143 Maple Ridge,15,4,YES,0,1,
+371,514424,2015-01-30,Multi-vehicle Collision,Front Collision,Major Damage,Other,NC,Columbus,7121 Rock St,22,3,YES,2,1,NO
+372,954191,2015-01-31,Multi-vehicle Collision,Side Collision,Total Loss,Police,VA,Riverwood,9067 Texas Ave,16,2,,1,2,YES
+373,150181,2015-01-13,Single Vehicle Collision,Front Collision,Total Loss,Other,SC,Hillsdale,9245 Weaver Ridge,7,1,NO,1,3,
+374,388671,2015-02-16,Parked Car,,Minor Damage,,WV,Arlington,4585 Francis Ave,2,1,YES,1,2,
+375,457244,2015-02-04,Multi-vehicle Collision,Side Collision,Minor Damage,Police,SC,Northbend,6738 Francis Hwy,17,4,,0,0,YES
+376,206667,2015-02-07,Multi-vehicle Collision,Front Collision,Total Loss,Other,NY,Springfield,7576 Pine Ridge,12,3,,1,0,YES
+377,745200,2015-01-16,Single Vehicle Collision,Rear Collision,Major Damage,Ambulance,WV,Arlington,9105 Tree Lane,9,1,,1,0,NO
+378,412703,2015-02-28,Single Vehicle Collision,Side Collision,Total Loss,Fire,VA,Northbrook,2299 Britain Drive,16,1,,1,2,
+379,736771,2015-02-08,Multi-vehicle Collision,Side Collision,Minor Damage,Ambulance,NY,Springfield,1914 Francis St,19,3,,2,0,
+380,347984,2015-01-02,Multi-vehicle Collision,Front Collision,Major Damage,Other,VA,Columbus,6658 Weaver St,14,3,,1,2,NO
+381,626074,2015-01-13,Multi-vehicle Collision,Side Collision,Total Loss,Police,SC,Northbend,1985 5th Ave,18,3,,1,3,
+382,218109,2015-01-07,Single Vehicle Collision,Front Collision,Minor Damage,Police,SC,Springfield,1707 Sky Ave,23,1,YES,1,3,
+383,999435,2015-01-05,Multi-vehicle Collision,Rear Collision,Minor Damage,Other,NY,Springfield,6456 Andromedia Drive,15,3,,0,2,YES
+384,858060,2015-02-28,Single Vehicle Collision,Rear Collision,Minor Damage,Ambulance,NC,Arlington,5649 Texas Ave,18,1,YES,0,1,YES
+385,500384,2015-01-04,Single Vehicle Collision,Front Collision,Minor Damage,Police,NY,Riverwood,1220 MLK Ave,16,1,NO,2,2,YES
+386,903785,2015-02-02,Multi-vehicle Collision,Front Collision,Minor Damage,Fire,NY,Northbend,1589 Pine St,12,3,NO,1,0,YES
+387,873859,2015-02-23,Single Vehicle Collision,Side Collision,Major Damage,Ambulance,WV,Northbrook,8906 Elm Lane,16,1,NO,0,1,
+388,204294,2015-02-10,Single Vehicle Collision,Front Collision,Total Loss,Other,NY,Hillsdale,2654 Elm Drive,21,1,,1,2,
+389,467106,2015-02-16,Multi-vehicle Collision,Side Collision,Total Loss,Other,NY,Columbus,6681 Texas Ridge,15,3,YES,0,1,
+390,357713,2015-01-04,Single Vehicle Collision,Front Collision,Major Damage,Ambulance,WV,Northbrook,7782 Rock St,21,1,YES,1,2,
+391,890026,2015-01-30,Single Vehicle Collision,Rear Collision,Major Damage,Ambulance,WV,Arlington,9286 Oak Ave,1,1,YES,0,2,NO
+392,751612,2015-01-25,Multi-vehicle Collision,Side Collision,Total Loss,Fire,NY,Arlington,8758 5th St,17,3,,0,0,NO
+393,876680,2015-01-22,Multi-vehicle Collision,Rear Collision,Total Loss,Fire,NY,Columbus,7281 Maple Hwy,5,3,NO,2,1,NO
+394,756981,2015-01-01,Multi-vehicle Collision,Front Collision,Total Loss,Other,WV,Northbend,7571 Elm Ridge,15,3,,1,2,
+395,121439,2015-02-14,Multi-vehicle Collision,Rear Collision,Major Damage,Other,OH,Arlington,6738 Washington Hwy,2,4,NO,2,2,NO
+396,411289,2015-01-15,Vehicle Theft,,Minor Damage,,SC,Northbend,4188 Britain Ave,3,1,YES,2,0,NO
+397,538466,2015-01-06,Single Vehicle Collision,Side Collision,Major Damage,Other,NY,Riverwood,6934 Lincoln Ave,19,1,NO,1,0,
+398,932097,2015-02-08,Single Vehicle Collision,Front Collision,Minor Damage,Fire,VA,Hillsdale,6390 Apache St,17,1,YES,0,2,YES
+399,463727,2015-02-17,Vehicle Theft,,Trivial Damage,Police,WV,Columbus,7615 Weaver Drive,7,1,,0,1,YES
+400,552618,2015-01-21,Single Vehicle Collision,Rear Collision,Minor Damage,Ambulance,NY,Columbus,6409 Cherokee Drive,21,1,NO,1,0,YES
+401,936638,2015-02-09,Multi-vehicle Collision,Front Collision,Total Loss,Police,WV,Springfield,1123 5th Lane,10,2,YES,1,3,NO
+402,348814,2015-02-12,Single Vehicle Collision,Front Collision,Total Loss,Fire,NY,Columbus,5168 5th Ave,11,1,YES,1,0,
+403,944102,2015-02-24,Multi-vehicle Collision,Rear Collision,Major Damage,Ambulance,NY,Columbus,3697 Apache Drive,23,3,YES,2,0,NO
+404,689901,2015-02-02,Single Vehicle Collision,Side Collision,Minor Damage,Ambulance,NC,Northbend,1910 Sky Ave,14,1,,0,2,NO
+405,901083,2015-02-14,Single Vehicle Collision,Front Collision,Minor Damage,Other,SC,Riverwood,8954 Apache Lane,10,1,NO,1,3,NO
+406,396224,2015-02-15,Multi-vehicle Collision,Side Collision,Total Loss,Fire,WV,Hillsdale,3110 Lincoln Lane,6,3,,2,3,NO
+407,682178,2015-02-28,Multi-vehicle Collision,Rear Collision,Minor Damage,Police,WV,Arlington,6035 Rock Ave,10,3,,0,3,YES
+408,596298,2015-01-18,Multi-vehicle Collision,Side Collision,Total Loss,Police,VA,Hillsdale,2220 1st Lane,5,3,,0,0,NO
+409,253005,2015-01-06,Single Vehicle Collision,Rear Collision,Minor Damage,Fire,OH,Riverwood,4972 Francis Lane,17,1,,1,3,YES
+410,985924,2015-01-19,Vehicle Theft,,Trivial Damage,,NC,Springfield,6957 Weaver Drive,3,1,NO,2,3,NO
+411,631565,2015-01-17,Parked Car,,Minor Damage,,WV,Northbrook,1512 Rock Lane,9,1,,0,3,NO
+412,630998,2015-02-12,Parked Car,,Trivial Damage,Police,SC,Arlington,3693 Pine Ave,6,1,YES,2,0,YES
+413,926665,2015-02-11,Multi-vehicle Collision,Front Collision,Minor Damage,Fire,NY,Riverwood,9879 Apache Drive,22,3,NO,2,2,NO
+414,302669,2015-02-21,Multi-vehicle Collision,Front Collision,Major Damage,Fire,PA,Northbend,2494 Andromedia Drive,10,3,,1,2,YES
+415,620020,2015-01-02,Vehicle Theft,,Minor Damage,,NC,Riverwood,4615 Embaracadero Ave,4,1,YES,1,2,
+416,439828,2015-01-11,Single Vehicle Collision,Front Collision,Total Loss,Other,WV,Northbrook,1929 Britain Drive,23,1,NO,1,3,NO
+417,971295,2015-02-23,Single Vehicle Collision,Rear Collision,Total Loss,Police,NY,Riverwood,5051 Elm St,19,1,,0,2,YES
+418,165565,2015-01-28,Single Vehicle Collision,Rear Collision,Total Loss,Ambulance,NY,Hillsdale,9910 Maple Ave,22,1,YES,1,2,YES
+419,936543,2015-02-01,Vehicle Theft,,Trivial Damage,Police,NC,Riverwood,5602 Britain St,6,1,NO,1,3,NO
+420,296960,2015-02-24,Single Vehicle Collision,Side Collision,Minor Damage,Other,NY,Springfield,6889 Cherokee St,6,1,NO,2,0,
+421,501692,2015-01-20,Single Vehicle Collision,Rear Collision,Major Damage,Ambulance,SC,Northbend,3926 Rock Lane,18,1,NO,2,2,
+422,525224,2015-01-14,Single Vehicle Collision,Front Collision,Total Loss,Ambulance,SC,Northbend,6717 Best Drive,22,1,,1,0,NO
+423,355085,2015-02-05,Single Vehicle Collision,Front Collision,Major Damage,Other,WV,Columbus,6117 4th Ave,21,1,,0,0,
+424,830729,2015-01-11,Single Vehicle Collision,Side Collision,Minor Damage,Fire,SC,Northbend,2668 Cherokee St,12,1,,0,0,
+425,651948,2015-01-02,Multi-vehicle Collision,Front Collision,Major Damage,Ambulance,NY,Arlington,6838 Flute Lane,6,3,,0,3,YES
+426,424358,2015-02-12,Multi-vehicle Collision,Side Collision,Major Damage,Police,WV,Northbrook,6583 MLK Ridge,0,4,,0,0,
+427,131478,2015-01-03,Single Vehicle Collision,Front Collision,Total Loss,Ambulance,WV,Arlington,6492 4th Lane,11,1,NO,0,2,
+428,268833,2015-02-25,Single Vehicle Collision,Side Collision,Minor Damage,Police,NC,Hillsdale,7299 Apache St,19,1,,1,0,NO
+429,287489,2015-01-19,Multi-vehicle Collision,Rear Collision,Major Damage,Ambulance,NC,Springfield,2756 Britain Hwy,22,3,,0,0,NO
+430,808153,2015-01-03,Single Vehicle Collision,Front Collision,Total Loss,Fire,NY,Columbus,9360 3rd Drive,2,1,YES,2,3,NO
+431,687639,2015-02-12,Multi-vehicle Collision,Front Collision,Total Loss,Ambulance,OH,Arlington,1655 Francis Hwy,16,4,YES,1,2,YES
+432,497347,2015-02-24,Multi-vehicle Collision,Side Collision,Total Loss,Other,VA,Columbus,9720 Lincoln Hwy,23,3,,0,0,YES
+433,439660,2015-02-25,Single Vehicle Collision,Front Collision,Major Damage,Police,NC,Northbend,7066 Texas Ave,21,1,YES,1,0,NO
+434,847123,2015-02-17,Single Vehicle Collision,Front Collision,Minor Damage,Other,NY,Columbus,9728 Britain Hwy,10,1,,2,3,YES
+435,172307,2015-02-09,Single Vehicle Collision,Rear Collision,Major Damage,Fire,NC,Riverwood,4486 Cherokee Ridge,12,1,,0,3,
+436,810189,2015-02-15,Single Vehicle Collision,Side Collision,Total Loss,Police,PA,Northbend,8021 Flute Ave,6,1,NO,1,0,NO
+437,432068,2015-02-25,Single Vehicle Collision,Side Collision,Major Damage,Fire,PA,Riverwood,2774 Apache Drive,6,1,,1,2,
+438,903203,2015-02-05,Parked Car,,Trivial Damage,Police,NC,Hillsdale,2787 MLK St,7,1,,2,2,NO
+439,253085,2015-01-12,Vehicle Theft,,Trivial Damage,Police,WV,Northbrook,9847 Elm St,3,1,NO,1,1,NO
+440,180720,2015-01-01,Parked Car,,Trivial Damage,,VA,Hillsdale,4629 Elm Ridge,10,1,YES,2,1,YES
+441,492224,2015-02-19,Single Vehicle Collision,Rear Collision,Total Loss,Fire,NY,Columbus,5585 Washington Drive,14,1,NO,0,2,NO
+442,411477,2015-01-14,Multi-vehicle Collision,Front Collision,Total Loss,Other,WV,Hillsdale,3925 Sky St,17,3,NO,0,3,NO
+443,107181,2015-01-30,Single Vehicle Collision,Side Collision,Major Damage,Fire,SC,Hillsdale,3903 Oak Ave,16,1,YES,0,0,
+444,312940,2015-01-20,Parked Car,,Minor Damage,,VA,Columbus,3805 Lincoln Hwy,3,1,NO,2,1,
+445,855186,2015-02-18,Parked Car,,Minor Damage,,NC,Arlington,4055 2nd Drive,7,1,NO,0,0,
+446,373935,2015-01-07,Single Vehicle Collision,Rear Collision,Total Loss,Police,SC,Northbend,3707 Oak Ridge,13,1,YES,1,1,
+447,812989,2015-01-16,Single Vehicle Collision,Rear Collision,Total Loss,Fire,NY,Springfield,7327 Lincoln Drive,20,1,YES,2,3,YES
+448,993840,2015-01-15,Single Vehicle Collision,Front Collision,Minor Damage,Fire,NC,Riverwood,9369 Flute Hwy,23,1,YES,2,2,NO
+449,327856,2015-02-01,Single Vehicle Collision,Front Collision,Total Loss,Ambulance,SC,Arlington,4239 Weaver Ave,11,1,NO,1,0,
+450,506333,2015-01-06,Multi-vehicle Collision,Rear Collision,Major Damage,Ambulance,WV,Northbend,6044 Weaver Drive,0,4,,0,3,NO
+451,263159,2015-02-02,Single Vehicle Collision,Rear Collision,Minor Damage,Ambulance,NY,Northbrook,8879 1st Drive,2,1,YES,0,1,
+452,372912,2015-02-25,Single Vehicle Collision,Side Collision,Total Loss,Fire,SC,Northbrook,9488 Best Drive,3,1,NO,2,0,YES
+453,552788,2015-02-10,Parked Car,,Trivial Damage,,NY,Hillsdale,7500 Texas Ridge,3,1,YES,1,0,NO
+454,722747,2015-02-22,Multi-vehicle Collision,Rear Collision,Total Loss,Other,NY,Arlington,2048 3rd Ridge,15,3,,2,1,NO
+455,248467,2015-01-31,Single Vehicle Collision,Side Collision,Minor Damage,Other,NY,Northbend,3419 Apache St,23,1,,2,3,NO
+456,955953,2015-02-12,Multi-vehicle Collision,Front Collision,Minor Damage,Police,WV,Springfield,9875 MLK Ave,9,3,YES,2,0,NO
+457,910622,2015-01-06,Vehicle Theft,,Minor Damage,Police,NY,Columbus,3553 Texas Ave,20,1,,0,1,YES
+458,137675,2015-01-01,Single Vehicle Collision,Side Collision,Major Damage,Ambulance,NC,Riverwood,4335 1st St,5,1,,2,1,YES
+459,343421,2015-01-07,Single Vehicle Collision,Side Collision,Total Loss,Other,NC,Hillsdale,9070 Tree Ave,15,1,YES,0,2,
+460,413192,2015-02-21,Single Vehicle Collision,Side Collision,Minor Damage,Ambulance,NY,Hillsdale,3900 Texas St,13,1,YES,2,3,
+461,247801,2015-02-14,Single Vehicle Collision,Rear Collision,Minor Damage,Other,SC,Riverwood,9657 5th Ave,16,1,NO,2,2,NO
+462,171147,2015-02-16,Single Vehicle Collision,Side Collision,Minor Damage,Ambulance,WV,Northbend,5765 Washington St,0,1,YES,0,2,NO
+463,431283,2015-02-04,Multi-vehicle Collision,Front Collision,Major Damage,Police,SC,Arlington,5997 Embaracadero Drive,10,3,NO,2,1,
+464,461962,2015-01-22,Multi-vehicle Collision,Side Collision,Total Loss,Police,NY,Springfield,1738 Solo Lane,14,3,NO,2,0,NO
+465,149467,2015-02-15,Multi-vehicle Collision,Front Collision,Total Loss,Other,SC,Columbus,2903 Weaver Drive,1,3,YES,2,2,
+466,758740,2015-01-07,Single Vehicle Collision,Rear Collision,Major Damage,Police,VA,Springfield,8926 Texas Ridge,16,1,,2,1,
+467,628337,2015-02-23,Multi-vehicle Collision,Side Collision,Major Damage,Fire,SC,Northbend,4231 3rd Ave,2,3,NO,0,1,YES
+468,574637,2015-01-06,Multi-vehicle Collision,Side Collision,Major Damage,Ambulance,VA,Springfield,8049 4th St,23,3,,0,0,
+469,373600,2015-02-07,Multi-vehicle Collision,Front Collision,Minor Damage,Fire,WV,Northbrook,6501 5th Drive,19,3,,2,2,NO
+470,930032,2015-02-14,Multi-vehicle Collision,Side Collision,Minor Damage,Fire,NC,Hillsdale,7909 Andromedia Hwy,23,3,NO,2,2,NO
+471,396590,2015-02-15,Single Vehicle Collision,Front Collision,Major Damage,Other,NY,Riverwood,5865 Sky Lane,10,1,,2,3,NO
+472,238412,2015-02-14,Multi-vehicle Collision,Front Collision,Minor Damage,Ambulance,WV,Springfield,1957 Washington Ave,12,3,YES,1,2,NO
+473,484321,2015-02-05,Multi-vehicle Collision,Side Collision,Total Loss,Ambulance,WV,Riverwood,7649 Texas St,15,3,NO,2,0,YES
+474,795847,2015-01-04,Vehicle Theft,,Trivial Damage,,SC,Columbus,1992 Britain Drive,3,1,NO,1,0,NO
+475,218456,2015-02-20,Parked Car,,Minor Damage,Police,PA,Springfield,9685 Sky Ridge,19,1,,2,2,
+476,792673,2015-02-05,Multi-vehicle Collision,Side Collision,Total Loss,Police,NC,Hillsdale,3457 Texas Lane,16,3,NO,1,1,NO
+477,662256,2015-01-15,Single Vehicle Collision,Rear Collision,Major Damage,Other,SC,Columbus,7693 Cherokee Lane,16,1,NO,0,3,YES
+478,971338,2015-01-05,Single Vehicle Collision,Side Collision,Total Loss,Police,VA,Northbend,3167 4th Ridge,10,1,,0,1,YES
+479,714738,2015-01-01,Vehicle Theft,,Minor Damage,Police,NC,Riverwood,1617 Rock Drive,6,1,NO,1,2,NO
+480,753844,2015-01-26,Single Vehicle Collision,Front Collision,Major Damage,Fire,WV,Arlington,7877 3rd Ridge,18,1,NO,2,1,NO
+481,976645,2015-02-13,Multi-vehicle Collision,Rear Collision,Major Damage,Fire,SC,Springfield,9325 Lincoln Drive,20,3,NO,0,2,NO
+482,918037,2015-01-14,Single Vehicle Collision,Rear Collision,Minor Damage,Fire,PA,Northbrook,5855 Apache St,14,1,NO,0,0,
+483,996253,2015-01-31,Multi-vehicle Collision,Front Collision,Major Damage,Other,WV,Riverwood,1328 Texas Lane,8,3,NO,0,3,
+484,373731,2015-01-22,Multi-vehicle Collision,Rear Collision,Minor Damage,Other,NY,Springfield,4567 Pine Ave,17,2,YES,2,0,
+485,836272,2015-01-30,Single Vehicle Collision,Rear Collision,Minor Damage,Ambulance,NC,Springfield,7575 Pine St,9,1,NO,2,0,
+486,167231,2015-02-17,Single Vehicle Collision,Front Collision,Total Loss,Other,NY,Springfield,2850 Washington St,0,1,,2,1,
+487,743330,2015-02-20,Single Vehicle Collision,Rear Collision,Total Loss,Fire,VA,Riverwood,9169 Cherokee Hwy,2,1,NO,0,0,
+488,807369,2015-02-04,Multi-vehicle Collision,Rear Collision,Minor Damage,Police,NY,Springfield,6443 Washington Ridge,23,3,,0,0,NO
+489,735307,2015-02-23,Single Vehicle Collision,Side Collision,Total Loss,Other,SC,Northbend,6751 5th Hwy,8,1,NO,0,3,YES
+490,789208,2015-02-08,Multi-vehicle Collision,Front Collision,Total Loss,Ambulance,NY,Columbus,2289 Weaver Ridge,6,3,NO,0,2,
+491,585324,2015-02-21,Vehicle Theft,,Minor Damage,,WV,Arlington,8306 1st Drive,3,1,YES,1,1,NO
+492,498759,2015-01-13,Multi-vehicle Collision,Front Collision,Minor Damage,Ambulance,VA,Northbend,2603 Andromedia Hwy,14,3,YES,1,3,
+493,795004,2015-01-17,Multi-vehicle Collision,Side Collision,Major Damage,Other,NY,Northbrook,6479 Francis Ave,16,3,NO,0,2,NO
+494,203250,2015-02-18,Single Vehicle Collision,Rear Collision,Minor Damage,Police,NY,Northbend,6428 Andromedia Lane,12,1,,1,2,NO
+495,430794,2015-01-14,Multi-vehicle Collision,Rear Collision,Major Damage,Other,OH,Northbrook,9081 Cherokee Hwy,1,3,NO,2,3,
+496,156636,2015-01-27,Single Vehicle Collision,Rear Collision,Minor Damage,Other,SC,Springfield,1532 Washington St,19,1,,0,3,
+497,284143,2015-02-12,Vehicle Theft,,Trivial Damage,Police,NY,Northbend,4625 MLK Drive,7,1,,1,2,NO
+498,740518,2015-01-17,Multi-vehicle Collision,Rear Collision,Minor Damage,Ambulance,NY,Springfield,1529 Elm Ridge,6,4,,1,1,NO
+499,445289,2015-01-13,Single Vehicle Collision,Front Collision,Major Damage,Police,NY,Arlington,2086 Francis Drive,11,1,,0,0,
+500,599262,2015-01-21,Single Vehicle Collision,Side Collision,Minor Damage,Other,NC,Northbend,9066 Best Ridge,2,1,YES,1,1,YES
+501,357949,2015-01-01,Single Vehicle Collision,Side Collision,Minor Damage,Police,SC,Northbrook,7178 Best Drive,15,1,,2,3,YES
+502,493161,2015-02-18,Single Vehicle Collision,Side Collision,Major Damage,Police,WV,Columbus,9821 Francis Ave,0,1,NO,0,2,
+503,320251,2015-02-04,Single Vehicle Collision,Side Collision,Major Damage,Other,WV,Hillsdale,7061 Cherokee Drive,12,1,YES,1,1,NO
+504,231127,2015-01-09,Single Vehicle Collision,Front Collision,Total Loss,Other,SC,Springfield,1325 1st Lane,1,1,,1,0,
+505,766193,2015-02-14,Multi-vehicle Collision,Rear Collision,Major Damage,Fire,VA,Hillsdale,3769 Sky St,16,2,YES,1,0,NO
+506,555374,2015-01-03,Single Vehicle Collision,Rear Collision,Minor Damage,Police,WV,Hillsdale,8489 Pine Hwy,2,1,NO,2,1,NO
+507,491484,2015-02-04,Multi-vehicle Collision,Rear Collision,Minor Damage,Police,NY,Riverwood,6329 Apache Ave,13,3,NO,2,1,
+508,925128,2015-01-30,Single Vehicle Collision,Front Collision,Minor Damage,Police,NY,Northbrook,9293 Pine Lane,0,1,NO,2,2,YES
+509,265093,2015-02-20,Multi-vehicle Collision,Front Collision,Total Loss,Fire,NY,Arlington,9224 Sky Drive,0,3,,0,1,NO
+510,267808,2015-01-07,Multi-vehicle Collision,Rear Collision,Total Loss,Police,NY,Northbend,8862 Maple Ridge,16,3,YES,2,0,NO
+511,116735,2015-01-31,Single Vehicle Collision,Rear Collision,Total Loss,Police,WV,Arlington,3492 Flute Lane,8,1,NO,2,0,
+512,963680,2015-02-17,Parked Car,,Trivial Damage,Police,NY,Hillsdale,6484 Tree Drive,9,1,,2,3,NO
+513,445694,2015-01-24,Single Vehicle Collision,Rear Collision,Total Loss,Ambulance,WV,Northbend,4554 Sky Ave,11,1,,2,1,YES
+514,215534,2015-02-02,Multi-vehicle Collision,Side Collision,Minor Damage,Ambulance,PA,Northbrook,5201 Texas Hwy,6,3,,0,2,NO
+515,232854,2015-01-09,Single Vehicle Collision,Rear Collision,Total Loss,Ambulance,NY,Arlington,3982 Weaver Lane,18,1,NO,0,0,NO
+516,168260,2015-02-28,Single Vehicle Collision,Side Collision,Total Loss,Other,NY,Northbrook,3660 Andromedia Hwy,11,1,,0,3,YES
+517,538955,2015-01-17,Single Vehicle Collision,Front Collision,Total Loss,Ambulance,WV,Arlington,7135 Flute Lane,17,1,,1,2,YES
+518,243226,2015-02-09,Multi-vehicle Collision,Front Collision,Major Damage,Fire,SC,Springfield,4414 Solo Drive,21,3,,1,0,NO
+519,246435,2015-01-14,Multi-vehicle Collision,Rear Collision,Minor Damage,Ambulance,SC,Hillsdale,2920 5th Ave,0,3,NO,1,0,NO
+520,582480,2015-02-02,Vehicle Theft,,Trivial Damage,Police,NY,Northbrook,2986 MLK Drive,9,1,NO,0,1,
+521,345539,2015-02-17,Single Vehicle Collision,Front Collision,Total Loss,Fire,NY,Riverwood,1580 Maple Lane,1,1,NO,0,2,
+522,924318,2015-01-25,Single Vehicle Collision,Rear Collision,Total Loss,Ambulance,WV,Springfield,3706 Texas Hwy,22,1,YES,1,3,
+523,726880,2015-02-13,Multi-vehicle Collision,Rear Collision,Minor Damage,Fire,SC,Northbend,9109 Britain Drive,20,4,NO,0,2,YES
+524,190588,2015-02-20,Multi-vehicle Collision,Rear Collision,Total Loss,Fire,SC,Northbend,2290 4th Ave,9,3,YES,2,1,YES
+525,246705,2015-01-08,Parked Car,,Minor Damage,Police,NC,Northbrook,4232 Britain Ridge,5,1,NO,1,2,
+526,619589,2015-02-28,Vehicle Theft,,Trivial Damage,Police,SC,Riverwood,6677 Andromedia Drive,12,1,YES,1,1,
+527,164988,2015-02-12,Multi-vehicle Collision,Side Collision,Major Damage,Ambulance,VA,Springfield,5868 Sky Hwy,6,3,NO,2,0,YES
+528,729534,2015-01-06,Vehicle Theft,,Trivial Damage,Police,SC,Columbus,3053 Lincoln Drive,8,1,NO,1,1,NO
+529,505014,2015-02-15,Single Vehicle Collision,Front Collision,Total Loss,Ambulance,WV,Riverwood,7041 Tree Ridge,14,1,,0,1,NO
+530,920826,2015-01-20,Single Vehicle Collision,Front Collision,Major Damage,Police,WV,Northbrook,7223 Embaracadero St,10,1,YES,1,3,
+531,534982,2015-01-03,Single Vehicle Collision,Front Collision,Minor Damage,Police,SC,Columbus,8081 Flute Ridge,12,1,,2,3,YES
+532,110408,2015-01-26,Single Vehicle Collision,Front Collision,Major Damage,Ambulance,SC,Springfield,8618 Texas Lane,12,1,,0,0,NO
+533,283052,2015-01-25,Multi-vehicle Collision,Front Collision,Total Loss,Other,VA,Riverwood,3508 Washington St,12,3,NO,1,3,YES
+534,840806,2015-01-18,Vehicle Theft,,Minor Damage,,SC,Columbus,2193 4th Ridge,13,1,NO,0,3,NO
+535,382394,2015-01-12,Multi-vehicle Collision,Rear Collision,Total Loss,Fire,WV,Northbend,8897 Sky St,17,3,NO,1,2,YES
+536,876699,2015-01-15,Single Vehicle Collision,Side Collision,Major Damage,Other,NY,Arlington,9611 Pine Ridge,14,1,NO,1,0,YES
+537,871432,2015-01-10,Multi-vehicle Collision,Front Collision,Major Damage,Ambulance,WV,Arlington,7825 1st Ridge,3,3,,1,3,YES
+538,379882,2015-01-23,Multi-vehicle Collision,Side Collision,Minor Damage,Police,NY,Riverwood,3039 Oak Hwy,18,3,YES,2,1,NO
+539,852002,2015-02-21,Parked Car,,Minor Damage,,VA,Northbend,8204 Pine Lane,5,1,YES,1,3,NO
+540,372891,2015-02-17,Single Vehicle Collision,Front Collision,Total Loss,Fire,SC,Riverwood,9787 Andromedia Ave,19,1,NO,0,2,YES
+541,689034,2015-01-06,Single Vehicle Collision,Front Collision,Major Damage,Other,VA,Hillsdale,9633 Rock Hwy,0,1,,2,2,NO
+542,743092,2015-02-18,Parked Car,,Trivial Damage,Police,NC,Arlington,6303 1st Drive,22,1,,0,2,YES
+543,599174,2015-02-17,Multi-vehicle Collision,Rear Collision,Major Damage,Police,NC,Arlington,2014 Rock Ave,21,3,YES,1,3,NO
+544,421092,2015-01-24,Multi-vehicle Collision,Rear Collision,Minor Damage,Ambulance,SC,Northbrook,8983 Tree St,4,3,YES,0,0,YES
+545,349658,2015-01-21,Single Vehicle Collision,Front Collision,Minor Damage,Fire,VA,Arlington,6260 5th Lane,10,1,YES,0,1,
+546,811042,2015-02-03,Single Vehicle Collision,Front Collision,Major Damage,Fire,SC,Hillsdale,2725 Britain Ridge,5,1,,1,3,NO
+547,505316,2015-01-07,Single Vehicle Collision,Side Collision,Total Loss,Ambulance,VA,Hillsdale,3089 Oak Ridge,13,1,,0,2,
+548,116645,2015-02-02,Multi-vehicle Collision,Side Collision,Major Damage,Other,OH,Northbrook,6206 3rd Ridge,18,3,YES,2,1,YES
+549,950880,2015-01-13,Vehicle Theft,,Minor Damage,Police,VA,Springfield,7240 5th Ridge,6,1,,1,2,NO
+550,788502,2015-02-28,Multi-vehicle Collision,Rear Collision,Minor Damage,Ambulance,SC,Arlington,8100 3rd Ave,0,3,,2,1,
+551,627486,2015-01-16,Multi-vehicle Collision,Side Collision,Total Loss,Ambulance,NC,Arlington,3282 4th Lane,5,3,,0,3,NO
+552,498842,2015-02-01,Single Vehicle Collision,Rear Collision,Minor Damage,Fire,SC,Arlington,3227 Maple Ave,8,1,YES,0,1,NO
+553,550294,2015-01-30,Vehicle Theft,,Minor Damage,Police,SC,Hillsdale,4264 Lincoln Ridge,5,1,YES,2,2,
+554,328387,2015-02-16,Parked Car,,Trivial Damage,Police,NC,Springfield,2215 Best Ave,9,1,YES,2,2,NO
+555,540152,2015-01-07,Multi-vehicle Collision,Side Collision,Minor Damage,Other,SC,Northbend,5363 Weaver Lane,10,3,YES,1,2,YES
+556,385932,2015-01-10,Single Vehicle Collision,Rear Collision,Major Damage,Other,NY,Northbrook,2397 Cherokee Ave,16,1,YES,2,1,NO
+557,618682,2015-01-31,Vehicle Theft,,Trivial Damage,Police,WV,Arlington,9794 Embaracadero St,8,1,,2,3,YES
+558,550930,2015-02-13,Vehicle Theft,,Minor Damage,Police,NC,Northbrook,1810 Elm Hwy,5,1,NO,0,2,YES
+559,998192,2015-02-22,Multi-vehicle Collision,Side Collision,Total Loss,Fire,WV,Riverwood,9603 Texas Lane,11,3,NO,2,1,
+560,663938,2015-01-08,Multi-vehicle Collision,Rear Collision,Minor Damage,Ambulance,WV,Arlington,5650 Sky Drive,15,3,,1,0,
+561,756870,2015-02-04,Multi-vehicle Collision,Side Collision,Total Loss,Police,WV,Columbus,9633 MLK Lane,23,3,YES,1,1,YES
+562,337158,2015-02-04,Single Vehicle Collision,Front Collision,Minor Damage,Fire,NY,Arlington,4981 Flute Hwy,23,1,NO,0,0,NO
+563,919875,2015-02-26,Single Vehicle Collision,Front Collision,Total Loss,Fire,NY,Northbrook,9078 Francis Ridge,23,1,,1,3,
+564,315631,2015-01-08,Single Vehicle Collision,Rear Collision,Minor Damage,Police,NY,Hillsdale,1381 Francis Ave,10,1,YES,0,0,
+565,113464,2015-02-15,Multi-vehicle Collision,Rear Collision,Minor Damage,Ambulance,VA,Columbus,6435 Texas Ave,12,4,,2,3,YES
+566,556415,2015-01-14,Single Vehicle Collision,Side Collision,Minor Damage,Other,WV,Springfield,1248 MLK Ridge,4,1,NO,2,2,YES
+567,250249,2015-01-12,Single Vehicle Collision,Rear Collision,Minor Damage,Fire,SC,Riverwood,3323 1st Lane,16,1,NO,2,0,YES
+568,403776,2015-01-18,Multi-vehicle Collision,Front Collision,Major Damage,Ambulance,SC,Columbus,6971 Best Ridge,18,3,,1,2,
+569,396002,2015-01-15,Multi-vehicle Collision,Rear Collision,Total Loss,Other,WV,Riverwood,7488 Lincoln Lane,15,3,YES,1,1,NO
+570,976908,2015-02-24,Single Vehicle Collision,Front Collision,Total Loss,Other,SC,Springfield,9007 Francis Hwy,8,1,NO,1,3,YES
+571,509489,2015-02-07,Multi-vehicle Collision,Rear Collision,Total Loss,Ambulance,WV,Springfield,1491 Francis Ridge,4,3,NO,0,1,NO
+572,485295,2015-02-22,Multi-vehicle Collision,Side Collision,Minor Damage,Police,SC,Northbrook,3659 Oak Lane,20,3,NO,0,2,YES
+573,361829,2015-01-19,Multi-vehicle Collision,Side Collision,Major Damage,Ambulance,NY,Northbend,4176 Britain Hwy,1,3,NO,2,3,
+574,603632,2015-02-28,Single Vehicle Collision,Rear Collision,Major Damage,Other,NY,Springfield,5189 Francis Drive,19,1,NO,0,2,YES
+575,783494,2015-02-04,Single Vehicle Collision,Side Collision,Total Loss,Other,OH,Northbend,6515 Oak Lane,11,1,NO,1,0,NO
+576,439049,2015-02-17,Single Vehicle Collision,Front Collision,Total Loss,Other,SC,Northbend,7168 Andromedia Ridge,13,1,YES,0,2,
+577,502634,2015-02-17,Single Vehicle Collision,Front Collision,Minor Damage,Police,NY,Springfield,7954 Tree Ridge,2,1,,2,2,NO
+578,378588,2015-01-17,Multi-vehicle Collision,Rear Collision,Major Damage,Other,SC,Northbrook,1956 Apache St,9,3,YES,2,1,
+579,794731,2015-02-02,Multi-vehicle Collision,Rear Collision,Total Loss,Police,WV,Arlington,9918 Andromedia Drive,15,2,YES,1,3,YES
+580,641934,2015-02-12,Single Vehicle Collision,Side Collision,Major Damage,Fire,NY,Springfield,5499 Flute Ridge,23,1,,2,3,NO
+581,113516,2015-01-04,Single Vehicle Collision,Front Collision,Total Loss,Other,NC,Riverwood,3311 2nd Drive,16,1,NO,2,0,YES
+582,425631,2015-02-21,Multi-vehicle Collision,Side Collision,Major Damage,Other,NC,Arlington,7609 Rock St,21,4,YES,2,0,
+583,542245,2015-01-23,Multi-vehicle Collision,Front Collision,Minor Damage,Ambulance,SC,Hillsdale,4652 Flute Drive,21,2,YES,2,1,NO
+584,512894,2015-02-12,Multi-vehicle Collision,Rear Collision,Minor Damage,Fire,NY,Northbrook,6853 Sky Hwy,3,3,NO,0,1,
+585,633090,2015-01-23,Parked Car,,Trivial Damage,Police,WV,Arlington,7780 Flute Lane,4,1,,1,2,NO
+586,464234,2015-02-10,Vehicle Theft,,Minor Damage,,OH,Springfield,1687 3rd Lane,17,1,,1,3,NO
+587,290162,2015-01-10,Vehicle Theft,,Trivial Damage,Police,WV,Springfield,6378 Britain Ave,7,1,YES,1,3,YES
+588,638155,2015-02-12,Multi-vehicle Collision,Front Collision,Major Damage,Other,SC,Columbus,1306 Andromedia St,14,2,,1,2,NO
+589,911429,2015-02-21,Single Vehicle Collision,Front Collision,Major Damage,Fire,NY,Northbrook,3664 Francis Ridge,13,1,NO,2,3,NO
+590,106186,2015-01-18,Multi-vehicle Collision,Side Collision,Total Loss,Other,WV,Springfield,5985 Lincoln Lane,23,2,,2,3,YES
+591,311783,2015-02-28,Multi-vehicle Collision,Side Collision,Total Loss,Ambulance,PA,Hillsdale,3706 4th Hwy,23,3,,2,1,YES
+592,528385,2015-01-19,Single Vehicle Collision,Rear Collision,Major Damage,Ambulance,WV,Arlington,6603 Francis Hwy,16,1,,2,1,
+593,228403,2015-01-11,Single Vehicle Collision,Rear Collision,Total Loss,Police,SC,Northbrook,7069 4th Hwy,17,1,NO,2,0,
+594,209177,2015-02-11,Single Vehicle Collision,Side Collision,Major Damage,Fire,VA,Northbrook,5093 Flute Lane,9,1,YES,1,1,
+595,497929,2015-01-09,Multi-vehicle Collision,Side Collision,Major Damage,Fire,SC,Hillsdale,5894 Flute Drive,13,3,NO,2,1,YES
+596,735844,2015-01-20,Single Vehicle Collision,Rear Collision,Major Damage,Police,NC,Springfield,8459 Apache Ave,13,1,YES,1,2,YES
+597,710741,2015-02-26,Parked Car,,Trivial Damage,Police,WV,Columbus,7447 Lincoln Ridge,3,1,,2,0,NO
+598,276804,2015-02-02,Parked Car,,Trivial Damage,Police,PA,Springfield,1821 Andromedia Ridge,3,1,,2,1,
+599,507545,2015-01-04,Multi-vehicle Collision,Front Collision,Major Damage,Ambulance,NY,Columbus,6859 Flute Ridge,16,3,,1,3,YES
+600,485642,2015-02-19,Multi-vehicle Collision,Front Collision,Major Damage,Police,WV,Northbrook,4175 Elm Ridge,12,3,NO,1,3,
+601,796375,2015-01-12,Single Vehicle Collision,Side Collision,Minor Damage,Ambulance,VA,Hillsdale,5007 Oak St,4,1,,1,2,NO
+602,171183,2015-01-24,Single Vehicle Collision,Front Collision,Minor Damage,Other,NC,Riverwood,5790 Flute Ridge,3,1,,2,0,
+603,110084,2015-02-17,Single Vehicle Collision,Rear Collision,Total Loss,Other,SC,Hillsdale,8704 Britain Lane,0,1,NO,2,1,
+604,714784,2015-01-13,Vehicle Theft,,Trivial Damage,Police,WV,Columbus,7816 MLK Lane,19,1,NO,2,3,
+605,143924,2015-02-28,Multi-vehicle Collision,Side Collision,Minor Damage,Police,SC,Hillsdale,3618 Maple Lane,15,2,,0,1,YES
+606,996850,2015-01-03,Single Vehicle Collision,Rear Collision,Minor Damage,Other,NY,Arlington,7705 Lincoln Drive,6,1,NO,1,0,NO
+607,284834,2015-02-05,Single Vehicle Collision,Side Collision,Total Loss,Ambulance,SC,Springfield,8602 Washington Ridge,3,1,,0,3,
+608,830878,2015-01-01,Parked Car,,Minor Damage,Police,NY,Springfield,2832 Andromedia Lane,17,1,YES,0,0,
+609,270208,2015-01-06,Multi-vehicle Collision,Front Collision,Total Loss,Police,VA,Riverwood,9760 4th Hwy,4,4,NO,2,1,
+610,407958,2015-02-03,Single Vehicle Collision,Front Collision,Minor Damage,Police,NY,Springfield,2509 Rock Drive,14,1,NO,2,0,YES
+611,832300,2015-02-12,Multi-vehicle Collision,Rear Collision,Minor Damage,Fire,NY,Northbrook,2063 Weaver St,3,3,NO,1,0,NO
+612,927205,2015-02-16,Multi-vehicle Collision,Front Collision,Minor Damage,Other,WV,Columbus,3818 Texas Ridge,4,3,,2,1,
+613,655356,2015-02-25,Single Vehicle Collision,Rear Collision,Total Loss,Other,NY,Columbus,3929 Elm Ave,13,1,,1,2,YES
+614,831053,2015-01-21,Multi-vehicle Collision,Front Collision,Minor Damage,Police,SC,Northbrook,9911 Britain Lane,23,3,NO,0,2,YES
+615,432740,2015-01-28,Parked Car,,Minor Damage,Police,NY,Northbend,3246 Britain Ridge,3,1,,0,1,NO
+616,893853,2015-02-27,Multi-vehicle Collision,Side Collision,Total Loss,Other,WV,Springfield,2696 Cherokee Ridge,0,3,,1,0,NO
+617,594988,2015-02-10,Multi-vehicle Collision,Side Collision,Major Damage,Fire,SC,Columbus,5249 4th Ave,14,2,,2,2,
+618,979544,2015-01-18,Multi-vehicle Collision,Front Collision,Minor Damage,Police,NY,Arlington,4721 Cherokee Hwy,14,2,NO,2,2,
+619,191891,2015-01-13,Single Vehicle Collision,Rear Collision,Total Loss,Ambulance,SC,Springfield,8212 Flute Ridge,22,1,,1,0,
+620,831479,2015-01-31,Multi-vehicle Collision,Front Collision,Minor Damage,Ambulance,NY,Springfield,3592 MLK Ridge,17,3,NO,0,3,
+621,714346,2015-01-15,Single Vehicle Collision,Side Collision,Minor Damage,Police,SC,Hillsdale,6494 4th Ave,14,1,,0,0,NO
+622,326289,2015-02-13,Single Vehicle Collision,Side Collision,Minor Damage,Police,NY,Riverwood,6608 Apache Lane,2,1,,2,1,YES
+623,944537,2015-02-13,Parked Car,,Trivial Damage,Police,WV,Riverwood,1553 Lincoln St,4,1,,2,0,
+624,779156,2015-01-03,Single Vehicle Collision,Rear Collision,Major Damage,Fire,VA,Hillsdale,7628 4th Lane,2,1,,1,1,NO
+625,856153,2015-01-13,Parked Car,,Minor Damage,,SC,Riverwood,3028 5th St,10,1,YES,1,0,NO
+626,473338,2015-02-14,Single Vehicle Collision,Front Collision,Major Damage,Ambulance,NC,Northbrook,8949 Rock Hwy,11,1,YES,1,1,NO
+627,521694,2015-01-20,Multi-vehicle Collision,Side Collision,Major Damage,Fire,SC,Springfield,9751 Tree St,1,4,YES,1,2,NO
+628,136520,2015-01-18,Parked Car,,Trivial Damage,Police,WV,Northbend,4702 Texas Drive,20,1,,0,2,NO
+629,730819,2015-01-03,Single Vehicle Collision,Front Collision,Major Damage,Fire,SC,Riverwood,2757 4th Hwy,10,1,NO,2,3,YES
+630,912665,2015-03-01,Multi-vehicle Collision,Side Collision,Total Loss,Other,NY,Northbrook,6678 Weaver Drive,20,2,,0,2,YES
+631,469966,2015-01-01,Multi-vehicle Collision,Front Collision,Minor Damage,Fire,NY,Columbus,8667 Weaver Lane,10,3,,2,1,NO
+632,952300,2015-01-29,Multi-vehicle Collision,Rear Collision,Total Loss,Other,SC,Springfield,4931 Maple Drive,2,2,NO,1,2,NO
+633,322609,2015-01-10,Single Vehicle Collision,Front Collision,Minor Damage,Fire,VA,Springfield,3808 5th Ave,19,1,NO,0,2,NO
+634,890280,2015-01-29,Single Vehicle Collision,Rear Collision,Major Damage,Police,NY,Columbus,1725 Solo Lane,10,1,YES,1,2,NO
+635,431583,2015-02-20,Single Vehicle Collision,Side Collision,Major Damage,Police,WV,Arlington,8097 Maple Lane,14,1,YES,0,3,YES
+636,155912,2015-01-21,Parked Car,,Trivial Damage,,SC,Columbus,3320 5th Hwy,5,1,,0,2,YES
+637,110143,2015-01-18,Vehicle Theft,,Minor Damage,Police,WV,Hillsdale,9573 2nd Ave,8,1,YES,2,1,YES
+638,808544,2015-01-09,Vehicle Theft,,Trivial Damage,Police,WV,Northbend,8336 1st Ridge,4,1,NO,0,2,
+639,409074,2015-01-13,Multi-vehicle Collision,Side Collision,Major Damage,Ambulance,NC,Columbus,3998 4th Hwy,4,3,,1,0,NO
+640,824728,2015-02-13,Multi-vehicle Collision,Side Collision,Minor Damage,Fire,VA,Northbrook,3966 Oak Hwy,20,2,,1,1,
+641,606037,2015-01-08,Single Vehicle Collision,Side Collision,Total Loss,Police,NY,Riverwood,7601 Andromedia Lane,18,1,,2,3,YES
+642,636843,2015-02-17,Multi-vehicle Collision,Rear Collision,Total Loss,Police,NY,Hillsdale,5160 2nd Hwy,0,3,NO,0,3,NO
+643,111874,2015-01-15,Single Vehicle Collision,Rear Collision,Major Damage,Ambulance,SC,Springfield,3288 Tree Lane,1,1,,2,0,NO
+644,439844,2015-01-24,Single Vehicle Collision,Side Collision,Major Damage,Police,NC,Hillsdale,5874 1st Hwy,17,1,NO,0,1,YES
+645,463513,2015-02-28,Single Vehicle Collision,Front Collision,Minor Damage,Other,NY,Riverwood,6467 Best Ave,23,1,,2,2,
+646,577858,2015-02-16,Multi-vehicle Collision,Rear Collision,Total Loss,Fire,SC,Arlington,6309 5th Ave,4,3,YES,2,1,YES
+647,607351,2015-02-09,Multi-vehicle Collision,Front Collision,Total Loss,Ambulance,NY,Springfield,8212 Rock Ave,0,3,NO,2,3,
+648,682754,2015-01-24,Single Vehicle Collision,Side Collision,Minor Damage,Ambulance,NY,Riverwood,4107 MLK Ridge,11,1,NO,1,2,NO
+649,757352,2015-02-11,Parked Car,,Trivial Damage,,NY,Arlington,4558 3rd Hwy,4,1,,0,2,
+650,307469,2015-01-27,Multi-vehicle Collision,Side Collision,Total Loss,Ambulance,WV,Columbus,1762 Maple Hwy,0,3,,0,2,
+651,526296,2015-01-19,Multi-vehicle Collision,Side Collision,Major Damage,Ambulance,NY,Springfield,5532 Francis Lane,2,3,NO,0,2,
+652,658816,2015-02-20,Multi-vehicle Collision,Front Collision,Minor Damage,Police,NY,Springfield,6158 Sky Ridge,11,3,YES,1,1,NO
+653,913337,2015-01-10,Multi-vehicle Collision,Front Collision,Major Damage,Other,SC,Northbend,9214 Elm Ridge,23,3,NO,2,1,
+654,488464,2015-02-21,Multi-vehicle Collision,Side Collision,Minor Damage,Police,NY,Riverwood,1833 Solo Ave,17,3,NO,1,3,YES
+655,480094,2015-02-01,Single Vehicle Collision,Side Collision,Minor Damage,Other,WV,Columbus,1953 Sky Lane,22,1,NO,1,3,YES
+656,263108,2015-02-25,Single Vehicle Collision,Side Collision,Major Damage,Other,WV,Hillsdale,6834 1st Drive,18,1,YES,1,1,YES
+657,298412,2015-02-24,Vehicle Theft,,Trivial Damage,Police,SC,Arlington,9562 4th Ridge,8,1,,1,3,NO
+658,261905,2015-02-21,Multi-vehicle Collision,Front Collision,Minor Damage,Other,NC,Riverwood,4835 Britain Ridge,15,3,,0,3,NO
+659,674485,2015-01-08,Single Vehicle Collision,Rear Collision,Minor Damage,Fire,NC,Springfield,8548 Cherokee Ridge,20,1,,2,0,
+660,223404,2015-01-10,Single Vehicle Collision,Front Collision,Minor Damage,Ambulance,SC,Columbus,2352 MLK Drive,4,1,,0,3,YES
+661,991480,2015-02-14,Multi-vehicle Collision,Front Collision,Total Loss,Police,SC,Northbrook,9734 2nd Ridge,10,3,NO,0,0,NO
+662,804219,2015-02-26,Single Vehicle Collision,Side Collision,Major Damage,Ambulance,VA,Springfield,3122 Apache Drive,10,1,YES,1,3,
+663,483088,2015-01-30,Multi-vehicle Collision,Front Collision,Total Loss,Police,WV,Northbend,9816 Britain St,22,3,YES,1,0,
+664,100804,2015-01-07,Multi-vehicle Collision,Side Collision,Total Loss,Ambulance,NY,Northbend,8214 Flute St,15,3,NO,0,1,NO
+665,941807,2015-02-27,Single Vehicle Collision,Side Collision,Minor Damage,Ambulance,NY,Arlington,6259 Lincoln Hwy,13,1,,0,1,YES
+666,593466,2015-02-13,Single Vehicle Collision,Front Collision,Total Loss,Ambulance,WV,Arlington,4492 Andromedia Ave,23,1,NO,2,1,
+667,437442,2015-02-02,Multi-vehicle Collision,Side Collision,Major Damage,Fire,NY,Northbend,6179 3rd Ridge,18,3,,2,2,YES
+668,942106,2015-02-27,Single Vehicle Collision,Rear Collision,Total Loss,Ambulance,SC,Arlington,3799 Embaracadero Drive,7,1,YES,1,1,NO
+669,794951,2015-02-02,Single Vehicle Collision,Rear Collision,Major Damage,Ambulance,VA,Hillsdale,5071 1st Lane,21,1,NO,2,2,YES
+670,182450,2015-01-17,Multi-vehicle Collision,Rear Collision,Major Damage,Other,SC,Columbus,6574 4th Drive,15,3,NO,1,3,NO
+671,730973,2015-01-12,Multi-vehicle Collision,Rear Collision,Total Loss,Ambulance,PA,Hillsdale,2711 Britain Ave,17,3,,1,3,
+672,687755,2015-01-20,Single Vehicle Collision,Front Collision,Minor Damage,Fire,SC,Hillsdale,4214 MLK Ridge,2,1,NO,0,3,
+673,757644,2015-02-05,Multi-vehicle Collision,Rear Collision,Minor Damage,Ambulance,WV,Northbend,7976 Britain Drive,1,3,YES,1,0,NO
+674,998865,2015-01-20,Single Vehicle Collision,Rear Collision,Major Damage,Police,SC,Northbend,4995 Weaver Ridge,3,1,,0,1,
+675,944953,2015-02-24,Vehicle Theft,,Trivial Damage,,VA,Northbend,1515 Embaracadero St,0,1,NO,1,1,YES
+676,386429,2015-02-21,Vehicle Theft,,Trivial Damage,Police,SC,Hillsdale,2968 Andromedia Ave,4,1,NO,0,2,
+677,108270,2015-02-11,Multi-vehicle Collision,Front Collision,Minor Damage,Ambulance,NY,Arlington,9236 2nd Hwy,11,3,YES,2,0,NO
+678,205134,2015-01-24,Parked Car,,Trivial Damage,,NY,Arlington,9639 Britain Ridge,4,1,YES,1,2,
+679,749325,2015-01-06,Multi-vehicle Collision,Front Collision,Minor Damage,Fire,SC,Columbus,9422 Washington Ridge,11,3,,0,2,
+680,774303,2015-01-15,Multi-vehicle Collision,Side Collision,Minor Damage,Police,NC,Riverwood,1213 4th Lane,4,3,NO,2,2,NO
+681,698470,2015-02-22,Single Vehicle Collision,Front Collision,Total Loss,Police,NY,Hillsdale,3872 5th Drive,20,1,,2,2,YES
+682,719989,2015-01-21,Parked Car,,Trivial Damage,Police,NC,Springfield,9397 5th Hwy,22,1,YES,0,0,NO
+683,309323,2015-02-03,Parked Car,,Trivial Damage,Police,SC,Northbend,8876 1st St,4,1,NO,0,3,NO
+684,444035,2015-02-16,Multi-vehicle Collision,Rear Collision,Total Loss,Ambulance,NC,Hillsdale,3397 5th Ave,21,4,NO,0,0,NO
+685,431478,2015-02-07,Single Vehicle Collision,Front Collision,Major Damage,Ambulance,SC,Hillsdale,3263 Pine Ridge,20,1,YES,1,3,NO
+686,797634,2015-01-14,Single Vehicle Collision,Rear Collision,Major Damage,Fire,NY,Columbus,8639 5th Hwy,7,1,NO,2,0,
+687,284836,2015-02-02,Parked Car,,Trivial Damage,,NY,Riverwood,5743 4th Ridge,4,1,NO,0,1,NO
+688,238196,2015-02-06,Multi-vehicle Collision,Rear Collision,Minor Damage,Police,WV,Springfield,3555 Francis Ridge,17,3,,0,2,
+689,885789,2015-01-15,Multi-vehicle Collision,Side Collision,Minor Damage,Ambulance,WV,Northbend,4939 Oak Lane,20,3,YES,1,3,YES
+690,287436,2015-02-24,Single Vehicle Collision,Side Collision,Major Damage,Police,SC,Riverwood,3100 Best St,10,1,NO,2,3,
+691,496067,2015-01-07,Single Vehicle Collision,Front Collision,Minor Damage,Police,NY,Riverwood,3029 5th Ave,8,1,YES,2,2,NO
+692,206004,2015-02-04,Single Vehicle Collision,Front Collision,Major Damage,Police,WV,Columbus,8941 Solo Ridge,6,1,,0,2,NO
+693,153027,2015-02-04,Parked Car,,Minor Damage,Police,WV,Northbrook,4447 Francis Hwy,4,1,YES,1,1,NO
+694,469426,2015-01-25,Multi-vehicle Collision,Side Collision,Minor Damage,Ambulance,WV,Northbrook,7701 Tree St,17,3,NO,2,0,YES
+695,654974,2015-02-25,Multi-vehicle Collision,Rear Collision,Total Loss,Other,WV,Springfield,4653 Pine St,15,3,,0,0,YES
+696,943425,2015-02-27,Vehicle Theft,,Trivial Damage,Police,WV,Riverwood,8742 4th St,9,1,NO,2,1,NO
+697,641845,2015-02-11,Single Vehicle Collision,Rear Collision,Total Loss,Police,WV,Hillsdale,7316 Texas Ave,17,1,,2,1,YES
+698,794534,2015-01-04,Single Vehicle Collision,Rear Collision,Major Damage,Other,VA,Arlington,2950 MLK Ave,13,1,,2,3,
+699,357808,2015-01-26,Vehicle Theft,,Trivial Damage,Police,SC,Springfield,8233 Tree Drive,5,1,YES,1,0,NO
+700,536052,2015-03-01,Multi-vehicle Collision,Front Collision,Total Loss,Police,VA,Arlington,4642 Rock Ridge,23,3,YES,2,2,
+701,873384,2015-02-06,Multi-vehicle Collision,Front Collision,Major Damage,Other,WV,Arlington,7733 Britain Lane,1,2,NO,2,1,
+702,790225,2015-02-09,Multi-vehicle Collision,Rear Collision,Major Damage,Fire,NY,Hillsdale,2753 Cherokee Ave,17,4,NO,2,1,NO
+703,587498,2015-02-05,Parked Car,,Minor Damage,,NY,Springfield,3995 Lincoln Hwy,3,1,YES,1,3,
+704,639027,2015-01-03,Multi-vehicle Collision,Rear Collision,Total Loss,Ambulance,SC,Columbus,4095 MLK St,17,3,,1,1,NO
+705,217899,2015-02-24,Multi-vehicle Collision,Rear Collision,Major Damage,Fire,NY,Northbend,5782 Rock Drive,23,3,YES,1,3,NO
+706,589094,2015-01-14,Single Vehicle Collision,Side Collision,Minor Damage,Ambulance,NY,Columbus,2900 Sky Drive,13,1,YES,0,0,NO
+707,458829,2015-01-08,Single Vehicle Collision,Rear Collision,Minor Damage,Fire,SC,Riverwood,1515 Pine Lane,17,1,YES,2,3,YES
+708,626208,2015-02-14,Single Vehicle Collision,Rear Collision,Minor Damage,Ambulance,NY,Arlington,4876 Washington Drive,2,1,YES,0,2,
+709,315041,2015-01-23,Multi-vehicle Collision,Rear Collision,Total Loss,Ambulance,SC,Hillsdale,5779 2nd Lane,23,3,NO,1,3,
+710,283267,2015-01-05,Single Vehicle Collision,Front Collision,Minor Damage,Ambulance,SC,Columbus,6706 Francis Drive,17,1,NO,1,2,
+711,442494,2015-02-19,Single Vehicle Collision,Side Collision,Major Damage,Ambulance,NC,Springfield,6384 5th Ridge,3,1,NO,1,0,NO
+712,159243,2015-02-07,Parked Car,,Minor Damage,,SC,Riverwood,3006 Lincoln Ridge,16,1,NO,2,1,NO
+713,669800,2015-02-07,Multi-vehicle Collision,Side Collision,Major Damage,Other,PA,Hillsdale,5352 Lincoln Drive,13,3,,1,3,NO
+714,520179,2015-01-20,Single Vehicle Collision,Rear Collision,Major Damage,Fire,NC,Riverwood,6110 Rock Ridge,8,1,NO,2,1,NO
+715,607974,2015-02-18,Single Vehicle Collision,Front Collision,Major Damage,Fire,SC,Columbus,7797 Tree Ridge,23,1,YES,0,2,
+716,465065,2015-01-11,Multi-vehicle Collision,Rear Collision,Major Damage,Ambulance,NC,Springfield,4910 1st Lane,15,3,YES,2,3,YES
+717,369941,2015-01-22,Single Vehicle Collision,Front Collision,Total Loss,Other,NY,Columbus,8766 Lincoln Lane,3,1,NO,2,2,YES
+718,447226,2015-02-23,Multi-vehicle Collision,Side Collision,Minor Damage,Ambulance,WV,Northbrook,6399 Oak Drive,4,3,NO,0,3,YES
+719,831668,2015-01-15,Single Vehicle Collision,Front Collision,Minor Damage,Other,NY,Northbend,3127 Flute St,8,1,YES,0,0,YES
+720,922937,2015-02-20,Vehicle Theft,,Trivial Damage,Police,PA,Northbend,8920 Best Ave,21,1,NO,1,0,YES
+721,640474,2015-01-19,Single Vehicle Collision,Front Collision,Total Loss,Ambulance,SC,Northbrook,7314 Tree Drive,23,1,YES,0,0,NO
+722,153298,2015-01-10,Parked Car,,Trivial Damage,,NY,Riverwood,8872 Oak Ridge,8,1,,1,3,YES
+723,334749,2015-01-16,Single Vehicle Collision,Side Collision,Major Damage,Ambulance,WV,Riverwood,5022 1st St,21,1,YES,2,1,NO
+724,221283,2015-02-12,Parked Car,,Minor Damage,Police,OH,Columbus,3423 Francis Ave,5,1,NO,2,3,NO
+725,961496,2015-01-23,Multi-vehicle Collision,Side Collision,Total Loss,Fire,WV,Columbus,9529 4th Drive,12,3,NO,0,0,YES
+726,804751,2015-02-13,Multi-vehicle Collision,Rear Collision,Minor Damage,Police,VA,Northbrook,1818 Tree St,7,3,,2,0,YES
+727,369226,2015-01-27,Parked Car,,Minor Damage,,NC,Northbend,4431 Rock St,0,1,NO,1,3,YES
+728,691115,2015-02-14,Single Vehicle Collision,Rear Collision,Major Damage,Police,SC,Northbend,4782 Sky Lane,14,1,YES,0,1,YES
+729,713172,2015-02-01,Single Vehicle Collision,Side Collision,Major Damage,Fire,VA,Northbrook,7112 Weaver Ave,13,1,,2,3,
+730,621756,2015-02-23,Single Vehicle Collision,Front Collision,Major Damage,Fire,WV,Hillsdale,4020 Best Drive,1,1,,1,0,YES
+731,615116,2015-01-20,Single Vehicle Collision,Side Collision,Major Damage,Police,SC,Riverwood,2037 5th Drive,23,1,NO,0,0,NO
+732,947598,2015-01-08,Single Vehicle Collision,Side Collision,Major Damage,Ambulance,VA,Northbrook,4699 Texas Ridge,1,1,,2,2,YES
+733,658002,2015-02-23,Single Vehicle Collision,Front Collision,Total Loss,Ambulance,SC,Riverwood,1832 Elm Hwy,9,1,YES,2,3,NO
+734,374545,2015-02-04,Single Vehicle Collision,Rear Collision,Total Loss,Fire,WV,Columbus,5226 Maple St,3,1,,0,1,NO
+735,805806,2015-02-09,Single Vehicle Collision,Side Collision,Minor Damage,Fire,NY,Hillsdale,3771 4th St,0,1,NO,2,1,
+736,235097,2015-02-18,Multi-vehicle Collision,Front Collision,Total Loss,Fire,WV,Northbend,8701 5th Lane,13,3,NO,1,1,NO
+737,290971,2015-02-10,Multi-vehicle Collision,Rear Collision,Total Loss,Fire,SC,Hillsdale,7574 4th St,18,3,NO,2,1,
+738,180286,2015-01-20,Multi-vehicle Collision,Front Collision,Total Loss,Ambulance,NC,Riverwood,1989 Solo Lane,17,3,,2,3,YES
+739,662088,2015-01-27,Single Vehicle Collision,Front Collision,Minor Damage,Fire,WV,Springfield,6331 MLK Ave,11,1,,0,0,YES
+740,884365,2015-01-21,Vehicle Theft,,Minor Damage,,WV,Riverwood,8453 Elm St,0,1,YES,0,3,NO
+741,178081,2015-02-18,Multi-vehicle Collision,Rear Collision,Minor Damage,Other,WV,Riverwood,1422 Flute Ave,14,3,,1,3,
+742,507452,2015-02-26,Single Vehicle Collision,Rear Collision,Minor Damage,Other,NC,Columbus,5058 4th Lane,4,1,NO,1,2,NO
+743,990624,2015-01-29,Multi-vehicle Collision,Side Collision,Major Damage,Other,WV,Springfield,3098 Oak Lane,2,3,NO,2,1,YES
+744,892148,2015-02-08,Multi-vehicle Collision,Front Collision,Major Damage,Other,SC,Arlington,9103 MLK Lane,9,3,YES,2,2,YES
+745,398683,2015-01-19,Multi-vehicle Collision,Rear Collision,Major Damage,Other,SC,Arlington,8624 Francis Ave,21,4,,0,2,NO
+746,605100,2015-02-08,Multi-vehicle Collision,Rear Collision,Major Damage,Fire,NC,Riverwood,2905 Embaracadero Drive,0,3,NO,2,3,NO
+747,143109,2015-01-07,Multi-vehicle Collision,Side Collision,Total Loss,Fire,WV,Springfield,3443 Maple Ridge,17,3,YES,0,3,NO
+748,230223,2015-02-13,Multi-vehicle Collision,Side Collision,Total Loss,Fire,WV,Northbend,1618 Maple Hwy,21,3,NO,1,1,YES
+749,769602,2015-02-15,Multi-vehicle Collision,Side Collision,Major Damage,Fire,NY,Northbrook,3751 Tree Hwy,20,3,YES,0,3,
+750,420815,2015-02-14,Single Vehicle Collision,Side Collision,Total Loss,Ambulance,SC,Northbrook,6848 Elm Hwy,5,1,NO,0,1,
+751,973546,2015-01-31,Vehicle Theft,,Minor Damage,Police,WV,Northbrook,4237 4th St,7,1,NO,2,1,NO
+752,608039,2015-01-28,Single Vehicle Collision,Side Collision,Minor Damage,Fire,NY,Columbus,6581 Rock Ridge,6,1,NO,0,0,YES
+753,250162,2015-03-01,Multi-vehicle Collision,Rear Collision,Minor Damage,Fire,NC,Northbend,7236 Apache Lane,2,4,YES,0,2,NO
+754,786432,2015-01-10,Multi-vehicle Collision,Rear Collision,Total Loss,Other,NY,Columbus,3846 4th Hwy,19,3,,1,1,YES
+755,445195,2015-02-25,Multi-vehicle Collision,Side Collision,Minor Damage,Fire,VA,Springfield,5028 Maple Ridge,21,3,YES,2,0,
+756,938634,2015-01-30,Multi-vehicle Collision,Side Collision,Major Damage,Police,WV,Springfield,7426 Rock Drive,3,3,,0,0,
+757,482495,2015-02-06,Single Vehicle Collision,Rear Collision,Total Loss,Ambulance,WV,Columbus,5771 Best St,22,1,,2,3,YES
+758,796005,2015-02-08,Single Vehicle Collision,Rear Collision,Total Loss,Fire,SC,Springfield,9818 Cherokee Ave,22,1,YES,2,3,NO
+759,910604,2015-01-13,Single Vehicle Collision,Front Collision,Minor Damage,Ambulance,VA,Arlington,7819 2nd Ave,16,1,NO,0,2,NO
+760,327488,2015-01-18,Single Vehicle Collision,Front Collision,Minor Damage,Ambulance,NY,Northbrook,1331 Elm Ridge,0,1,,0,3,
+761,715202,2015-03-01,Multi-vehicle Collision,Side Collision,Minor Damage,Other,NY,Hillsdale,9240 Britain Ave,1,3,,2,1,
+762,648852,2015-02-02,Multi-vehicle Collision,Rear Collision,Major Damage,Police,SC,Arlington,6668 Andromedia Ridge,19,3,YES,0,3,
+763,516959,2015-01-20,Multi-vehicle Collision,Rear Collision,Major Damage,Other,NY,Columbus,5276 2nd Lane,0,3,,2,1,NO
+764,984456,2015-01-24,Multi-vehicle Collision,Front Collision,Major Damage,Fire,SC,Arlington,2889 Weaver St,2,3,,0,2,YES
+765,801331,2015-01-04,Multi-vehicle Collision,Rear Collision,Minor Damage,Police,NY,Arlington,1879 4th Lane,5,3,YES,1,3,NO
+766,786103,2015-01-17,Single Vehicle Collision,Rear Collision,Total Loss,Ambulance,SC,Columbus,5499 Elm Hwy,6,1,,2,0,YES
+767,684193,2015-02-04,Multi-vehicle Collision,Rear Collision,Total Loss,Fire,VA,Riverwood,8822 Sky St,21,3,YES,2,1,
+768,247505,2015-02-14,Multi-vehicle Collision,Front Collision,Major Damage,Ambulance,NY,Columbus,4254 Best Ridge,11,3,YES,0,0,NO
+769,259792,2015-01-07,Single Vehicle Collision,Rear Collision,Minor Damage,Other,VA,Springfield,5812 Weaver Ave,3,1,YES,2,0,YES
+770,185124,2015-02-02,Multi-vehicle Collision,Side Collision,Total Loss,Police,SC,Northbrook,7155 Apache Drive,4,3,,2,1,YES
+771,760700,2015-01-12,Multi-vehicle Collision,Front Collision,Minor Damage,Fire,WV,Northbrook,1376 Pine St,2,3,NO,1,0,NO
+772,362407,2015-01-01,Single Vehicle Collision,Side Collision,Minor Damage,Fire,VA,Northbrook,3340 3rd Hwy,22,1,,1,1,NO
+773,389525,2015-02-22,Single Vehicle Collision,Front Collision,Total Loss,Ambulance,NY,Northbend,3097 4th Drive,8,1,,1,3,YES
+774,179538,2015-01-16,Multi-vehicle Collision,Rear Collision,Total Loss,Ambulance,WV,Northbrook,1916 Elm St,14,3,YES,0,1,YES
+775,265437,2015-01-28,Multi-vehicle Collision,Side Collision,Minor Damage,Police,WV,Arlington,8917 Cherokee Lane,14,4,NO,1,0,YES
+776,266247,2015-01-23,Parked Car,,Trivial Damage,Police,WV,Northbrook,8492 Weaver Hwy,5,1,YES,1,2,
+777,921851,2015-02-25,Single Vehicle Collision,Front Collision,Minor Damage,Fire,WV,Columbus,3753 Francis Lane,18,1,NO,2,1,NO
+778,488724,2015-02-11,Multi-vehicle Collision,Rear Collision,Total Loss,Police,NC,Springfield,4545 4th Ridge,20,3,,0,0,YES
+779,192524,2015-01-03,Multi-vehicle Collision,Front Collision,Total Loss,Police,WV,Springfield,2272 Embaracadero Drive,0,3,YES,2,2,YES
+780,338070,2015-01-30,Multi-vehicle Collision,Rear Collision,Minor Damage,Police,NC,Hillsdale,5341 5th Ave,1,3,,2,1,NO
+781,865607,2015-01-18,Single Vehicle Collision,Front Collision,Total Loss,Fire,WV,Hillsdale,7745 Washington Ridge,10,1,,1,2,YES
+782,963285,2015-01-04,Single Vehicle Collision,Front Collision,Minor Damage,Ambulance,NC,Riverwood,1275 4th Ridge,12,1,NO,0,3,
+783,728491,2015-01-20,Vehicle Theft,,Minor Damage,,NY,Springfield,4857 Weaver St,6,1,NO,0,1,
+784,553436,2015-02-12,Parked Car,,Trivial Damage,,NY,Hillsdale,8211 Sky Hwy,1,1,NO,0,1,NO
+785,440616,2015-02-19,Multi-vehicle Collision,Front Collision,Total Loss,Police,WV,Columbus,8617 Best Ave,21,3,NO,0,0,YES
+786,463237,2015-02-21,Multi-vehicle Collision,Front Collision,Major Damage,Ambulance,NY,Columbus,9856 Apache St,3,3,YES,2,1,
+787,753452,2015-02-02,Multi-vehicle Collision,Rear Collision,Minor Damage,Fire,NY,Northbend,1951 Best Ave,14,4,YES,0,0,NO
+788,920554,2015-02-01,Multi-vehicle Collision,Front Collision,Minor Damage,Fire,SC,Riverwood,1824 5th Lane,19,3,NO,1,2,
+789,594783,2015-01-08,Single Vehicle Collision,Front Collision,Major Damage,Fire,OH,Springfield,7393 Washington St,7,1,YES,2,1,YES
+790,725330,2015-01-16,Single Vehicle Collision,Rear Collision,Minor Damage,Fire,VA,Arlington,1386 Britain St,0,1,,0,0,YES
+791,607259,2015-02-20,Parked Car,,Trivial Damage,,SC,Northbrook,7928 Maple Ridge,6,1,YES,2,1,YES
+792,979336,2015-01-30,Single Vehicle Collision,Rear Collision,Total Loss,Other,NY,Northbend,1546 Cherokee Ave,0,1,YES,0,2,
+793,865201,2015-01-19,Multi-vehicle Collision,Rear Collision,Total Loss,Police,VA,Riverwood,2003 2nd Hwy,9,3,YES,0,3,NO
+794,140977,2015-02-25,Single Vehicle Collision,Side Collision,Total Loss,Ambulance,NY,Columbus,9418 5th Hwy,23,1,YES,0,1,NO
+795,787351,2015-01-24,Multi-vehicle Collision,Front Collision,Minor Damage,Fire,WV,Northbrook,8770 1st Lane,13,3,NO,2,0,NO
+796,272330,2015-01-16,Multi-vehicle Collision,Side Collision,Total Loss,Fire,WV,Columbus,1087 Flute Drive,0,3,,0,3,YES
+797,728025,2015-01-12,Single Vehicle Collision,Rear Collision,Major Damage,Ambulance,NY,Hillsdale,2217 Tree Lane,7,1,,2,3,
+798,804608,2015-01-04,Single Vehicle Collision,Side Collision,Minor Damage,Fire,NC,Northbrook,6741 Oak Ridge,23,1,YES,0,1,YES
+799,718829,2015-02-02,Single Vehicle Collision,Side Collision,Major Damage,Fire,NY,Northbrook,2123 MLK Ridge,7,1,NO,2,0,
+800,482404,2015-02-01,Parked Car,,Trivial Damage,,VA,Hillsdale,4390 4th Drive,20,1,YES,0,1,
+801,331170,2015-02-14,Single Vehicle Collision,Rear Collision,Minor Damage,Police,SC,Arlington,1437 3rd Lane,22,1,YES,0,3,
+802,753056,2015-02-08,Multi-vehicle Collision,Rear Collision,Minor Damage,Other,NY,Riverwood,1186 Rock St,10,3,,2,0,YES
+803,910365,2015-01-22,Single Vehicle Collision,Front Collision,Total Loss,Police,NY,Arlington,4394 Oak St,10,1,,2,2,NO
+804,379268,2015-01-14,Single Vehicle Collision,Rear Collision,Minor Damage,Ambulance,NC,Arlington,8368 Cherokee Ave,17,1,YES,1,0,YES
+805,362843,2015-02-03,Parked Car,,Trivial Damage,,WV,Arlington,4905 Best Lane,3,1,YES,2,3,YES
+806,135400,2015-01-20,Single Vehicle Collision,Rear Collision,Minor Damage,Ambulance,WV,Hillsdale,3618 Sky Ave,10,1,NO,0,1,NO
+807,798579,2015-01-01,Single Vehicle Collision,Side Collision,Major Damage,Fire,SC,Arlington,5459 MLK Ave,1,1,YES,0,1,YES
+808,250833,2015-02-02,Multi-vehicle Collision,Rear Collision,Minor Damage,Ambulance,NY,Springfield,1371 Texas Lane,1,3,NO,2,3,
+809,824116,2015-01-23,Single Vehicle Collision,Side Collision,Total Loss,Fire,NC,Northbend,2654 Embaracadero St,7,1,,1,2,NO
+810,322613,2015-01-26,Single Vehicle Collision,Rear Collision,Major Damage,Ambulance,VA,Northbend,2123 Texas Ave,19,1,,2,3,NO
+811,871305,2015-01-02,Multi-vehicle Collision,Side Collision,Total Loss,Other,NY,Northbend,4538 Flute Hwy,3,3,NO,0,2,YES
+812,488037,2015-02-25,Vehicle Theft,,Minor Damage,,WV,Arlington,4434 Weaver St,3,1,NO,0,3,YES
+813,485813,2015-01-15,Single Vehicle Collision,Front Collision,Minor Damage,Ambulance,VA,Hillsdale,2798 1st Ave,23,1,NO,2,0,YES
+814,886473,2015-02-09,Vehicle Theft,,Minor Damage,,WV,Springfield,2809 Francis Lane,7,1,,1,2,NO
+815,907113,2015-01-16,Multi-vehicle Collision,Front Collision,Total Loss,Ambulance,VA,Riverwood,7281 Oak St,0,3,NO,0,1,YES
+816,833321,2015-02-01,Single Vehicle Collision,Rear Collision,Total Loss,Police,SC,Arlington,9878 Washington Ave,10,1,,0,1,NO
+817,521592,2015-02-10,Multi-vehicle Collision,Side Collision,Minor Damage,Other,SC,Columbus,2537 5th Ave,4,4,,0,0,
+818,254837,2015-01-03,Single Vehicle Collision,Rear Collision,Major Damage,Other,SC,Columbus,8493 Apache Drive,16,1,,1,1,
+819,634499,2015-01-01,Vehicle Theft,,Trivial Damage,Police,WV,Northbend,2878 Britain Hwy,3,1,YES,2,0,
+820,574707,2015-02-23,Single Vehicle Collision,Side Collision,Minor Damage,Other,SC,Columbus,2862 Tree Ridge,5,1,YES,0,3,
+821,476839,2015-01-28,Vehicle Theft,,Trivial Damage,,VA,Hillsdale,4453 Best Ave,14,1,,0,0,
+822,149601,2015-02-22,Multi-vehicle Collision,Side Collision,Minor Damage,Fire,NY,Arlington,5191 4th St,7,3,,0,0,
+823,630683,2015-01-03,Single Vehicle Collision,Front Collision,Minor Damage,Police,WV,Northbend,1364 Best St,16,1,,2,3,YES
+824,500639,2015-01-10,Single Vehicle Collision,Front Collision,Major Damage,Police,NC,Northbrook,8946 2nd Drive,6,1,NO,2,2,YES
+825,352120,2015-01-25,Single Vehicle Collision,Rear Collision,Total Loss,Ambulance,PA,Riverwood,3726 MLK Hwy,10,1,YES,1,1,NO
+826,569245,2015-01-10,Single Vehicle Collision,Front Collision,Total Loss,Police,SC,Riverwood,2820 Britain St,19,1,,1,1,
+827,907012,2015-01-28,Single Vehicle Collision,Front Collision,Minor Damage,Fire,NY,Arlington,2646 MLK Drive,10,1,,0,1,
+828,700074,2015-02-18,Multi-vehicle Collision,Side Collision,Total Loss,Ambulance,WV,Riverwood,6256 Elm St,6,3,NO,1,1,
+829,866805,2015-01-24,Multi-vehicle Collision,Rear Collision,Major Damage,Fire,SC,Riverwood,9724 Maple St,12,3,NO,2,2,NO
+830,951863,2015-01-20,Multi-vehicle Collision,Side Collision,Total Loss,Other,NC,Riverwood,7397 4th Drive,10,3,YES,2,3,NO
+831,211578,2015-01-10,Single Vehicle Collision,Side Collision,Total Loss,Police,PA,Northbrook,3488 Flute Lane,0,1,NO,2,0,NO
+832,357394,2015-01-07,Multi-vehicle Collision,Rear Collision,Major Damage,Police,NY,Hillsdale,9082 3rd Lane,12,3,YES,2,0,
+833,863749,2015-01-16,Vehicle Theft,,Minor Damage,,VA,Arlington,1941 5th Ridge,10,1,YES,1,3,YES
+834,596914,2015-01-01,Multi-vehicle Collision,Rear Collision,Total Loss,Police,WV,Northbend,5333 MLK Lane,3,4,NO,0,1,
+835,684653,2015-01-07,Vehicle Theft,,Minor Damage,Police,SC,Riverwood,4577 Sky Hwy,21,1,YES,1,1,YES
+836,528259,2015-02-17,Vehicle Theft,,Minor Damage,,NC,Northbrook,4814 Lincoln Lane,6,1,,0,2,
+837,797636,2015-02-26,Single Vehicle Collision,Rear Collision,Total Loss,Police,VA,Northbend,2381 1st Hwy,0,1,NO,0,1,YES
+838,326180,2015-01-31,Vehicle Theft,,Trivial Damage,,NC,Arlington,6939 3rd Hwy,6,1,NO,0,3,YES
+839,620075,2015-02-27,Multi-vehicle Collision,Side Collision,Major Damage,Fire,SC,Arlington,5269 Flute Hwy,20,3,YES,1,1,
+840,965187,2015-03-01,Single Vehicle Collision,Rear Collision,Major Damage,Police,SC,Northbrook,7197 2nd Drive,4,1,NO,2,2,YES
+841,516182,2015-02-13,Parked Car,,Trivial Damage,,SC,Arlington,1741 Best Ridge,9,1,NO,0,3,
+842,728839,2015-01-08,Multi-vehicle Collision,Rear Collision,Minor Damage,Fire,SC,Northbrook,9148 4th Hwy,20,3,,1,0,YES
+843,771509,2015-02-05,Vehicle Theft,,Minor Damage,Police,WV,Springfield,4279 Solo Drive,7,1,NO,2,1,
+844,264221,2015-02-20,Multi-vehicle Collision,Front Collision,Major Damage,Other,NY,Springfield,9177 Texas Ave,18,3,,0,2,
+845,602704,2015-01-24,Multi-vehicle Collision,Side Collision,Minor Damage,Police,VA,Northbrook,5969 Francis St,0,3,NO,1,3,
+846,672416,2015-01-31,Multi-vehicle Collision,Side Collision,Major Damage,Ambulance,SC,Columbus,9942 Tree Ave,11,3,,0,1,
+847,545506,2015-01-23,Single Vehicle Collision,Side Collision,Total Loss,Fire,VA,Hillsdale,5474 Weaver Hwy,13,1,NO,0,3,
+848,777533,2015-01-11,Multi-vehicle Collision,Side Collision,Minor Damage,Fire,NY,Riverwood,1102 Apache Hwy,19,3,YES,1,3,
+849,953334,2015-02-20,Single Vehicle Collision,Side Collision,Major Damage,Ambulance,NY,Springfield,9214 Texas Drive,23,1,YES,1,2,YES
+850,369781,2015-02-24,Parked Car,,Trivial Damage,Police,NC,Northbend,8991 Texas Hwy,23,1,NO,0,3,NO
+851,990998,2015-01-19,Multi-vehicle Collision,Side Collision,Total Loss,Police,NY,Hillsdale,9580 MLK Ave,19,3,YES,2,0,YES
+852,982678,2015-01-08,Single Vehicle Collision,Side Collision,Major Damage,Ambulance,SC,Northbend,5868 Best Drive,19,1,NO,1,2,NO
+853,646069,2015-03-01,Multi-vehicle Collision,Side Collision,Total Loss,Fire,NY,Northbend,5318 5th Ave,17,3,NO,2,3,NO
+854,331683,2015-01-21,Single Vehicle Collision,Front Collision,Minor Damage,Fire,WV,Hillsdale,7502 Rock Lane,18,1,NO,1,3,YES
+855,364055,2015-02-28,Multi-vehicle Collision,Side Collision,Total Loss,Police,WV,Northbrook,4627 Elm Ridge,17,3,NO,2,2,
+856,521854,2015-01-26,Multi-vehicle Collision,Rear Collision,Total Loss,Fire,SC,Springfield,5584 Britain Lane,11,3,,1,3,YES
+857,737252,2015-01-31,Multi-vehicle Collision,Side Collision,Minor Damage,Fire,WV,Northbend,7002 Oak Hwy,22,3,,0,1,NO
+858,344480,2015-02-20,Single Vehicle Collision,Front Collision,Minor Damage,Fire,NY,Columbus,4780 Best Drive,7,1,NO,0,1,NO
+859,898519,2015-02-17,Multi-vehicle Collision,Side Collision,Minor Damage,Other,SC,Northbrook,8995 1st Ave,17,3,,2,3,YES
+860,957816,2015-02-02,Multi-vehicle Collision,Side Collision,Total Loss,Other,SC,Columbus,5586 2nd St,16,3,NO,2,3,
+861,175960,2015-02-06,Multi-vehicle Collision,Rear Collision,Minor Damage,Other,NY,Northbend,1589 Best Ave,13,3,NO,1,2,YES
+862,489618,2015-02-11,Multi-vehicle Collision,Side Collision,Minor Damage,Other,NY,Northbrook,1880 Weaver Drive,17,3,YES,0,2,YES
+863,717044,2015-01-25,Single Vehicle Collision,Rear Collision,Minor Damage,Ambulance,WV,Springfield,7295 Tree Hwy,3,1,YES,2,0,
+864,101421,2015-02-23,Multi-vehicle Collision,Front Collision,Minor Damage,Other,SC,Arlington,8832 Pine Drive,15,3,,0,2,
+865,793948,2015-01-29,Single Vehicle Collision,Front Collision,Total Loss,Fire,WV,Hillsdale,1620 Oak Ave,16,1,YES,2,1,
+866,737483,2015-01-02,Single Vehicle Collision,Rear Collision,Major Damage,Fire,SC,Hillsdale,3847 Elm Hwy,18,1,,1,3,YES
+867,695117,2015-02-06,Single Vehicle Collision,Front Collision,Minor Damage,Fire,NY,Hillsdale,3177 MLK Ridge,18,1,NO,1,0,NO
+868,167466,2015-02-14,Multi-vehicle Collision,Rear Collision,Total Loss,Ambulance,NY,Riverwood,3929 Oak Drive,22,2,NO,0,3,YES
+869,664732,2015-02-04,Multi-vehicle Collision,Front Collision,Minor Damage,Other,SC,Springfield,1469 Lincoln Drive,15,3,NO,1,2,YES
+870,143038,2015-02-12,Multi-vehicle Collision,Rear Collision,Major Damage,Police,OH,Arlington,9719 4th Lane,16,3,YES,1,3,
+871,979963,2015-02-12,Single Vehicle Collision,Front Collision,Total Loss,Fire,NY,Riverwood,3196 Cherokee St,18,1,,1,0,
+872,467841,2015-01-28,Parked Car,,Minor Damage,,WV,Northbend,8492 Andromedia Ridge,8,1,NO,2,0,YES
+873,219028,2015-01-10,Multi-vehicle Collision,Side Collision,Major Damage,Ambulance,NY,Hillsdale,1353 Washington St,23,3,YES,0,0,YES
+874,130156,2015-01-19,Single Vehicle Collision,Rear Collision,Major Damage,Ambulance,WV,Hillsdale,6731 Andromedia Hwy,18,1,,0,2,YES
+875,762951,2015-01-19,Single Vehicle Collision,Side Collision,Minor Damage,Other,NC,Riverwood,5769 Texas Lane,10,1,YES,1,0,YES
+876,376879,2015-01-28,Single Vehicle Collision,Side Collision,Major Damage,Ambulance,SC,Arlington,2849 Pine Drive,12,1,NO,0,2,NO
+877,599031,2015-02-16,Vehicle Theft,,Trivial Damage,Police,WV,Springfield,2577 Texas Ridge,5,1,YES,1,2,
+878,676255,2015-01-08,Multi-vehicle Collision,Front Collision,Total Loss,Other,NY,Northbend,3841 Washington Lane,21,3,,2,3,
+879,985446,2015-01-24,Multi-vehicle Collision,Rear Collision,Major Damage,Fire,SC,Columbus,8125 Texas Ridge,17,3,YES,1,3,NO
+880,884180,2015-02-18,Single Vehicle Collision,Front Collision,Total Loss,Other,NC,Arlington,4826 5th St,4,1,YES,2,1,
+881,571462,2015-01-21,Single Vehicle Collision,Front Collision,Major Damage,Fire,VA,Northbrook,1578 5th Lane,11,1,NO,1,1,NO
+882,815883,2015-01-08,Single Vehicle Collision,Rear Collision,Major Damage,Fire,VA,Hillsdale,6440 Rock Lane,18,1,,1,3,YES
+883,258265,2015-02-02,Single Vehicle Collision,Rear Collision,Total Loss,Police,NY,Northbrook,5806 Embaracadero St,12,1,,0,0,NO
+884,569714,2015-03-01,Multi-vehicle Collision,Side Collision,Major Damage,Ambulance,WV,Riverwood,1472 4th Drive,18,3,YES,0,3,NO
+885,180008,2015-02-04,Single Vehicle Collision,Front Collision,Minor Damage,Fire,WV,Hillsdale,5839 Weaver Lane,16,1,NO,2,2,
+886,633375,2015-02-27,Multi-vehicle Collision,Rear Collision,Total Loss,Police,NC,Columbus,7630 Rock Drive,19,3,YES,0,0,
+887,556538,2015-02-09,Single Vehicle Collision,Front Collision,Total Loss,Fire,SC,Riverwood,7144 Andromedia St,13,1,NO,1,0,YES
+888,669501,2015-02-19,Parked Car,,Minor Damage,,VA,Arlington,9988 Rock Ridge,4,1,NO,0,0,NO
+889,963761,2015-01-12,Single Vehicle Collision,Rear Collision,Major Damage,Fire,SC,Northbrook,7544 Washington Ave,8,1,YES,1,2,YES
+890,753005,2015-02-07,Multi-vehicle Collision,Side Collision,Major Damage,Ambulance,VA,Hillsdale,7201 Washington Ave,19,3,NO,2,0,NO
+891,454758,2015-01-13,Single Vehicle Collision,Side Collision,Total Loss,Ambulance,NC,Northbend,8805 Cherokee Drive,18,1,YES,2,0,NO
+892,698589,2015-01-18,Multi-vehicle Collision,Rear Collision,Total Loss,Other,SC,Arlington,3275 Pine St,9,2,,0,3,
+893,330119,2015-01-15,Vehicle Theft,,Trivial Damage,,WV,Columbus,7785 Lincoln Lane,6,1,,2,1,NO
+894,164464,2015-02-23,Vehicle Theft,,Minor Damage,,NC,Arlington,4994 Lincoln Drive,8,1,YES,0,0,
+895,927354,2015-02-17,Parked Car,,Minor Damage,,NY,Springfield,1298 Maple Hwy,6,1,,1,3,
+896,231508,2015-02-17,Multi-vehicle Collision,Front Collision,Major Damage,Fire,WV,Northbend,2644 MLK Drive,23,3,,0,3,
+897,272910,2015-01-18,Parked Car,,Trivial Damage,,SC,Riverwood,5630 1st Drive,13,1,NO,0,3,YES
+898,305758,2015-01-17,Multi-vehicle Collision,Front Collision,Minor Damage,Police,NY,Springfield,6137 MLK St,3,3,NO,2,0,
+899,950542,2015-02-25,Single Vehicle Collision,Rear Collision,Major Damage,Police,WV,Northbrook,5383 Maple Drive,23,1,NO,0,1,NO
+900,291544,2015-01-06,Vehicle Theft,,Minor Damage,,NC,Arlington,4460 4th Lane,8,1,YES,1,3,
+901,388616,2015-02-26,Single Vehicle Collision,Side Collision,Total Loss,Other,NY,Columbus,8524 Pine Lane,23,1,YES,0,3,NO
+902,577992,2015-02-11,Single Vehicle Collision,Side Collision,Total Loss,Police,NY,Northbrook,8456 1st Ave,23,1,YES,0,0,NO
+903,342830,2015-02-13,Multi-vehicle Collision,Side Collision,Minor Damage,Fire,SC,Riverwood,3639 Flute Hwy,9,3,NO,2,1,NO
+904,491170,2015-01-10,Single Vehicle Collision,Side Collision,Minor Damage,Other,WV,Riverwood,7900 Sky Hwy,22,1,YES,2,3,NO
+905,175553,2015-01-24,Multi-vehicle Collision,Side Collision,Total Loss,Other,VA,Riverwood,7835 Cherokee Hwy,22,3,YES,2,1,YES
+906,439341,2015-02-15,Multi-vehicle Collision,Side Collision,Major Damage,Fire,VA,Northbend,1030 Pine Lane,15,3,NO,1,2,
+907,221186,2015-01-09,Multi-vehicle Collision,Rear Collision,Major Damage,Police,SC,Columbus,9278 Francis Ridge,16,3,NO,2,0,YES
+908,868031,2015-01-31,Multi-vehicle Collision,Front Collision,Minor Damage,Fire,WV,Northbend,6604 Apache Drive,17,3,,1,2,
+909,844117,2015-02-04,Vehicle Theft,,Minor Damage,Police,WV,Northbrook,2311 4th St,3,1,YES,1,0,
+910,744557,2015-01-30,Multi-vehicle Collision,Rear Collision,Total Loss,Other,SC,Northbend,9523 Solo Hwy,10,3,,0,2,NO
+911,159536,2015-02-27,Single Vehicle Collision,Side Collision,Minor Damage,Police,PA,Springfield,3171 Andromedia Lane,9,1,NO,1,2,YES
+912,727109,2015-02-05,Multi-vehicle Collision,Front Collision,Total Loss,Police,WV,Northbend,2492 Lincoln Lane,13,2,,0,1,YES
+913,155604,2015-01-30,Multi-vehicle Collision,Rear Collision,Major Damage,Police,NC,Northbend,4477 5th Ave,15,3,YES,2,1,YES
+914,608443,2015-01-03,Single Vehicle Collision,Side Collision,Minor Damage,Fire,WV,Springfield,6724 Andromedia St,23,1,,1,1,NO
+915,117862,2015-03-01,Multi-vehicle Collision,Front Collision,Major Damage,Fire,NY,Riverwood,7495 Washington Ave,2,4,YES,0,2,YES
+916,991553,2015-02-13,Single Vehicle Collision,Rear Collision,Major Damage,Fire,SC,Hillsdale,4291 Sky Hwy,14,1,YES,2,0,
+917,727443,2015-02-25,Vehicle Theft,,Trivial Damage,,NY,Hillsdale,5650 Rock Ave,7,1,,1,1,YES
+918,378587,2015-01-23,Single Vehicle Collision,Side Collision,Major Damage,Other,NY,Columbus,6888 Elm Ridge,23,1,NO,1,3,NO
+919,420948,2015-02-19,Multi-vehicle Collision,Front Collision,Minor Damage,Ambulance,NY,Northbrook,2352 Sky Drive,7,3,YES,2,1,
+920,457188,2015-02-08,Multi-vehicle Collision,Rear Collision,Minor Damage,Police,NY,Hillsdale,5280 Pine Ave,8,3,YES,1,0,
+921,118236,2015-02-04,Single Vehicle Collision,Rear Collision,Total Loss,Other,WV,Northbrook,6638 Tree Drive,17,1,NO,1,0,YES
+922,987524,2015-02-22,Multi-vehicle Collision,Rear Collision,Minor Damage,Other,NY,Northbrook,5678 Lincoln Drive,10,3,NO,0,3,NO
+923,490596,2015-01-14,Vehicle Theft,,Minor Damage,Police,WV,Columbus,4496 Pine Lane,9,1,NO,0,3,NO
+924,524215,2015-01-06,Single Vehicle Collision,Rear Collision,Total Loss,Other,SC,Hillsdale,8845 5th Ave,2,1,YES,1,0,YES
+925,913464,2015-01-19,Multi-vehicle Collision,Rear Collision,Minor Damage,Ambulance,WV,Riverwood,9317 Apache Ave,18,3,NO,0,1,NO
+926,398484,2015-01-24,Vehicle Theft,,Minor Damage,Police,VA,Arlington,8638 3rd Ave,4,1,,2,3,NO
+927,752504,2015-01-27,Single Vehicle Collision,Front Collision,Total Loss,Fire,NY,Columbus,3061 Francis Hwy,12,1,,0,3,YES
+928,449263,2015-01-13,Single Vehicle Collision,Front Collision,Major Damage,Other,NY,Northbrook,1173 Andromedia Ave,15,1,YES,1,3,YES
+929,844007,2015-01-15,Vehicle Theft,,Trivial Damage,Police,VA,Springfield,6068 2nd St,9,1,YES,1,3,
+930,686522,2015-02-04,Single Vehicle Collision,Side Collision,Major Damage,Police,SC,Arlington,7937 Weaver Ridge,6,1,YES,0,0,NO
+931,670142,2015-01-04,Multi-vehicle Collision,Rear Collision,Major Damage,Police,SC,Springfield,2823 Weaver Lane,11,4,YES,0,2,NO
+932,607687,2015-01-14,Multi-vehicle Collision,Side Collision,Total Loss,Fire,PA,Columbus,1809 Sky St,13,3,NO,1,1,
+933,967713,2015-01-27,Multi-vehicle Collision,Side Collision,Minor Damage,Other,NC,Springfield,9352 Washington Ave,4,3,,2,1,YES
+934,291902,2015-02-12,Multi-vehicle Collision,Side Collision,Minor Damage,Ambulance,NY,Columbus,2697 Oak Drive,20,3,YES,1,3,
+935,149839,2015-02-03,Multi-vehicle Collision,Rear Collision,Major Damage,Ambulance,VA,Riverwood,1110 4th Drive,0,3,NO,1,3,
+936,840225,2015-01-26,Multi-vehicle Collision,Side Collision,Total Loss,Other,WV,Hillsdale,7535 5th Lane,18,4,,2,3,YES
+937,643226,2015-01-09,Single Vehicle Collision,Front Collision,Minor Damage,Police,NY,Northbrook,9043 Maple Hwy,6,1,,1,0,
+938,535879,2015-02-17,Single Vehicle Collision,Front Collision,Total Loss,Police,VA,Hillsdale,3777 Maple Ave,23,1,,2,2,YES
+939,746630,2015-01-16,Single Vehicle Collision,Front Collision,Major Damage,Other,NY,Northbrook,5608 Solo St,4,1,,0,0,
+940,598308,2015-01-12,Multi-vehicle Collision,Rear Collision,Major Damage,Other,SC,Arlington,6981 Weaver St,21,3,,1,0,
+941,720356,2015-01-03,Parked Car,,Minor Damage,,NY,Springfield,4369 Maple Lane,7,1,,1,1,YES
+942,724752,2015-01-22,Multi-vehicle Collision,Side Collision,Major Damage,Fire,NY,Columbus,6931 Elm St,19,3,,0,0,
+943,148498,2015-01-13,Parked Car,,Minor Damage,,SC,Arlington,7583 Washington Ave,5,1,NO,1,3,NO
+944,110122,2015-01-31,Multi-vehicle Collision,Front Collision,Minor Damage,Police,NC,Arlington,7552 3rd St,22,3,YES,0,0,NO
+945,281388,2015-02-04,Single Vehicle Collision,Side Collision,Total Loss,Police,SC,Northbrook,1654 Pine St,12,1,YES,1,3,YES
+946,728600,2015-01-20,Multi-vehicle Collision,Front Collision,Total Loss,Police,SC,Springfield,6058 Andromedia Hwy,19,3,NO,0,2,NO
+947,231548,2015-02-07,Single Vehicle Collision,Side Collision,Major Damage,Fire,WV,Hillsdale,6536 MLK Hwy,10,1,,2,0,
+948,531160,2015-02-05,Single Vehicle Collision,Side Collision,Minor Damage,Other,WV,Columbus,8198 Embaracadero Lane,7,1,NO,0,3,
+949,889003,2015-01-02,Single Vehicle Collision,Front Collision,Total Loss,Police,WV,Hillsdale,3447 Solo Ave,17,1,NO,1,1,NO
+950,193213,2015-02-08,Multi-vehicle Collision,Side Collision,Total Loss,Police,WV,Arlington,1806 Weaver Ridge,0,3,,2,3,YES
+951,557218,2015-01-13,Parked Car,,Minor Damage,,SC,Arlington,7930 Texas Ave,9,1,NO,1,0,NO
+952,125591,2015-01-16,Single Vehicle Collision,Side Collision,Total Loss,Ambulance,NC,Riverwood,7082 Oak Ridge,21,1,,0,3,
+953,227244,2015-01-30,Multi-vehicle Collision,Front Collision,Total Loss,Other,VA,Northbend,6357 Texas Lane,22,3,NO,0,2,NO
+954,791425,2015-02-26,Vehicle Theft,,Minor Damage,,WV,Hillsdale,9322 Rock Hwy,3,1,NO,1,0,YES
+955,354455,2015-01-27,Single Vehicle Collision,Rear Collision,Minor Damage,Ambulance,WV,Northbrook,6684 Solo Lane,16,1,YES,0,3,
+956,601042,2015-01-28,Single Vehicle Collision,Side Collision,Total Loss,Other,NY,Riverwood,4885 Oak Lane,14,1,YES,0,0,NO
+957,433663,2015-02-23,Multi-vehicle Collision,Side Collision,Total Loss,Police,SC,Springfield,7846 Andromedia Drive,21,3,YES,0,3,YES
+958,471938,2015-01-18,Single Vehicle Collision,Rear Collision,Minor Damage,Police,WV,Columbus,3915 Embaracadero St,19,1,NO,2,1,NO
+959,564654,2015-02-15,Multi-vehicle Collision,Front Collision,Major Damage,Fire,NC,Hillsdale,4242 Rock Lane,13,3,NO,1,3,NO
+960,645723,2015-02-04,Vehicle Theft,,Minor Damage,Police,VA,Hillsdale,7405 Oak St,21,1,NO,0,0,YES
+961,573572,2015-01-12,Multi-vehicle Collision,Rear Collision,Minor Damage,Ambulance,NY,Northbend,9633 4th St,11,3,NO,1,2,YES
+962,437960,2015-01-02,Vehicle Theft,,Trivial Damage,Police,VA,Columbus,3492 Britain St,16,1,,2,0,
+963,649800,2015-01-27,Single Vehicle Collision,Rear Collision,Total Loss,Police,VA,Arlington,7973 4th St,9,1,NO,0,2,
+964,544225,2015-02-09,Vehicle Theft,,Minor Damage,Police,WV,Riverwood,3952 Andromedia Lane,8,1,NO,0,0,YES
+965,390256,2015-02-06,Vehicle Theft,,Minor Damage,Police,WV,Springfield,6702 Andromedia St,7,1,,2,1,YES
+966,488597,2015-01-03,Single Vehicle Collision,Front Collision,Minor Damage,Other,SC,Arlington,5455 Oak Hwy,12,1,,0,0,NO
+967,133889,2015-01-12,Multi-vehicle Collision,Rear Collision,Minor Damage,Other,NC,Columbus,2253 Maple Ave,21,3,YES,0,0,
+968,931901,2015-01-22,Single Vehicle Collision,Rear Collision,Major Damage,Police,NC,Arlington,7897 Lincoln St,4,1,YES,1,2,NO
+969,769475,2015-01-03,Multi-vehicle Collision,Side Collision,Major Damage,Police,NY,Northbend,8811 Maple Hwy,18,3,NO,2,2,YES
+970,844062,2015-02-23,Vehicle Theft,,Trivial Damage,Police,SC,Northbend,8167 Apache Ave,7,1,,2,3,
+971,844129,2015-01-22,Single Vehicle Collision,Side Collision,Total Loss,Fire,SC,Northbrook,5475 Rock Lane,13,1,YES,2,0,YES
+972,732169,2015-02-13,Single Vehicle Collision,Front Collision,Total Loss,Fire,VA,Northbend,8215 Flute Drive,0,1,NO,2,1,
+973,221854,2015-02-08,Single Vehicle Collision,Rear Collision,Major Damage,Fire,NY,Northbend,1320 Flute Lane,22,1,,1,1,YES
+974,776950,2015-01-09,Single Vehicle Collision,Rear Collision,Major Damage,Ambulance,SC,Columbus,1229 5th Ave,15,1,YES,2,3,
+975,291006,2015-02-08,Multi-vehicle Collision,Side Collision,Major Damage,Police,SC,Riverwood,3884 Pine Lane,3,3,NO,2,1,
+976,845751,2015-01-10,Multi-vehicle Collision,Rear Collision,Total Loss,Fire,VA,Northbend,7108 Tree St,18,2,YES,0,2,
+977,889764,2015-01-26,Multi-vehicle Collision,Side Collision,Major Damage,Fire,WV,Arlington,8014 Embaracadero Drive,17,3,,2,2,
+978,929306,2015-02-21,Multi-vehicle Collision,Side Collision,Major Damage,Ambulance,WV,Springfield,4937 Flute Drive,18,3,,1,1,NO
+979,515457,2015-01-23,Single Vehicle Collision,Front Collision,Total Loss,Other,NY,Columbus,2889 Francis St,11,1,,2,3,YES
+980,556270,2015-02-05,Single Vehicle Collision,Rear Collision,Total Loss,Other,NY,Columbus,7504 Flute Drive,17,1,NO,0,2,YES
+981,908935,2015-02-15,Single Vehicle Collision,Rear Collision,Minor Damage,Ambulance,OH,Northbend,7570 Cherokee Drive,12,1,YES,0,2,YES
+982,525862,2015-01-08,Multi-vehicle Collision,Front Collision,Total Loss,Police,NY,Northbend,4710 Lincoln Hwy,15,3,,1,2,NO
+983,490514,2015-01-01,Multi-vehicle Collision,Front Collision,Minor Damage,Police,NY,Arlington,7511 1st Ave,0,3,,0,3,YES
+984,774895,2015-02-26,Parked Car,,Trivial Damage,Police,SC,Arlington,7042 Maple Ridge,9,1,,2,1,
+985,974522,2015-02-28,Single Vehicle Collision,Side Collision,Total Loss,Ambulance,WV,Springfield,4475 Lincoln Ridge,1,1,YES,2,1,NO
+986,669809,2015-01-13,Single Vehicle Collision,Side Collision,Major Damage,Other,WV,Columbus,9439 MLK St,22,1,,0,2,
+987,182953,2015-02-19,Single Vehicle Collision,Rear Collision,Minor Damage,Other,WV,Riverwood,8269 Sky Hwy,11,1,YES,2,3,
+988,836349,2015-01-13,Single Vehicle Collision,Side Collision,Major Damage,Other,NC,Hillsdale,5663 Oak Lane,10,1,,0,3,
+989,591269,2015-02-17,Single Vehicle Collision,Rear Collision,Minor Damage,Fire,NY,Columbus,4633 5th Lane,5,1,YES,1,1,NO
+990,550127,2015-02-15,Multi-vehicle Collision,Rear Collision,Total Loss,Police,SC,Arlington,9682 Cherokee Ridge,3,3,YES,1,2,
+991,663190,2015-01-31,Single Vehicle Collision,Rear Collision,Minor Damage,Fire,NY,Northbrook,4755 1st St,18,1,,2,2,YES
+992,109392,2015-02-06,Single Vehicle Collision,Rear Collision,Total Loss,Other,WV,Riverwood,5312 Francis Ridge,21,1,NO,0,1,NO
+993,215278,2015-01-23,Multi-vehicle Collision,Front Collision,Major Damage,Fire,OH,Springfield,1705 Weaver St,6,3,YES,1,2,YES
+994,674570,2015-02-17,Multi-vehicle Collision,Side Collision,Total Loss,Other,OH,Hillsdale,1643 Washington Hwy,20,3,,0,1,
+995,681486,2015-01-22,Parked Car,,Minor Damage,,SC,Northbend,6516 Solo Drive,6,1,,1,2,YES
+996,941851,2015-02-22,Single Vehicle Collision,Front Collision,Minor Damage,Fire,NC,Northbrook,6045 Andromedia St,20,1,YES,0,1,
+997,186934,2015-01-24,Single Vehicle Collision,Rear Collision,Major Damage,Fire,SC,Northbend,3092 Texas Drive,23,1,YES,2,3,
+998,918516,2015-01-23,Multi-vehicle Collision,Side Collision,Minor Damage,Police,NC,Arlington,7629 5th St,4,3,,2,3,YES
+999,533940,2015-02-26,Single Vehicle Collision,Rear Collision,Major Damage,Other,NY,Arlington,6128 Elm Lane,2,1,,0,1,YES
+1000,556080,2015-02-26,Parked Car,,Minor Damage,Police,WV,Columbus,1416 Cherokee Ridge,6,1,,0,3,

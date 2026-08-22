@@ -179,3 +179,50 @@ For every query, ClaimShield AI returns:
 - ✅ Risk indicators and financial exposure
 - ✅ A recommendation — **Approve / Review / Investigate**
 - ✅ Full evidence trace, so every sentence can be clicked back to its source
+
+---
+
+## Data preparation and DuckDB database
+
+The supplied workbook is stored at `data/1db65133-d9c2-4d71-9d4a-8963a16e255d.xlsx`. Run the following command from the repository root to clean the data and rebuild the database:
+
+```powershell
+python backend/build_index.py
+```
+
+This creates `data/claimshield.duckdb`, a persistent relational DuckDB database, plus `data/cleaned_csv/` exports and `data/load_manifest.json` with the cleaning audit.
+
+### Relational model
+
+```text
+insured (insured_id)
+  └── policy (policy_number, insured_id)
+        ├── vehicle (vehicle_id, policy_number)
+        └── incident (incident_id, policy_number)
+              └── claim (claim_id, incident_id)
+```
+
+The loader enforces primary keys and foreign keys, and verifies that each claim total equals the sum of its injury, property, and vehicle claim components.
+
+### Cleaning rules
+
+1. Validate the expected five-sheet structure and normalize headers.
+2. Remove blank rows and exact duplicate records.
+3. Trim text and convert blank/common missing markers to SQL `NULL`.
+4. Convert dates and numeric values to typed database fields.
+5. Preserve postal codes as text identifiers and standardize yes/no fields to `YES` or `NO`.
+6. Validate key uniqueness, all relationships, and claim-total reconciliation before writing the database.
+
+Source-null incident fields are intentionally retained as `NULL`; no values are invented during cleaning.
+
+### Quick query
+
+```sql
+SELECT i.incident_severity,
+       COUNT(*) AS claim_count,
+       ROUND(AVG(c.total_claim_amount), 2) AS average_claim_amount
+FROM claim AS c
+JOIN incident AS i ON i.incident_id = c.incident_id
+GROUP BY i.incident_severity
+ORDER BY average_claim_amount DESC;
+```

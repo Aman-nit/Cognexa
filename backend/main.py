@@ -1,24 +1,57 @@
-"""ClaimShield API entry point: exposes health and investigation routes."""
+from dotenv import load_dotenv
+import streamlit as st
 
-from fastapi import FastAPI
-from pydantic import BaseModel
+from langchain_huggingface import HuggingFaceEndpoint, ChatHuggingFace
+from langchain_ollama import ChatOllama
 
-from backend.retrieval import retrieve_evidence
+load_dotenv()
 
-app = FastAPI(title="ClaimShield AI", version="0.1.0")
+st.title("Claim Policy Chatbot")
+st.header("Ask any question related to claim policy and get instant answers!")
 
-
-class InvestigationRequest(BaseModel):
-    query: str
-
-
-@app.get("/health")
-def health() -> dict[str, str]:
-    """Confirm that the API process is available."""
-    return {"status": "ok"}
+input_text = st.text_input("Enter your question here:")
 
 
-@app.post("/investigate")
-def investigate(request: InvestigationRequest) -> dict:
-    """Return evidence found for an investigator's natural-language query."""
-    return {"query": request.query, "evidence": retrieve_evidence(request.query)}
+# Primary Model: Ollama
+ollama_llm = ChatOllama(
+    model="phi3",
+    base_url="http://localhost:11434",
+    max_tokens=512,
+    timeout=30,
+)
+
+
+
+# Fallback Model: Hugging Face
+hf_llm = HuggingFaceEndpoint(
+    repo_id="Qwen/Qwen3.8-2.4T-A95B",
+    task="text-generation",
+    temperature=0.1,
+    max_new_tokens=512,
+   
+)
+
+hf_model = ChatHuggingFace(llm=hf_llm)
+
+
+
+# Create fallback chain
+model = ollama_llm.with_fallbacks([hf_model])
+
+
+
+# Ask question
+if st.button("Ask"):
+
+    if input_text.strip():
+
+        try:
+            response = model.invoke(input_text)
+
+            st.write(response.content)
+
+        except Exception as e:
+            st.error(f"Both models failed: {e}")
+
+    else:
+        st.warning("Please enter a question.")

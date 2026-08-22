@@ -1,4 +1,4 @@
--- Insurance Project: DuckDB Relational Schema
+
 
 CREATE TABLE insured (
     insured_id BIGINT PRIMARY KEY,

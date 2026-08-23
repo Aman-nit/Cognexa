@@ -1,154 +1,300 @@
-# 🛡️ ClaimShield AI
+# ClaimShield AI
 
-### Insurance Claim Investigation using Hybrid Semantic Search &amp; RAG
+Insurance Claim Investigation using LLM Routing, Retrieval, and DuckDB
 
-> Cognizant NPN Hackathon — Use Case 8
+![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)
+![Streamlit](https://img.shields.io/badge/UI-Streamlit-FF4B4B?logo=streamlit&logoColor=white)
+![DuckDB](https://img.shields.io/badge/Database-DuckDB-FFF000?logo=duckdb&logoColor=000)
+![Status](https://img.shields.io/badge/Project-Prototype-orange)
 
----
+## Project Idea
 
-## 📌 Use Case
+Claim investigation teams often need to combine two different worlds:
 
-Insurance companies process thousands of claims every day across health, life, motor, and property products. Before a claim can be approved, rejected, or escalated, investigators have to manually piece together:
+- Structured claim and policy records
+- Unstructured business rules, investigation notes, and guidance text
 
-- **Claim details** — amount, type, incident facts
-- **Policy & customer history** — coverage, tenure, prior claims
-- **Business rules** — fraud indicators, underwriting conditions, escalation SOPs
+ClaimShield AI is designed to bridge both worlds. A user asks a plain-language question, the system classifies the question type, retrieves relevant evidence, and returns a clear answer grounded in retrieved context.
 
-Today this is slow, inconsistent, and locked behind SQL — a business user can't just *ask a question* and get an answer.
+## What the Project Does
 
-### Challenges
+The assistant routes incoming questions into one of these labels:
 
-| # | Challenge                                                                   |
-| - | --------------------------------------------------------------------------- |
-| 1 | Data scattered across claims, policy, and insurer systems                   |
-| 2 | Business rules spread across fraud, underwriting, and escalation guidelines |
-| 3 | Manual investigation is slow and effort-heavy                               |
-| 4 | Inconsistent conclusions on similar claims                                  |
-| 5 | SQL skills needed, limiting business-user self-service                      |
+1. sql_query
+2. rag_query
+3. rag_sql_query
 
-### Objective
+Current implementation in this repository:
 
-Given a query — a Claim ID, Policy Number, Customer Name, fraud investigation request, or compliance question — retrieve the relevant claim/policy records and business rules **contextually and semantically**, not just by exact keyword match, and return:
+- rag_query: implemented end-to-end in the Streamlit assistant
+- sql_query: classification present, execution path pending
+- rag_sql_query: classification present, hybrid execution path pending
 
-- Relevant claim and policy details
-- Applicable fraud and compliance rules
-- Investigation findings and risk indicators
-- Recommended action (Approve / Review / Investigate)
-- A natural-language explanation grounded in that evidence
+## End-to-End Flow
 
----
-
-## 💡 Proposed Solution — ClaimShield AI
-
-ClaimShield AI is an investigator-facing system that turns a plain-language question into an **evidence-grounded answer**, not a guess.
-
-It works by fusing four retrieval paths — structured data, keyword search, semantic search, and codified business rules — and only lets the LLM speak once every claim it makes can be traced back to a real fact or rule ID. Nothing enters the answer that wasn't retrieved.
-
-**Design principles:**
-
-- 🔎 **Hybrid over single-mode** — SQL alone misses nuance, embeddings alone miss exact IDs. Fuse both.
-- 📜 **Rules stay human-editable** — YAML, not hardcoded into prompts, so logic stays auditable.
-- 🛡️ **Grounded, not generative** — every sentence the LLM outputs must cite a fact or rule that was actually retrieved.
-- 🧑‍⚖️ **Human stays in charge** — the system recommends; it never auto-decides.
-- 🔌 **Offline-first** — runs without external services, so nothing breaks on a flaky connection.
-
----
-
-## 🧩 Tech Stack
-
-<table>
-<tr>
-<th align="left">Layer</th>
-<th align="left">Pick</th>
-<th align="left">Why this one</th>
-</tr>
-<tr>
-<td>🗄️ <b>Structured data</b></td>
-<td><code>DuckDB</code></td>
-<td>Zero-infra, joins claims × customers × policies in one SQL statement</td>
-</tr>
-<tr>
-<td>📜 <b>Rules</b></td>
-<td><code>YAML</code> + Python evaluator</td>
-<td>Human-readable, editable live to prove logic isn't hardcoded</td>
-</tr>
-<tr>
-<td>🔎 <b>Keyword search</b></td>
-<td><code>BM25</code></td>
-<td>Catches exact claim IDs and rule codes embeddings can blur</td>
-</tr>
-<tr>
-<td>🧠 <b>Vector store</b></td>
-<td><code>FAISS</code> (in-process)</td>
-<td>No external service — loads from disk, works fully offline</td>
-</tr>
-<tr>
-<td>🔡 <b>Embeddings</b></td>
-<td><code>sentence-transformers</code> (MiniLM / BGE-small)</td>
-<td>CPU-only, fast enough to embed the whole corpus in seconds</td>
-</tr>
-<tr>
-<td>🤖 <b>LLM</b></td>
-<td><code>Phi-3-mini</code> local + hosted fallback</td>
-<td>No single point of failure if local inference or wifi drops</td>
-</tr>
-<tr>
-<td>🔀 <b>Fusion</b></td>
-<td>Reciprocal Rank Fusion</td>
-<td>Merges SQL / keyword / semantic / rules into one ranked context</td>
-</tr>
-<tr>
-<td>🛡️ <b>Guardrail</b></td>
-<td>Citation-validation pass</td>
-<td>Strips any claim not backed by retrieved evidence</td>
-</tr>
-<tr>
-<td>⚙️ <b>Backend</b></td>
-<td><code>FastAPI</code></td>
-<td>Clean, testable routes — independent of the UI</td>
-</tr>
-<tr>
-<td>🖥️ <b>Frontend</b></td>
-<td><code>Streamlit</code></td>
-<td>Fast to build an investigator-facing evidence & trace view</td>
-</tr>
-</table>
-
----
-
-## 🔄 Workflow
-
-```
-Investigator Query
-        │
-        ▼
- Hybrid Retrieval  (DuckDB + BM25 + FAISS + YAML rules)
-        │
-        ▼
- Reciprocal Rank Fusion → single evidence set
-        │
-        ▼
- Phi-3 reasoning → grounded, cited draft answer
-        │
-        ▼
- Guardrail → verifies every citation is real
-        │
-        ▼
- Streamlit → answer + evidence + recommendation
+```mermaid
+flowchart TD
+              A[Investigator Question] --> B[Streamlit App backend/main.py]
+              B --> C[Classifier]
+              C -->|rag_query| D[Pinecone Retrieval]
+              D --> E[Context Builder]
+              E --> F[Ollama Phi-3 Generation]
+              F --> G[Answer in UI]
+              C -->|sql_query| H[Planned SQL branch]
+              C -->|rag_sql_query| I[Planned hybrid branch]
 ```
 
----
+## System Components
 
-## 📁 Project Structure
+| Layer | Module | Purpose |
+| --- | --- | --- |
+| UI | backend/main.py | Streamlit assistant interface and orchestration |
+| Query Routing | backend/classifier.py | Classifies queries into sql_query, rag_query, rag_sql_query |
+| Retrieval | backend/retrieval.py | Searches Pinecone index for context chunks |
+| Ingestion | backend/ingestion.py | Splits data text files and uploads chunks to Pinecone |
+| Structured Data | load_cleaned_data_to_duckdb.py | Builds DuckDB tables and analysis view from Excel |
 
----
+## Repository Structure
 
-## 🎯 Output
+```text
+Cognexa/
+       backend/
+              classifier.py
+              ingestion.py
+              main.py
+              retrieval.py
+       data/
+              entities.txt
+              relationships.txt
+              rules.txt
+              Semantic_Insurance_Business_YAML.yaml
+       frontend/
+              app.py
+       notebook/
+              01_data_exploration.ipynb
+              cognexa.ipynb
+       insurance.duckdb
+       insurance_duckdb_schema.sql
+       load_cleaned_data_to_duckdb.py
+       query_database.py
+       query_duckdb.py
+       test_duckdb.py
+       requirements.txt
+```
 
-For every query, ClaimShield AI returns:
+## Database Structure
 
-- ✅ Relevant claim & policy facts (from DuckDB)
-- ✅ Matched rule IDs with plain-language explanation (from YAML)
-- ✅ Risk indicators and financial exposure
-- ✅ A recommendation — **Approve / Review / Investigate**
-- ✅ Full evidence trace, so every sentence can be clicked back to its source
+Primary relational entities:
+
+- insured
+- policy
+- vehicle
+- incident
+- claim
+
+Entity relationship overview:
+
+```mermaid
+erDiagram
+              INSURED ||--o{ POLICY : owns
+              POLICY ||--o{ VEHICLE : covers
+              POLICY ||--o{ INCIDENT : linked_to
+              INCIDENT ||--|| CLAIM : produces
+
+              INSURED {
+                            bigint insured_id PK
+                            bigint age
+                            varchar gender
+                            varchar occupation
+              }
+
+              POLICY {
+                            bigint policy_number PK
+                            bigint insured_id FK
+                            date policy_bind_date
+                            double policy_annual_premium
+              }
+
+              VEHICLE {
+                            bigint vehicle_id PK
+                            bigint policy_number FK
+                            varchar auto_make
+                            varchar auto_model
+              }
+
+              INCIDENT {
+                            bigint incident_id PK
+                            bigint policy_number FK
+                            date incident_date
+                            varchar incident_type
+                            varchar incident_severity
+              }
+
+              CLAIM {
+                            bigint claim_id PK
+                            bigint incident_id FK
+                            double total_claim_amount
+                            varchar fraud_reported
+              }
+```
+
+## Prerequisites
+
+Install before setup:
+
+1. Python 3.10+
+2. Git
+3. Ollama
+4. Pinecone account with an index created
+
+## Run on Your Machine (Windows PowerShell)
+
+### 1. Clone and move into project
+
+```powershell
+git clone <your-repo-url>
+cd Cognexa
+```
+
+### 2. Create and activate virtual environment
+
+```powershell
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+```
+
+### 3. Install dependencies
+
+```powershell
+pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+### 4. Create .env in project root
+
+```env
+PINECONE_API_KEY=YOUR_PINECONE_API_KEY
+PINECONE_INDEX_NAME=cognexa-rag
+
+# Optional telemetry
+LANGSMITH_TRACING=false
+LANGSMITH_API_KEY=
+LANGSMITH_PROJECT=Cognexa
+```
+
+Important: never commit real keys or tokens.
+
+### 5. Start Ollama and pull model
+
+```powershell
+ollama pull phi3
+ollama serve
+```
+
+If Ollama is already running as a service, you only need ollama pull phi3 once.
+
+### 6. Build Pinecone document index
+
+```powershell
+python backend/ingestion.py
+```
+
+### 7. Run the main assistant
+
+```powershell
+streamlit run backend/main.py
+```
+
+Open the URL printed by Streamlit, usually http://localhost:8501.
+
+## DuckDB Pipeline (Structured Data)
+
+Use this when you need the relational database locally.
+
+### Input required
+
+- cleaned_insurance_dataset.xlsx in project root
+- Excel sheets named exactly: insured, policy, vehicle, incident, claim
+
+### Build DB
+
+```powershell
+python load_cleaned_data_to_duckdb.py
+```
+
+This creates insurance_project.duckdb and a view named insurance_claim_analysis.
+
+### Quick validation
+
+```powershell
+python query_duckdb.py
+python test_duckdb.py
+```
+
+## Alternate UI (Prototype)
+
+You can also run the lightweight UI scaffold:
+
+```powershell
+streamlit run frontend/app.py
+```
+
+This is currently a placeholder and not fully connected to a backend API endpoint.
+
+## Example Questions
+
+Try prompts like:
+
+- What documents are required to file a motor insurance claim?
+- Explain common fraud indicators in claim investigations.
+- What are escalation rules for high-value claims?
+
+## Troubleshooting
+
+### Pinecone errors
+
+- Verify PINECONE_API_KEY
+- Verify PINECONE_INDEX_NAME exists
+- Re-run ingestion after fixing .env
+
+### Ollama connection issues
+
+- Confirm ollama serve is running
+- Confirm phi3 model is installed
+- Default local endpoint used by code is http://localhost:11434
+
+### No answer or empty retrieval
+
+- Ensure ingestion completed successfully
+- Ensure data text files exist in data folder
+
+### DuckDB build fails
+
+- Check Excel file exists in root
+- Check sheet names match expected values exactly
+
+## Team Workflow Recommendation
+
+For group development:
+
+1. Keep this README as the single source of setup truth.
+2. Use feature branches for each module change.
+3. Do not commit secrets in .env.
+4. Update README whenever run steps change.
+
+## Current Limitations
+
+- sql_query execution branch is not implemented yet in the Streamlit orchestrator.
+- rag_sql_query hybrid execution branch is not implemented yet.
+- frontend/app.py is a starter interface.
+
+## Roadmap
+
+1. Implement SQL execution path over DuckDB.
+2. Implement hybrid rag_sql_query path.
+3. Add FastAPI service layer and wire frontend/app.py.
+4. Add test coverage for routing, retrieval, and DB pipeline.
+
+## Documentation Status
+
+This repository now uses README.md as the primary project documentation file.

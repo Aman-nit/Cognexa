@@ -8,3 +8,6 @@ __pycache__/
 backend/faiss_index/
 *.faiss
 *.npy
+
+
+Cognexa_SQL_Query_Documentation.docx

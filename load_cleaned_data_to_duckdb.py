@@ -12,6 +12,14 @@ tables = pd.read_excel(
 
 con = duckdb.connect(database_file)
 
+con.execute("DROP VIEW IF EXISTS insurance_claim_analysis")
+
+con.execute("DROP TABLE IF EXISTS claim")
+con.execute("DROP TABLE IF EXISTS incident")
+con.execute("DROP TABLE IF EXISTS vehicle")
+con.execute("DROP TABLE IF EXISTS policy")
+con.execute("DROP TABLE IF EXISTS insured")
+
 
 con.execute("""
 CREATE OR REPLACE TABLE insured (
@@ -19,6 +27,7 @@ CREATE OR REPLACE TABLE insured (
     age BIGINT,
     gender VARCHAR,
     occupation VARCHAR,
+    insured_zip VARCHAR,
     hobbies VARCHAR,
     relationship VARCHAR,
     education_level VARCHAR,
@@ -32,10 +41,11 @@ con.execute("""
 CREATE OR REPLACE TABLE policy (
     policy_number BIGINT PRIMARY KEY,
     insured_id BIGINT REFERENCES insured(insured_id),
+    months_as_customer BIGINT,
     policy_bind_date DATE,
     policy_state VARCHAR,
     policy_csl VARCHAR,
-    policy_deductable DOUBLE,
+    policy_deductible DOUBLE,
     policy_annual_premium DOUBLE,
     umbrella_limit DOUBLE,
     auto_year BIGINT
@@ -64,8 +74,8 @@ CREATE OR REPLACE TABLE incident (
     incident_state VARCHAR,
     incident_city VARCHAR,
     incident_location VARCHAR,
-    incident_hour_of_the_day BIGINT,
-    number_of_vehicles_involved BIGINT,
+    incident_hour_of_day BIGINT,
+    vehicles_involved BIGINT,
     property_damage VARCHAR,
     bodily_injuries BIGINT,
     witnesses BIGINT,
@@ -88,7 +98,7 @@ CREATE OR REPLACE TABLE claim (
 
 for table_name in ["insured", "policy", "vehicle", "incident", "claim"]:
     con.register("temp_data", tables[table_name])
-    con.execute(f"INSERT INTO {table_name} SELECT * FROM temp_data")
+    con.execute(f"INSERT INTO {table_name} BY NAME SELECT * FROM temp_data")
     con.unregister("temp_data")
 
 

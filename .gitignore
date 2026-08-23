@@ -3,3 +3,8 @@ __pycache__/
 *.pyc
 .env
 .ipynb_checkpoints/
+
+# Local FAISS index (built by backend/ingestion.py / backend/build_index.py)
+backend/faiss_index/
+*.faiss
+*.npy

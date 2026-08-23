@@ -1,57 +1,111 @@
-from dotenv import load_dotenv
 import streamlit as st
 
-from langchain_huggingface import HuggingFaceEndpoint, ChatHuggingFace
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.output_parsers import StrOutputParser
 from langchain_ollama import ChatOllama
 
-load_dotenv()
-
-st.title("Claim Policy Chatbot")
-st.header("Ask any question related to claim policy and get instant answers!")
-
-input_text = st.text_input("Enter your question here:")
+from classifier import classify_query
+from retrieval import retrieve_documents
 
 
-# Primary Model: Ollama
-ollama_llm = ChatOllama(
+# Load LLM
+model = ChatOllama(
     model="phi3",
     base_url="http://localhost:11434",
     max_tokens=512,
-    timeout=30,
+    timeout=30
 )
 
 
+# Create answer prompt
+ANSWER_PROMPT = ChatPromptTemplate.from_template("""
+You are an insurance claims assistant.
 
-# Fallback Model: Hugging Face
-hf_llm = HuggingFaceEndpoint(
-    repo_id="Qwen/Qwen3.8-2.4T-A95B",
-    task="text-generation",
-    temperature=0.1,
-    max_new_tokens=512,
-   
-)
+Answer the user's question using the provided context.
 
-hf_model = ChatHuggingFace(llm=hf_llm)
+Rules:
+- Give a clear and concise answer.
+- Use only information available in the context.
+- Do not mention the context, chunks, Pinecone, retrieval, or RAG.
+- Do not copy the context word-for-word.
+- If the context does not contain enough information, say that the available information is insufficient.
+- Format the answer in a clean and easy-to-read way.
+
+Context:
+{context}
+
+Question:
+{query}
+
+Answer:
+""")
 
 
-
-# Create fallback chain
-model = ollama_llm.with_fallbacks([hf_model])
+answer_chain = ANSWER_PROMPT | model | StrOutputParser()
 
 
+# Streamlit UI
+st.title("Cognexa Insurance Assistant")
 
-# Ask question
-if st.button("Ask"):
+query = st.text_input("Ask your question:")
 
-    if input_text.strip():
+
+if st.button("Ask") or query:
+
+    if not query.strip():
+        st.warning("Please enter a question.")
+        st.stop()
+
+    # Classify query
+    with st.spinner("Understanding your question..."):
 
         try:
-            response = model.invoke(input_text)
-
-            st.write(response.content)
+            label = classify_query(query)
 
         except Exception as e:
-            st.error(f"Both models failed: {e}")
+            st.error("Unable to classify the query.")
+            st.caption(f"Details: {e}")
+            st.stop()
 
-    else:
-        st.warning("Please enter a question.")
+    # Handle RAG queries
+    if label == "rag_query":
+
+        with st.spinner("Searching relevant information..."):
+
+            try:
+                context = retrieve_documents(query)
+
+            except Exception as e:
+                st.error("Unable to retrieve information.")
+                st.caption(f"Details: {e}")
+                st.stop()
+
+        if not context.strip():
+            st.warning("I couldn't find relevant information for your question.")
+            st.stop()
+
+        # Generate final answer
+        with st.spinner("Generating answer..."):
+
+            try:
+                answer = answer_chain.invoke({
+                    "context": context,
+                    "query": query
+                })
+
+            except Exception as e:
+                st.error("Unable to generate the answer.")
+                st.caption(f"Details: {e}")
+                st.stop()
+
+        # Show only final answer
+        st.subheader("Answer")
+        st.write(answer)
+
+    elif label == "sql_query":
+
+        st.info("This is a SQL query. SQL processing will be handled here.")
+
+    elif label == "rag_sql_query":
+
+        st.info("This query requires both SQL and document retrieval.")

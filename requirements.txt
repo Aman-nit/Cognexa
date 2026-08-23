@@ -3,5 +3,19 @@ fastapi
 uvicorn[standard]
 pydantic
 streamlit
-langchain_huggingface
-lanchain-core
+python-dotenv
+langchain-core
+langchain-ollama
+langchain-community
+sentence-transformers
+langchain-huggingface
+pinecone
+langchain-pinecone
+pyyaml
+
+
+#For duck db data base requirements
+pandas
+openpyxl
+duckdb
+

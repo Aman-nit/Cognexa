@@ -1,4 +1,5 @@
 # 🛡️ ClaimShield AI
+
 ### Insurance Claim Investigation using Hybrid Semantic Search &amp; RAG
 
 > Cognizant NPN Hackathon — Use Case 8
@@ -17,13 +18,13 @@ Today this is slow, inconsistent, and locked behind SQL — a business user can'
 
 ### Challenges
 
-| # | Challenge |
-|---|---|
-| 1 | Data scattered across claims, policy, and insurer systems |
+| # | Challenge                                                                   |
+| - | --------------------------------------------------------------------------- |
+| 1 | Data scattered across claims, policy, and insurer systems                   |
 | 2 | Business rules spread across fraud, underwriting, and escalation guidelines |
-| 3 | Manual investigation is slow and effort-heavy |
-| 4 | Inconsistent conclusions on similar claims |
-| 5 | SQL skills needed, limiting business-user self-service |
+| 3 | Manual investigation is slow and effort-heavy                               |
+| 4 | Inconsistent conclusions on similar claims                                  |
+| 5 | SQL skills needed, limiting business-user self-service                      |
 
 ### Objective
 
@@ -44,6 +45,7 @@ ClaimShield AI is an investigator-facing system that turns a plain-language ques
 It works by fusing four retrieval paths — structured data, keyword search, semantic search, and codified business rules — and only lets the LLM speak once every claim it makes can be traced back to a real fact or rule ID. Nothing enters the answer that wasn't retrieved.
 
 **Design principles:**
+
 - 🔎 **Hybrid over single-mode** — SQL alone misses nuance, embeddings alone miss exact IDs. Fuse both.
 - 📜 **Rules stay human-editable** — YAML, not hardcoded into prompts, so logic stays auditable.
 - 🛡️ **Grounded, not generative** — every sentence the LLM outputs must cite a fact or rule that was actually retrieved.
@@ -108,7 +110,7 @@ It works by fusing four retrieval paths — structured data, keyword search, sem
 <tr>
 <td>🖥️ <b>Frontend</b></td>
 <td><code>Streamlit</code></td>
-<td>Fast to build an investigator-facing evidence &amp; trace view</td>
+<td>Fast to build an investigator-facing evidence & trace view</td>
 </tr>
 </table>
 
@@ -138,35 +140,6 @@ Investigator Query
 ---
 
 ## 📁 Project Structure
-
-```
-claimshield-ai/
-│
-├── data/
-│   ├── insurance_fraud_detection.xlsx     # raw dataset as given
-│   └── claimshield.duckdb                  # built from the xlsx
-│
-├── rules/
-│   └── fraud_rules.yaml                    # rules + semantics in one file for MVP
-│
-├── index/
-│   ├── faiss_index.bin                      # vector index
-│   └── bm25_index.pkl                        # keyword index
-│
-├── backend/
-│   ├── main.py                                # FastAPI app + all routes
-│   ├── retrieval.py                            # SQL + BM25 + FAISS + rules, one file
-│   ├── fusion.py                                # Reciprocal Rank Fusion
-│   ├── llm.py                                    # Phi-3 local/fallback + guardrail
-│   └── build_index.py                             # one-time setup: xlsx→duckdb, build indexes
-│
-├── frontend/
-│   └── app.py                                       # Streamlit UI
-│
-├── requirements.txt
-├── .env.example
-└── README.md
-```
 
 ---
 

@@ -1,0 +1,39 @@
+15 test questions
+🟢 1–5: SQL Query
+
+These should be classified as sql_query.
+
+How many fraudulent claims are there?
+What is the average claim amount?
+Show the 5 claims with the highest claim amount.
+Which states have the most incidents?
+What is the average annual premium by policy state?
+
+Expected:
+
+sql_query
+🔵 6–10: Semantic Search
+
+These should be classified as semantic_search.
+
+What claims require manual investigation?
+What is the high-value claim investigation rule?
+What happens when a claim is filed within 30 days of policy issuance?
+What does BR009 mean?
+Does an investigation warning prove that a claim is fraudulent?
+
+Expected:
+
+semantic_search
+
+These are particularly good for checking whether your YAML retrieval finds BR006, BR008, BR009, etc.
+
+🟠 11–15: Hybrid Search
+
+These should be classified as hybrid_search.
+
+Should claim 5 be investigated according to the business rules?
+Does claim 5 trigger the high-value claim rule?
+Does claim 5 meet any suspicious investigation criteria?
+Explain why claim 5 should be investigated using the available claim data and business rules.
+Does claim 5 violate any of the documented investigation rules?

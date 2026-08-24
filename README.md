@@ -1,300 +1,375 @@
-# ClaimShield AI
+# 🛡️ Cognexa
 
-Insurance Claim Investigation using LLM Routing, Retrieval, and DuckDB
+### Explainable insurance claims investigation through natural-language access to structured data and business rules.
+
+## Badges
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)
-![Streamlit](https://img.shields.io/badge/UI-Streamlit-FF4B4B?logo=streamlit&logoColor=white)
-![DuckDB](https://img.shields.io/badge/Database-DuckDB-FFF000?logo=duckdb&logoColor=000)
-![Status](https://img.shields.io/badge/Project-Prototype-orange)
+![Streamlit](https://img.shields.io/badge/Streamlit-UI-FF4B4B?logo=streamlit&logoColor=white)
+![DuckDB](<https://img.shields.io/badge/DuckDB-Structured%20data-FFF000?logo=duckdb&logoColor=000>)
+![LangChain](https://img.shields.io/badge/LangChain-Orchestration-1C3C3C?logo=langchain&logoColor=white)
+![Ollama](https://img.shields.io/badge/Ollama-Phi--3-black?logo=ollama&logoColor=white)
+![License](<https://img.shields.io/badge/License-Not%20specified-lightgrey>)
 
-## Project Idea
+> Cognexa is currently a local prototype. No open-source license has been added to this repository yet.
 
-Claim investigation teams often need to combine two different worlds:
+## Project Overview
 
-- Structured claim and policy records
-- Unstructured business rules, investigation notes, and guidance text
+Cognexa is an AI-powered insurance claims investigation and policy intelligence assistant. Users ask questions in natural language about claims, policies, incidents, insured customers, vehicles, fraud indicators, and investigation rules.
 
-ClaimShield AI is designed to bridge both worlds. A user asks a plain-language question, the system classifies the question type, retrieves relevant evidence, and returns a clear answer grounded in retrieved context.
+The application classifies each question as `sql_query`, `semantic_search`, or `hybrid_search`. It retrieves evidence from the local DuckDB database, the YAML business-knowledge layer, or both, then passes that evidence to a final LLM for a concise answer in Streamlit.
 
-## What the Project Does
+## Problem Statement
 
-The assistant routes incoming questions into one of these labels:
+Insurance investigation work often combines structured records with rules that live in documents or team knowledge. Investigators may need to search claim data manually, interpret scattered procedures, and explain why a case deserves attention. A fraud label, an investigation warning, and a business rule are related but are not the same thing.
 
-1. sql_query
-2. rag_query
-3. rag_sql_query
+Cognexa addresses this gap by making the data queryable in plain language while keeping the answer tied to database values and explicit business knowledge.
 
-Current implementation in this repository:
+## Solution
 
-- rag_query: implemented end-to-end in the Streamlit assistant
-- sql_query: classification present, execution path pending
-- rag_sql_query: classification present, hybrid execution path pending
+Cognexa uses a lightweight routing architecture:
 
-## End-to-End Flow
+- Local Phi-3 through Ollama classifies the question.
+- DuckDB stores and queries relational insurance data.
+- `all-MiniLM-L6-v2` embeds business-knowledge passages for semantic retrieval.
+- `semantic_insurance_business_rules.yaml` stores rules, entities, relationships, metrics, and question patterns.
+- An OpenRouter model produces the final answer from the retrieved context.
+
+## Key Features
+
+- Natural-language questions over insurance records
+- Read-only SQL generation and validation
+- Automatic SQL correction after DuckDB validation errors
+- Semantic retrieval of business rules and investigation guidance
+- Hybrid answers combining database evidence with business rules
+- Fraud analysis without treating every warning as proof of fraud
+- Policy and claims intelligence in one interface
+- Supporting SQL, tabular results, and retrieved passages in Streamlit
+
+## Architecture
 
 ```mermaid
 flowchart TD
-              A[Investigator Question] --> B[Streamlit App backend/main.py]
-              B --> C[Classifier]
-              C -->|rag_query| D[Pinecone Retrieval]
-              D --> E[Context Builder]
-              E --> F[Ollama Phi-3 Generation]
-              F --> G[Answer in UI]
-              C -->|sql_query| H[Planned SQL branch]
-              C -->|rag_sql_query| I[Planned hybrid branch]
+    A[User Query] --> B[Phi-3 Classifier<br/>Ollama]
+    B -->|sql_query| C[SQL Generator<br/>backend/sql_query.py]
+    B -->|semantic_search| D[Semantic Search<br/>backend/semantic_search.py]
+    B -->|hybrid_search| C
+    B -->|hybrid_search| D
+    C --> E[(insurance.duckdb)]
+    D --> F[YAML Business Knowledge<br/>semantic_insurance_business_rules.yaml]
+    E --> G[Final LLM<br/>OpenRouter]
+    F --> G
+    G --> H[Evidence-based Answer<br/>Streamlit UI]
 ```
 
-## System Components
+## Query Processing Flow
 
-| Layer | Module | Purpose |
+### SQL Query
+
+1. `classifier.py` routes the question to `sql_query`.
+2. `sql_query.py` asks Phi-3 to produce one read-only `SELECT` statement using the known schema and join paths.
+3. The statement is validated, explained, and executed against `insurance.duckdb` in read-only mode.
+4. Query results are passed to the final LLM and shown in the UI.
+
+### Semantic Search
+
+1. `classifier.py` routes the question to `semantic_search`.
+2. `semantic_search.py` loads the YAML knowledge base and turns its rules, patterns, categories, and objectives into passages.
+3. `all-MiniLM-L6-v2` embeds the passages and the user question.
+4. Cosine similarity selects relevant passages above the configured threshold.
+5. The final LLM answers using the retrieved business context.
+
+Embeddings allow a question to match the meaning of a rule even when it does not use the rule's exact wording.
+
+### Hybrid Search
+
+Hybrid questions need both a record-level fact and a rule-level interpretation, such as whether a particular claim meets an investigation condition. Cognexa runs the SQL and semantic paths, then gives the final LLM both contexts so it can distinguish what the database says from what the business rules recommend.
+
+## AI Pipeline
+
+| Component            | Role                                                                    |
+| -------------------- | ----------------------------------------------------------------------- |
+| Phi-3 via Ollama     | Classifies questions and generates DuckDB SQL locally                   |
+| `all-MiniLM-L6-v2` | Creates embeddings for semantic business-rule retrieval                 |
+| DuckDB               | Stores and queries insured, policy, vehicle, incident, and claim tables |
+| YAML knowledge layer | Stores semantic business knowledge and investigation guidance           |
+| OpenRouter model     | Produces the final answer from the supplied evidence                    |
+
+## Technology Stack
+
+| Layer                  | Technology             | Purpose                                           |
+| ---------------------- | ---------------------- | ------------------------------------------------- |
+| Interface              | Streamlit              | Local interactive application                     |
+| Routing and generation | LangChain Core, Ollama | Prompt chains, classification, and SQL generation |
+| Structured data        | DuckDB                 | Read-only claim and policy queries                |
+| Semantic retrieval     | Sentence Transformers  | Embedding and cosine-similarity search            |
+| Knowledge format       | YAML / PyYAML          | Business rules and semantic metadata              |
+| Data preparation       | pandas, openpyxl       | Optional Excel-to-DuckDB rebuild workflow         |
+
+## Database Schema and Connection
+
+Cognexa uses DuckDB as its local structured-data layer. The active application connects to `insurance.duckdb` from `backend/sql_query.py` and opens it in read-only mode before validating and executing generated SQL.
+
+### Tables
+
+<small>The following attributes were read from the active `insurance.duckdb` database. Types are included for reference.</small>
+
+| Object | Attributes | Key relationships |
 | --- | --- | --- |
-| UI | backend/main.py | Streamlit assistant interface and orchestration |
-| Query Routing | backend/classifier.py | Classifies queries into sql_query, rag_query, rag_sql_query |
-| Retrieval | backend/retrieval.py | Searches Pinecone index for context chunks |
-| Ingestion | backend/ingestion.py | Splits data text files and uploads chunks to Pinecone |
-| Structured Data | load_cleaned_data_to_duckdb.py | Builds DuckDB tables and analysis view from Excel |
+| `insured` | <small>insured_id (BIGINT), age (BIGINT), gender (VARCHAR), occupation (VARCHAR), insured_zip (VARCHAR), hobbies (VARCHAR), relationship (VARCHAR), education_level (VARCHAR), capital_gains (DOUBLE), capital_loss (DOUBLE), monthly_income (DOUBLE)</small> | Primary key: `insured_id`<br/>Referenced by `policy.insured_id` |
+| `policy` | <small>policy_number (BIGINT), insured_id (BIGINT), months_as_customer (BIGINT), policy_bind_date (DATE), policy_state (VARCHAR), policy_csl (VARCHAR), policy_deductible (DOUBLE), policy_annual_premium (DOUBLE), umbrella_limit (DOUBLE), auto_year (BIGINT)</small> | Primary key: `policy_number`<br/>Foreign key: `insured_id`<br/>Referenced by `vehicle.policy_number` and `incident.policy_number` |
+| `vehicle` | <small>vehicle_id (BIGINT), policy_number (BIGINT), auto_make (VARCHAR), auto_model (VARCHAR), auto_year (BIGINT)</small> | Primary key: `vehicle_id`<br/>Foreign key: `policy_number` |
+| `incident` | <small>incident_id (BIGINT), policy_number (BIGINT), incident_date (DATE), incident_type (VARCHAR), collision_type (VARCHAR), incident_severity (VARCHAR), authorities_contacted (VARCHAR), incident_state (VARCHAR), incident_city (VARCHAR), incident_location (VARCHAR), incident_hour_of_day (BIGINT), vehicles_involved (BIGINT), property_damage (VARCHAR), bodily_injuries (BIGINT), witnesses (BIGINT), police_report_available (VARCHAR)</small> | Primary key: `incident_id`<br/>Foreign key: `policy_number`<br/>Referenced by `claim.incident_id` |
+| `claim` | <small>claim_id (BIGINT), incident_id (BIGINT), total_claim_amount (DOUBLE), injury_claim (DOUBLE), property_claim (DOUBLE), vehicle_claim (DOUBLE), fraud_reported (VARCHAR)</small> | Primary key: `claim_id`<br/>Foreign key: `incident_id` |
+| `insurance_claim_analysis` (view) | <small>insured_id (BIGINT), age (BIGINT), gender (VARCHAR), policy_number (BIGINT), policy_state (VARCHAR), incident_id (BIGINT), incident_type (VARCHAR), incident_severity (VARCHAR), claim_id (BIGINT), total_claim_amount (DOUBLE), injury_claim (DOUBLE), property_claim (DOUBLE), vehicle_claim (DOUBLE), fraud_reported (VARCHAR)</small> | Read-only joined view across `insured`, `policy`, `incident`, and `claim` |
+
+### Relationship Diagram
+
+```mermaid
+erDiagram
+    INSURED ||--o{ POLICY : owns
+    POLICY ||--o{ VEHICLE : covers
+    POLICY ||--o{ INCIDENT : records
+    INCIDENT ||--o{ CLAIM : produces
+
+    INSURED {
+        BIGINT insured_id PK
+    }
+    POLICY {
+        BIGINT policy_number PK
+        BIGINT insured_id FK
+    }
+    VEHICLE {
+        BIGINT vehicle_id PK
+        BIGINT policy_number FK
+    }
+    INCIDENT {
+        BIGINT incident_id PK
+        BIGINT policy_number FK
+    }
+    CLAIM {
+        BIGINT claim_id PK
+        BIGINT incident_id FK
+    }
+```
+
+The valid join paths used by SQL generation are:
+
+```text
+claim -> incident -> policy -> insured
+claim -> incident -> policy -> vehicle
+```
+
+Claims must be joined to vehicles through `incident` and `policy`; Cognexa does not join `claim` directly to `vehicle`.
+
+### Application Connection
+
+The application resolves the database path relative to the project root, so it can be started from the repository root with:
+
+```python
+DATABASE_PATH = PROJECT_ROOT / "insurance.duckdb"
+
+with duckdb.connect(
+    str(DATABASE_PATH),
+    read_only=True,
+) as connection:
+    results = connection.execute(sql).fetchdf()
+```
+
+The checked-in `insurance.duckdb` is the database used by the active Streamlit application. `load_cleaned_data_to_duckdb.py` creates a separate `insurance_project.duckdb` from an Excel workbook; that output is used by the optional data-preparation workflow and is not the database currently queried by `backend/main.py`.
 
 ## Repository Structure
 
 ```text
 Cognexa/
-       backend/
-              classifier.py
-              ingestion.py
-              main.py
-              retrieval.py
-       data/
-              entities.txt
-              relationships.txt
-              rules.txt
-              Semantic_Insurance_Business_YAML.yaml
-       frontend/
-              app.py
-       notebook/
-              01_data_exploration.ipynb
-              cognexa.ipynb
-       insurance.duckdb
-       insurance_duckdb_schema.sql
-       load_cleaned_data_to_duckdb.py
-       query_database.py
-       query_duckdb.py
-       test_duckdb.py
-       requirements.txt
+├── backend/
+│   ├── classifier.py
+│   ├── main.py
+│   ├── semantic_search.py
+│   ├── sql_query.py
+│   └── test.py
+│
+├── data/
+│   ├── cleaned_data.xlsx
+│   └── semantic_insurance_business_rules.yaml
+│
+├── notebook/
+│   ├── 01_data_exploration.ipynb
+│   └── cognexa.ipynb
+│
+├── insurance.duckdb
+├── insurance_duckdb_schema.sql
+├── load_cleaned_data_to_duckdb.py
+├── query_database.py
+├── query_duckdb.py
+├── test_duckdb.py
+├── requirements.txt
+├── .env
+├── venv/
+└── README.md
 ```
 
-## Database Structure
+| File                                            | Purpose                                                        |
+| ----------------------------------------------- | -------------------------------------------------------------- |
+| `backend/main.py`                             | Streamlit application and route orchestration                  |
+| `backend/classifier.py`                       | Classifies questions into the three supported paths            |
+| `backend/sql_query.py`                        | Generates, validates, repairs, and executes read-only SQL      |
+| `backend/semantic_search.py`                  | Loads, embeds, and searches YAML business knowledge            |
+| `data/semantic_insurance_business_rules.yaml` | Business rules and semantic knowledge source                   |
+| `insurance.duckdb`                            | Database used by the active application                        |
+| `load_cleaned_data_to_duckdb.py`              | Rebuilds a DuckDB database from a five-sheet Excel workbook    |
+| `query_database.py`                           | Simple query against the checked-in database and analysis view |
 
-Primary relational entities:
+The notebooks and `frontend/app.py` are supporting or historical prototypes, not dependencies of the active application. `query_duckdb.py` targets the alternate `insurance_project.duckdb` output created by the loader.
 
-- insured
-- policy
-- vehicle
-- incident
-- claim
+## Installation
 
-Entity relationship overview:
+Prerequisites:
 
-```mermaid
-erDiagram
-              INSURED ||--o{ POLICY : owns
-              POLICY ||--o{ VEHICLE : covers
-              POLICY ||--o{ INCIDENT : linked_to
-              INCIDENT ||--|| CLAIM : produces
-
-              INSURED {
-                            bigint insured_id PK
-                            bigint age
-                            varchar gender
-                            varchar occupation
-              }
-
-              POLICY {
-                            bigint policy_number PK
-                            bigint insured_id FK
-                            date policy_bind_date
-                            double policy_annual_premium
-              }
-
-              VEHICLE {
-                            bigint vehicle_id PK
-                            bigint policy_number FK
-                            varchar auto_make
-                            varchar auto_model
-              }
-
-              INCIDENT {
-                            bigint incident_id PK
-                            bigint policy_number FK
-                            date incident_date
-                            varchar incident_type
-                            varchar incident_severity
-              }
-
-              CLAIM {
-                            bigint claim_id PK
-                            bigint incident_id FK
-                            double total_claim_amount
-                            varchar fraud_reported
-              }
-```
-
-## Prerequisites
-
-Install before setup:
-
-1. Python 3.10+
-2. Git
-3. Ollama
-4. Pinecone account with an index created
-
-## Run on Your Machine (Windows PowerShell)
-
-### 1. Clone and move into project
+- Python 3.10 or newer
+- Git
+- Ollama
+- An OpenRouter API key for final answer generation
 
 ```powershell
-git clone <your-repo-url>
+git clone <repository-url>
 cd Cognexa
-```
-
-### 2. Create and activate virtual environment
-
-```powershell
 python -m venv venv
 .\venv\Scripts\Activate.ps1
-```
-
-### 3. Install dependencies
-
-```powershell
-pip install --upgrade pip
+python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-### 4. Create .env in project root
-
-```env
-PINECONE_API_KEY=YOUR_PINECONE_API_KEY
-PINECONE_INDEX_NAME=cognexa-rag
-
-# Optional telemetry
-LANGSMITH_TRACING=false
-LANGSMITH_API_KEY=
-LANGSMITH_PROJECT=Cognexa
-```
-
-Important: never commit real keys or tokens.
-
-### 5. Start Ollama and pull model
+Install and prepare Phi-3 with Ollama:
 
 ```powershell
 ollama pull phi3
 ollama serve
 ```
 
-If Ollama is already running as a service, you only need ollama pull phi3 once.
+The semantic model `all-MiniLM-L6-v2` is downloaded by `sentence-transformers` when `backend/semantic_search.py` first loads it. The checked-in `insurance.duckdb` and YAML knowledge base are already used by the active app.
 
-### 6. Build Pinecone document index
+## Environment Variables
 
-```powershell
-python backend/ingestion.py
+Create a local `.env` file in the project root. Never commit credentials.
+
+```env
+OPENROUTER_API_KEY=your_openrouter_api_key
 ```
 
-### 7. Run the main assistant
+The application also uses Ollama at `http://localhost:11434`, which is the default local endpoint configured in `backend/sql_query.py`.
+
+## Running Locally
+
+Start the active application from the repository root:
 
 ```powershell
 streamlit run backend/main.py
 ```
 
-Open the URL printed by Streamlit, usually http://localhost:8501.
+Open the local URL printed by Streamlit, normally `http://localhost:8501`.
 
-## DuckDB Pipeline (Structured Data)
-
-Use this when you need the relational database locally.
-
-### Input required
-
-- cleaned_insurance_dataset.xlsx in project root
-- Excel sheets named exactly: insured, policy, vehicle, incident, claim
-
-### Build DB
+To rebuild the optional DuckDB database from Excel, place `cleaned_insurance_dataset.xlsx` in the project root. It must contain sheets named `insured`, `policy`, `vehicle`, `incident`, and `claim`.
 
 ```powershell
 python load_cleaned_data_to_duckdb.py
 ```
 
-This creates insurance_project.duckdb and a view named insurance_claim_analysis.
+The loader writes `insurance_project.duckdb`; the active application currently reads the checked-in `insurance.duckdb`.
 
-### Quick validation
+## Example Queries
+
+### SQL
+
+- Which claims have a total amount above 50,000?
+- How many fraudulent claims are there?
+- What is the average annual premium by state?
+- Which vehicle has the highest model year?
+
+### Semantic
+
+- What claims require manual investigation?
+- What is the high-value claim rule?
+- What does BR006 mean?
+- What are the escalation rules for severe incidents?
+
+### Hybrid
+
+- Should claim 5 be investigated according to the business rules?
+- Does claim 5 trigger the high-value claim rule?
+- Does claim 5 violate any investigation rules?
+
+## Testing and Debugging
+
+The repository currently provides lightweight script checks rather than a complete automated test suite.
 
 ```powershell
-python query_duckdb.py
+python backend/classifier.py
+python backend/semantic_search.py
+python backend/sql_query.py
+python query_database.py
 python test_duckdb.py
 ```
 
-## Alternate UI (Prototype)
+Expected routing examples:
 
-You can also run the lightweight UI scaffold:
+| Question type                          | Expected label      |
+| -------------------------------------- | ------------------- |
+| “Show claims above 50,000”           | `sql_query`       |
+| “What is the high-value claim rule?” | `semantic_search` |
+| “Should claim 5 be investigated?”    | `hybrid_search`   |
 
-```powershell
-streamlit run frontend/app.py
-```
+For a full application check, ensure Ollama is running with Phi-3, the semantic model can be downloaded, and `OPENROUTER_API_KEY` is available before starting Streamlit.
 
-This is currently a placeholder and not fully connected to a backend API endpoint.
+## Explainability and Safety
 
-## Example Questions
+- SQL execution uses DuckDB read-only mode.
+- Generated SQL is restricted to a single `SELECT` statement and checked for prohibited operations.
+- Database values are passed to the final LLM without permission to rewrite them.
+- Retrieved business rules are treated as guidance, not as database facts.
+- `fraud_reported = 'Y'` is a source-dataset fraud label; an investigation warning alone is not proof of fraud.
+- The final prompt instructs the model to say when the supplied information is insufficient.
 
-Try prompts like:
+## Limitations
 
-- What documents are required to file a motor insurance claim?
-- Explain common fraud indicators in claim investigations.
-- What are escalation rules for high-value claims?
+- Local Phi-3 classification and SQL generation depend on Ollama availability and local hardware.
+- The first semantic-search run may need to download `all-MiniLM-L6-v2`.
+- Classifier mistakes can send a question down the wrong path.
+- Semantic retrieval quality depends on the YAML content, passage construction, and similarity threshold.
+- The project has lightweight script checks but does not yet have comprehensive automated tests.
+- The optional Excel loader and the active database use different database filenames.
+- `frontend/app.py` is a placeholder UI and is not connected to the active orchestrator.
 
-## Troubleshooting
+## Future Scope
 
-### Pinecone errors
+- Add routing and retrieval evaluation datasets.
+- Use structured classifier output with confidence and fallback handling.
+- Add reranking and retrieval-quality evaluation.
+- Expand automated tests for SQL safety, routing, retrieval, and hybrid answers.
+- Add observability for latency, route selection, and evidence quality.
+- Add deployment configuration and role-based access controls.
+- Consider a vector database if the business-knowledge collection grows beyond local retrieval.
 
-- Verify PINECONE_API_KEY
-- Verify PINECONE_INDEX_NAME exists
-- Re-run ingestion after fixing .env
+## Team Contributions
 
-### Ollama connection issues
+Team member names and responsibilities were not included in the repository. Add them here before the hackathon submission:
 
-- Confirm ollama serve is running
-- Confirm phi3 model is installed
-- Default local endpoint used by code is http://localhost:11434
+| Team Member | Role        | Contribution |
+| ----------- | ----------- | ------------ |
+| To be added | To be added | To be added  |
 
-### No answer or empty retrieval
+## Hackathon Highlights
 
-- Ensure ingestion completed successfully
-- Ensure data text files exist in data folder
+Cognexa demonstrates a practical insurance use case with a clear hybrid architecture. It gives investigators natural-language access to structured claim data while preserving the context of business rules, and it makes the distinction between source facts and investigation guidance visible in the answer flow.
 
-### DuckDB build fails
+## Demo
 
-- Check Excel file exists in root
-- Check sheet names match expected values exactly
+No screenshot assets are currently included in the repository. Add the following materials when they are available:
 
-## Team Workflow Recommendation
+- Application screenshot
+- Architecture screenshot
+- Sample investigation report
 
-For group development:
+## License
 
-1. Keep this README as the single source of setup truth.
-2. Use feature branches for each module change.
-3. Do not commit secrets in .env.
-4. Update README whenever run steps change.
-
-## Current Limitations
-
-- sql_query execution branch is not implemented yet in the Streamlit orchestrator.
-- rag_sql_query hybrid execution branch is not implemented yet.
-- frontend/app.py is a starter interface.
-
-## Roadmap
-
-1. Implement SQL execution path over DuckDB.
-2. Implement hybrid rag_sql_query path.
-3. Add FastAPI service layer and wire frontend/app.py.
-4. Add test coverage for routing, retrieval, and DB pipeline.
-
-## Documentation Status
-
-This repository now uses README.md as the primary project documentation file.
+No `LICENSE` file is present in this repository. Add a license before distributing Cognexa publicly.

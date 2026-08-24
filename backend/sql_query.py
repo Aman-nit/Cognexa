@@ -1,334 +1,201 @@
-"""Generate and execute read-only DuckDB queries from natural-language questions."""
+"""Generate and execute read-only DuckDB SQL queries."""
 
+import os
 import re
 from pathlib import Path
 
 import duckdb
+from dotenv import load_dotenv
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
+from langchain_openrouter import ChatOpenRouter
 from langchain_ollama import ChatOllama
 
 
-# Database path.
+
+# Load environment variables.
+load_dotenv()
+
+
+# Find the database file.
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DATABASE_PATH = PROJECT_ROOT / "insurance.duckdb"
 
 
-# Initialize the language model used for SQL generation and correction.
+# Create the LLM.
+# model = ChatOpenRouter(
+#     model="z-ai/glm-5.2:free",
+#     openrouter_api_key=os.getenv("OPENROUTER_API_KEY"),
+#     temperature=0,
+# )
+
+
 model = ChatOllama(
     model="phi3",
     base_url="http://localhost:11434",
-    max_tokens=1000,
+    max_tokens=512,
     timeout=120
 )
 
 
-# Schema and relationship context supplied to the language model.
+
+# Define the database schema.
 SCHEMA = """
-TABLE insured:
-insured_id
-age
-gender
-occupation
-hobbies
-relationship
-education_level
-capital_gains
-capital_loss
-monthly_income
+TABLE insured
+- insured_id
+- age
+- gender
+- occupation
+- insured_zip
+- hobbies
+- relationship
+- education_level
+- capital_gains
+- capital_loss
+- monthly_income
 
-TABLE policy:
-policy_number
-insured_id
-policy_bind_date
-policy_state
-policy_csl
-policy_deductable
-policy_annual_premium
-umbrella_limit
-auto_year
+TABLE policy
+- policy_number
+- insured_id
+- months_as_customer
+- policy_bind_date
+- policy_state
+- policy_csl
+- policy_deductible
+- policy_annual_premium
+- umbrella_limit
+- auto_year
 
-TABLE vehicle:
-vehicle_id
-policy_number
-auto_make
-auto_model
-auto_year
+TABLE vehicle
+- vehicle_id
+- policy_number
+- auto_make
+- auto_model
+- auto_year
 
-TABLE incident:
-incident_id
-policy_number
-incident_date
-incident_type
-collision_type
-incident_severity
-authorities_contacted
-incident_state
-incident_city
-incident_location
-incident_hour_of_the_day
-number_of_vehicles_involved
-property_damage
-bodily_injuries
-witnesses
-police_report_available
+TABLE incident
+- incident_id
+- policy_number
+- incident_date
+- incident_type
+- collision_type
+- incident_severity
+- authorities_contacted
+- incident_state
+- incident_city
+- incident_location
+- incident_hour_of_day
+- vehicles_involved
+- property_damage
+- bodily_injuries
+- witnesses
+- police_report_available
 
-TABLE claim:
-claim_id
-incident_id
-total_claim_amount
-injury_claim
-property_claim
-vehicle_claim
-fraud_reported
+TABLE claim
+- claim_id
+- incident_id
+- total_claim_amount
+- injury_claim
+- property_claim
+- vehicle_claim
+- fraud_reported
 
-VALID RELATIONSHIPS:
 
-claim.incident_id = incident.incident_id
+RELATIONSHIPS
 
-incident.policy_number = policy.policy_number
-
-policy.insured_id = insured.insured_id
-
+insured.insured_id = policy.insured_id
 policy.policy_number = vehicle.policy_number
+policy.policy_number = incident.policy_number
+incident.incident_id = claim.incident_id
+
+
+VALID JOIN PATHS
+
+claim -> incident -> policy -> insured
+claim -> incident -> policy -> vehicle
+
+Never join claim directly to vehicle.
 """
 
 
-# Prompt used to convert a user question into one SELECT statement.
-SQL_PROMPT = ChatPromptTemplate.from_template("""
+# Create the SQL generation prompt.
+SQL_PROMPT = ChatPromptTemplate.from_template(
+    """
 You are a DuckDB SQL generator.
 
-Convert the user's question into ONE valid SELECT query.
+Convert the user's question into exactly ONE read-only SELECT query.
 
 SCHEMA:
-
 {schema}
 
-
 ALIASES:
-
-claim AS c
-incident AS i
-policy AS p
 insured AS ins
+policy AS p
 vehicle AS v
+incident AS i
+claim AS c
 
+RULES:
 
-VALID JOINS:
+1. Return SQL only.
+2. Return exactly one SELECT statement.
+3. Never use INSERT, UPDATE, DELETE, DROP, ALTER, CREATE, TRUNCATE,
+   COPY, EXPORT, ATTACH, DETACH, INSTALL, LOAD, CALL or PRAGMA.
+4. Use only the tables and columns in the schema.
+5. Never invent tables or columns.
+6. Always use the correct aliases.
+7. Always qualify columns with aliases.
+8. Use explicit JOIN ... ON conditions.
+9. Never join claim directly to vehicle.
+10. Use only required joins.
+11. Normal record queries must use LIMIT 100.
+12. Aggregate queries do not need LIMIT.
+13. "how many" means COUNT(*).
+14. "total" means SUM().
+15. "average" means AVG().
+16. "highest" means MAX().
+17. "lowest" means MIN().
+18. "top N" means ORDER BY value DESC LIMIT N.
+19. "bottom N" means ORDER BY value ASC LIMIT N.
+20. Use WHERE for normal filters.
+21. Use HAVING only for aggregate filters.
+22. Do not use aggregate functions inside WHERE.
+23. For claims above an amount use c.total_claim_amount directly.
+24. For claims below an amount use c.total_claim_amount directly.
+25. GROUP BY must contain every selected non-aggregate column.
+26. Do not use aggregate functions when individual records are requested.
+27. Do not return comments or explanations.
 
-c.incident_id = i.incident_id
+COMMON MEANINGS:
 
-i.policy_number = p.policy_number
+"fraudulent claims" -> c.fraud_reported = 'Y'
 
-p.insured_id = ins.insured_id
+"fraud was reported" -> c.fraud_reported = 'Y'
 
-p.policy_number = v.policy_number
+"claims above 50000" -> c.total_claim_amount > 50000
 
+"claims below 20000" -> c.total_claim_amount < 20000
 
-IMPORTANT:
+"highest claim" -> ORDER BY c.total_claim_amount DESC LIMIT 1
 
-Never join claim directly to vehicle.
+"lowest claim" -> ORDER BY c.total_claim_amount ASC LIMIT 1
 
-Correct path:
+"highest capital gain" -> ORDER BY ins.capital_gains DESC
 
-claim -> incident -> policy -> vehicle
+"average premium" -> AVG(p.policy_annual_premium)
 
+"claims by severity" -> GROUP BY i.incident_severity
 
-STRICT RULES:
 
-1. Return ONLY SQL.
-
-2. The first word must be SELECT.
-
-3. Generate exactly ONE SELECT statement.
-
-4. Never generate INSERT.
-
-5. Never generate UPDATE.
-
-6. Never generate DELETE.
-
-7. Never generate DROP.
-
-8. Never generate ALTER.
-
-9. Never generate CREATE.
-
-10. Never generate TRUNCATE.
-
-11. Never generate COPY.
-
-12. Never generate EXPORT.
-
-13. Never generate ATTACH.
-
-14. Never generate DETACH.
-
-15. Never generate INSTALL.
-
-16. Never generate LOAD.
-
-17. Never generate CALL.
-
-18. Never generate PRAGMA.
-
-19. Use ONLY tables from the schema.
-
-20. Use ONLY columns from the schema.
-
-21. Never invent columns.
-
-22. Never invent tables.
-
-23. Use only aliases c, i, p, ins and v.
-
-24. Always qualify columns with aliases.
-
-25. Only use JOINs required by the question.
-
-26. Always use explicit JOIN conditions.
-
-27. Do not create unnecessary CTEs.
-
-28. Do not create unnecessary subqueries.
-
-29. Do not use WITH unless absolutely necessary.
-
-30. Normal record queries MUST use LIMIT 100.
-
-31. COUNT, SUM, AVG, MIN and MAX queries do not require LIMIT.
-
-32. If using GROUP BY, every selected non-aggregate column MUST appear in GROUP BY.
-
-33. Never select claim_id in a GROUP BY query unless claim-level results are requested.
-
-34. Never select total_claim_amount directly when calculating a count by category.
-
-35. Never select unrelated columns in an aggregate query.
-
-36. Never use aggregate functions in WHERE.
-
-37. Use WHERE for filtering individual records.
-
-38. Use HAVING only for filtering aggregated GROUP BY results.
-
-39. Do NOT use SUM when the user asks to show individual claims above an amount.
-
-40. Do NOT use AVG when the user asks to show individual claims above an amount.
-
-41. Do NOT use COUNT when the user asks to show individual claims.
-
-42. Do NOT use MIN or MAX when the user asks to show individual claims.
-
-43. Do not generate comments.
-
-44. Do not explain the query.
-
-45. Do not use Markdown.
-
-46. Do not use ```sql.
-
-47. Do not apologize.
-
-48. Do not say "Here is the query".
-
-49. Never generate multiple SQL statements.
-
-
-FILTERING RULES:
-
-If the user says:
-
-"claims above 50000"
-
-use:
-
-WHERE c.total_claim_amount > 50000
-
-
-If the user says:
-
-"claims below 20000"
-
-use:
-
-WHERE c.total_claim_amount < 20000
-
-
-If the user says:
-
-"claims above 50000"
-
-DO NOT use:
-
-SUM(c.total_claim_amount)
-
-COUNT(*)
-
-AVG(c.total_claim_amount)
-
-MAX(c.total_claim_amount)
-
-
-If the user asks for individual records, use the actual column
-directly in WHERE.
-
-
-AGGREGATE RULES:
-
-"how many" means COUNT(*).
-
-"total" means SUM().
-
-"average" means AVG().
-
-"highest" means MAX().
-
-"lowest" means MIN().
-
-
-EXAMPLE 1:
+EXAMPLES:
 
 Question:
+Show all claims where fraud was reported
 
-Show claims above 50000
-
-Correct SQL:
-
+SQL:
 SELECT
     c.claim_id,
-    c.total_claim_amount
-FROM claim AS c
-WHERE c.total_claim_amount > 50000
-LIMIT 100
-
-
-EXAMPLE 2:
-
-Question:
-
-Show claims below 20000
-
-Correct SQL:
-
-SELECT
-    c.claim_id,
-    c.total_claim_amount
-FROM claim AS c
-WHERE c.total_claim_amount < 20000
-LIMIT 100
-
-
-EXAMPLE 3:
-
-Question:
-
-Show claims where fraud was reported as Y
-
-Correct SQL:
-
-SELECT
-    c.claim_id,
+    c.incident_id,
     c.total_claim_amount,
     c.fraud_reported
 FROM claim AS c
@@ -336,198 +203,280 @@ WHERE c.fraud_reported = 'Y'
 LIMIT 100
 
 
-EXAMPLE 4:
-
 Question:
+Find the total claim amount per incident
 
-Show claims with major incident severity
-
-Correct SQL:
-
+SQL:
 SELECT
-    c.claim_id,
-    c.total_claim_amount,
-    i.incident_severity
+    c.incident_id,
+    SUM(c.total_claim_amount) AS total_claim
 FROM claim AS c
-JOIN incident AS i
-    ON c.incident_id = i.incident_id
-WHERE i.incident_severity = 'Major Damage'
-LIMIT 100
+GROUP BY c.incident_id
 
-
-EXAMPLE 5:
 
 Question:
+List vehicles involved in fraudulent claims
 
-Show claims above 10000 with policy state and incident severity
-
-Correct SQL:
-
+SQL:
 SELECT
-    c.claim_id,
-    c.total_claim_amount,
-    p.policy_state,
-    i.incident_severity
+    v.vehicle_id,
+    v.auto_make,
+    v.auto_model,
+    c.claim_id
 FROM claim AS c
 JOIN incident AS i
     ON c.incident_id = i.incident_id
 JOIN policy AS p
     ON i.policy_number = p.policy_number
-WHERE c.total_claim_amount > 10000
+JOIN vehicle AS v
+    ON p.policy_number = v.policy_number
+WHERE c.fraud_reported = 'Y'
 LIMIT 100
 
 
-EXAMPLE 6:
+Question:
+Find average annual premium by state
+
+SQL:
+SELECT
+    p.policy_state,
+    AVG(p.policy_annual_premium) AS avg_premium
+FROM policy AS p
+GROUP BY p.policy_state
+ORDER BY avg_premium DESC
+
 
 Question:
+Show insured individuals with the highest capital gain
 
-How many claims are there?
-
-Correct SQL:
-
+SQL:
 SELECT
-    COUNT(*) AS claim_count
+    ins.insured_id,
+    ins.age,
+    ins.occupation,
+    ins.capital_gains
+FROM insured AS ins
+ORDER BY ins.capital_gains DESC
+LIMIT 5
+
+
+Question:
+Count incidents by severity
+
+SQL:
+SELECT
+    i.incident_severity,
+    COUNT(*) AS total_incidents
+FROM incident AS i
+GROUP BY i.incident_severity
+ORDER BY total_incidents DESC
+
+
+Question:
+Detect suspicious claims above 50000
+
+SQL:
+SELECT
+    c.claim_id,
+    c.incident_id,
+    c.total_claim_amount
+FROM claim AS c
+WHERE c.total_claim_amount > 50000
+LIMIT 100
+
+
+Question:
+Join insured with their policies
+
+SQL:
+SELECT
+    ins.insured_id,
+    ins.age,
+    ins.gender,
+    p.policy_number,
+    p.policy_annual_premium
+FROM insured AS ins
+JOIN policy AS p
+    ON ins.insured_id = p.insured_id
+LIMIT 100
+
+
+Question:
+Find the maximum claim amount
+
+SQL:
+SELECT
+    MAX(c.total_claim_amount) AS max_claim
 FROM claim AS c
 
 
-EXAMPLE 7:
-
 Question:
+Find the minimum claim amount
 
-What is the total claim amount?
-
-Correct SQL:
-
+SQL:
 SELECT
-    SUM(c.total_claim_amount) AS total_claim_amount
+    MIN(c.total_claim_amount) AS min_claim
 FROM claim AS c
 
 
-EXAMPLE 8:
+Question:
+Show the claim with the highest amount
+
+SQL:
+SELECT
+    c.claim_id,
+    c.incident_id,
+    c.total_claim_amount
+FROM claim AS c
+ORDER BY c.total_claim_amount DESC
+LIMIT 1
+
 
 Question:
+Show the claim with the lowest amount
 
-What is the average claim amount?
-
-Correct SQL:
-
+SQL:
 SELECT
+    c.claim_id,
+    c.incident_id,
+    c.total_claim_amount
+FROM claim AS c
+ORDER BY c.total_claim_amount ASC
+LIMIT 1
+
+
+Question:
+Maximum annual premium by state
+
+SQL:
+SELECT
+    p.policy_state,
+    MAX(p.policy_annual_premium) AS highest_premium
+FROM policy AS p
+GROUP BY p.policy_state
+
+
+Question:
+Minimum annual premium by state
+
+SQL:
+SELECT
+    p.policy_state,
+    MIN(p.policy_annual_premium) AS lowest_premium
+FROM policy AS p
+GROUP BY p.policy_state
+
+
+Question:
+Find the newest and oldest vehicles
+
+SQL:
+SELECT
+    MAX(v.auto_year) AS newest_vehicle,
+    MIN(v.auto_year) AS oldest_vehicle
+FROM vehicle AS v
+
+
+Question:
+Highest and lowest capital gain among insured
+
+SQL:
+SELECT
+    MAX(ins.capital_gains) AS max_gain,
+    MIN(ins.capital_gains) AS min_gain
+FROM insured AS ins
+
+
+Question:
+How many fraudulent claims are there?
+
+SQL:
+SELECT
+    COUNT(*) AS fraud_claim_count
+FROM claim AS c
+WHERE c.fraud_reported = 'Y'
+
+
+Question:
+What is the average claim amount by incident severity?
+
+SQL:
+SELECT
+    i.incident_severity,
     AVG(c.total_claim_amount) AS average_claim_amount
 FROM claim AS c
-
-
-EXAMPLE 9:
-
-Question:
-
-How many claims are there in each policy state?
-
-Correct SQL:
-
-SELECT
-    p.policy_state,
-    COUNT(*) AS claim_count
-FROM claim AS c
 JOIN incident AS i
     ON c.incident_id = i.incident_id
-JOIN policy AS p
-    ON i.policy_number = p.policy_number
-GROUP BY p.policy_state
-ORDER BY claim_count DESC
-
-
-EXAMPLE 10:
-
-Question:
-
-What is the total claim amount for each policy state?
-
-Correct SQL:
-
-SELECT
-    p.policy_state,
-    SUM(c.total_claim_amount) AS total_claim_amount
-FROM claim AS c
-JOIN incident AS i
-    ON c.incident_id = i.incident_id
-JOIN policy AS p
-    ON i.policy_number = p.policy_number
-GROUP BY p.policy_state
-ORDER BY total_claim_amount DESC
-
-
-EXAMPLE 11:
-
-Question:
-
-Show claims with vehicle make and model
-
-Correct SQL:
-
-SELECT
-    c.claim_id,
-    c.total_claim_amount,
-    v.auto_make,
-    v.auto_model
-FROM claim AS c
-JOIN incident AS i
-    ON c.incident_id = i.incident_id
-JOIN vehicle AS v
-    ON i.policy_number = v.policy_number
-LIMIT 100
+GROUP BY i.incident_severity
+ORDER BY average_claim_amount DESC
 
 
 USER QUESTION:
-
 {question}
 
 RETURN ONLY THE SQL QUERY.
-""")
+"""
+)
 
 
+# Create the SQL chain.
 sql_chain = SQL_PROMPT | model | StrOutputParser()
 
 
-# Remove response formatting and isolate the generated SQL statement.
-def extract_sql(raw_sql):
+# Extract the SQL from the model response.
+def extract_sql(raw_sql: str) -> str:
+
     sql = raw_sql.strip()
 
     sql = re.sub(
         r"```sql",
         "",
         sql,
-        flags=re.IGNORECASE
+        flags=re.IGNORECASE,
     )
 
-    sql = sql.replace("```", "")
+    sql = sql.replace("```", "").strip()
 
     match = re.search(
         r"\bSELECT\b",
         sql,
-        flags=re.IGNORECASE
+        flags=re.IGNORECASE,
     )
 
     if not match:
         raise ValueError(
-            "The model did not generate a SELECT query."
+            "Model did not generate a SELECT query."
         )
 
     sql = sql[match.start():].strip()
 
+    # Reject multiple statements.
     if ";" in sql:
-        sql = sql.split(";")[0].strip()
+        parts = [
+            part.strip()
+            for part in sql.split(";")
+            if part.strip()
+        ]
+
+        if len(parts) > 1:
+            raise ValueError(
+                "Multiple SQL statements are not allowed."
+            )
+
+        sql = parts[0]
 
     return sql
 
 
-# Reject generated SQL that is not intended to be read-only.
-def validate_sql(sql):
+# Check that the SQL is read-only.
+def validate_sql(sql: str) -> str:
+
     sql = sql.strip()
 
     if not re.match(
         r"^SELECT\b",
         sql,
-        flags=re.IGNORECASE
+        flags=re.IGNORECASE,
     ):
         raise ValueError(
             "Only SELECT queries are allowed."
@@ -537,9 +486,10 @@ def validate_sql(sql):
         r"\b("
         r"INSERT|UPDATE|DELETE|DROP|ALTER|CREATE|"
         r"TRUNCATE|COPY|EXPORT|ATTACH|DETACH|"
-        r"INSTALL|LOAD|CALL|PRAGMA"
+        r"INSTALL|LOAD|CALL|PRAGMA|VACUUM|"
+        r"SET|RESET"
         r")\b",
-        flags=re.IGNORECASE
+        flags=re.IGNORECASE,
     )
 
     if forbidden.search(sql):
@@ -547,196 +497,80 @@ def validate_sql(sql):
             "Unsafe SQL operation detected."
         )
 
-    bad_patterns = [
-        r"\bI'm sorry\b",
-        r"\bI am sorry\b",
-        r"\bHere is\b",
-        r"\bExplanation\b",
-        r"\bSQL Query\b",
-        r"\bAnswer:\b"
-    ]
-
-    for pattern in bad_patterns:
-        if re.search(
-            pattern,
-            sql,
-            flags=re.IGNORECASE
-        ):
-            raise ValueError(
-                "The model generated invalid SQL."
-            )
-
     return sql
 
 
-# Generate, extract, and validate a query for the user's question.
-def generate_sql(question):
-    raw_sql = sql_chain.invoke({
-        "schema": SCHEMA,
-        "question": question
-    })
+# Generate a safe SQL query.
+def generate_sql(question: str) -> str:
+
+    raw_sql = sql_chain.invoke(
+        {
+            "schema": SCHEMA,
+            "question": question,
+        }
+    )
 
     sql = extract_sql(raw_sql)
 
-    sql = validate_sql(sql)
-
-    return sql
+    return validate_sql(sql)
 
 
-# Ask the language model to correct a query rejected by DuckDB.
-def fix_sql(question, sql, error):
+# Correct SQL when DuckDB reports an error.
+def fix_sql(
+    question: str,
+    sql: str,
+    error: Exception,
+) -> str:
 
-    FIX_PROMPT = ChatPromptTemplate.from_template("""
-You are a DuckDB SQL correction assistant.
+    prompt = ChatPromptTemplate.from_template(
+        """
+Fix the following DuckDB SQL query.
 
-Fix the invalid SQL query.
-
-USER QUESTION:
-
+QUESTION:
 {question}
 
-
-INVALID SQL:
-
+SQL:
 {sql}
 
-
-DUCKDB ERROR:
-
+ERROR:
 {error}
 
-
 SCHEMA:
-
 {schema}
 
+Return exactly one SELECT statement.
 
-ALIASES:
+Rules:
+- Use only valid tables and columns.
+- Use aliases c, i, p, ins and v.
+- Never join claim directly to vehicle.
+- Never use INSERT, UPDATE, DELETE, DROP, ALTER, CREATE,
+  TRUNCATE, COPY, EXPORT, ATTACH, DETACH, INSTALL,
+  LOAD, CALL or PRAGMA.
+- Return SQL only.
 
-claim AS c
-incident AS i
-policy AS p
-insured AS ins
-vehicle AS v
-
-
-VALID JOINS:
-
-c.incident_id = i.incident_id
-
-i.policy_number = p.policy_number
-
-p.insured_id = ins.insured_id
-
-p.policy_number = v.policy_number
-
-
-IMPORTANT:
-
-The DuckDB error is authoritative.
-
-If the error says:
-
-WHERE clause cannot contain aggregates
-
-then remove SUM, AVG, COUNT, MIN and MAX
-from the WHERE clause.
-
-For example:
-
-WRONG:
-
-WHERE SUM(c.total_claim_amount) > 50000
-
-CORRECT:
-
-WHERE c.total_claim_amount > 50000
-
-
-If the user asks to SHOW claims,
-return individual claim records.
-
-If the user asks "claims above 50000",
-use:
-
-WHERE c.total_claim_amount > 50000
-
-Do NOT use SUM.
-
-Do NOT use COUNT.
-
-Do NOT use AVG.
-
-Do NOT use MAX.
-
-Do NOT use MIN.
-
-
-GROUP BY RULE:
-
-Every selected non-aggregate column must appear
-in GROUP BY.
-
-
-STRICT RULES:
-
-1. Return ONLY one SELECT query.
-
-2. Do not explain anything.
-
-3. Do not use Markdown.
-
-4. Do not use ```sql.
-
-5. Do not invent columns.
-
-6. Do not invent tables.
-
-7. Do not invent relationships.
-
-8. Use only aliases c, i, p, ins and v.
-
-9. Use valid DuckDB syntax.
-
-10. Generate exactly one SELECT query.
-
-11. Do not use INSERT.
-
-12. Do not use UPDATE.
-
-13. Do not use DELETE.
-
-14. Do not use DROP.
-
-15. Do not use ALTER.
-
-16. Do not use CREATE.
-
-RETURN ONLY THE CORRECTED SQL.
-""")
-
-    fix_chain = (
-        FIX_PROMPT
-        | model
-        | StrOutputParser()
+Correct query:
+"""
     )
 
-    fixed_raw = fix_chain.invoke({
-        "question": question,
-        "sql": sql,
-        "error": str(error),
-        "schema": SCHEMA
-    })
+    chain = prompt | model | StrOutputParser()
 
-    fixed_sql = extract_sql(fixed_raw)
+    raw_sql = chain.invoke(
+        {
+            "question": question,
+            "sql": sql,
+            "error": str(error),
+            "schema": SCHEMA,
+        }
+    )
 
-    fixed_sql = validate_sql(fixed_sql)
+    fixed_sql = extract_sql(raw_sql)
 
-    return fixed_sql
+    return validate_sql(fixed_sql)
 
 
-# Generate a query, validate it with EXPLAIN, then execute it safely.
-def generate_sql_and_execute(question):
+# Generate, validate and execute the query.
+def generate_sql_and_execute(question: str):
 
     if not DATABASE_PATH.exists():
         raise FileNotFoundError(
@@ -747,36 +581,28 @@ def generate_sql_and_execute(question):
 
     with duckdb.connect(
         str(DATABASE_PATH),
-        read_only=True
+        read_only=True,
     ) as connection:
 
+        # Check the query before execution.
         try:
+            connection.execute(
+                "EXPLAIN " + sql
+            )
+
+        except Exception as error:
+
+            sql = fix_sql(
+                question,
+                sql,
+                error,
+            )
 
             connection.execute(
                 "EXPLAIN " + sql
             )
 
-        except Exception as first_error:
-
-            sql = fix_sql(
-                question,
-                sql,
-                first_error
-            )
-
-            try:
-
-                connection.execute(
-                    "EXPLAIN " + sql
-                )
-
-            except Exception as second_error:
-
-                raise ValueError(
-                    "Unable to generate a valid SQL query: "
-                    + str(second_error)
-                )
-
+        # Execute the final query.
         results = connection.execute(
             sql
         ).fetchdf()
@@ -784,11 +610,11 @@ def generate_sql_and_execute(question):
     return {
         "question": question,
         "sql": sql,
-        "results": results
+        "results": results,
     }
 
 
-# Optional command-line entry point for manually testing the module.
+# Test the SQL pipeline.
 if __name__ == "__main__":
 
     question = input(
@@ -807,12 +633,7 @@ if __name__ == "__main__":
         print("\nQuery Results:")
         print(response["results"])
 
-    except Exception as e:
+    except Exception as error:
 
-        print(
-            "\nUnable to process the database query."
-        )
-
-        print(
-            f"Error: {e}"
-        )
+        print("\nError:")
+        print(error)

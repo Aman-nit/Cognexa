@@ -1,23 +1,11 @@
 # Purpose: Python dependencies for the ClaimShield API, retrieval, indexing, and UI.
-fastapi
-uvicorn[standard]
-pydantic
 streamlit
 python-dotenv
 langchain-core
 langchain-ollama
-langchain-community
+langchain-openrouter
 sentence-transformers
-langchain-huggingface
-pinecone
-langchain-pinecone
 pyyaml
-langchain-google-genai 
-google-generativeai
-
-
-#For duck db data base requirements
 pandas
 openpyxl
 duckdb
-

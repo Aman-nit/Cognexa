@@ -1,0 +1,700 @@
+business_domain:
+  name: "Insurance Claims Investigation & Policy Intelligence"
+  version: "3.0"
+  owner: "Claims Investigation and Risk Management Team"
+  description: >
+    This semantic business layer provides a unified view of insurance policies,
+    policyholders, covered vehicles, incidents, and claims. It supports claims
+    investigation, policy servicing, risk assessment, fraud analysis, customer
+    inquiry resolution, natural-language querying, and evidence-based decision support.
+  default_currency: "INR"
+  semantic_search_enabled: true
+  structured_query_enabled: true
+ 
+business_objective:
+  primary_goal: "Enable accurate, explainable, and evidence-based claim investigation and policy analysis."
+  secondary_goals:
+    - "Identify claims requiring manual investigation."
+    - "Detect potential fraud indicators and suspicious claim patterns."
+    - "Provide policy coverage and claim insights to business users."
+    - "Support investigator and claims-adjuster decision-making."
+    - "Improve claim-processing efficiency and consistency."
+    - "Enable natural-language querying of policy and claims data."
+    - "Support risk assessment and underwriting reviews."
+    - "Provide evidence for claim approval, rejection, verification, or escalation."
+ 
+source_system:
+  name: "Insurance Claims Analytical Repository"
+  source_type: "DuckDB"
+  database:
+    engine: "DuckDB"
+    schema: "main"
+    tables:
+      - insured
+      - policy
+      - vehicle
+      - incident
+      - claim
+  description: >
+    Normalized insurance policyholder, policy, vehicle, incident, and claim data
+    stored in DuckDB and used for investigation, reporting, semantic retrieval,
+    natural-language-to-SQL, and AI-assisted analysis.
+ 
+business_capabilities:
+  - "Claim Investigation"
+  - "Fraud Analysis"
+  - "Policy Coverage Lookup"
+  - "Customer Risk Profiling"
+  - "Claims Validation"
+  - "Incident Analysis"
+  - "Vehicle Risk Analysis"
+  - "Explainable Decision Support"
+  - "Regulatory Reporting"
+  - "Natural Language Data Exploration"
+ 
+business_users:
+  - "Claims Adjusters"
+  - "Fraud Investigators"
+  - "Risk Analysts"
+  - "Underwriters"
+  - "Customer Service Representatives"
+  - "Claims Managers"
+  - "Compliance Officers"
+ 
+semantic_configuration:
+  retrieval_mode: "hybrid"
+  structured_retrieval_source: "DuckDB"
+  semantic_knowledge_source: "This YAML document"
+  query_language: "DuckDB SQL"
+  llm_target: "Phi-3"
+  instructions:
+    - "Use entity names, attributes, synonyms, relationships, rules, and metrics to interpret the question."
+    - "Generate read-only SELECT statements only."
+    - "Use documented joins and never invent tables, columns, values, or business rules."
+    - "Retrieve evidence from DuckDB before producing a factual answer."
+    - "If required data is unavailable, state that the answer cannot be determined from the available data."
+    - "Distinguish a source fraud label from an investigation recommendation."
+    - "A warning or investigation recommendation does not prove fraud."
+    - "Reference applicable rule IDs when explaining an investigation decision."
+  answer_policy:
+    initial_summary_sentences: "2-3"
+    include_evidence: true
+    include_applied_rules: true
+    include_generated_sql: true
+    avoid_hallucination: true
+ 
+entities:
+  - entity_name: "insured"
+    business_name: "Policyholder"
+    business_description: "Person insured under an insurance policy."
+    primary_key: "insured_id"
+    synonyms:
+      - "insured"
+      - "customer"
+      - "policyholder"
+      - "client"
+    attributes:
+      - name: "insured_id"
+        business_name: "Customer Identifier"
+        type: "BIGINT"
+        synonyms: ["customer id", "insured id", "policyholder id"]
+      - name: "insured_zip"
+        business_name: "Insured ZIP Code"
+        type: "INTEGER"
+        synonyms: ["zip code", "postal code", "customer location"]
+        sensitive: true
+      - name: "age"
+        business_name: "Customer Age"
+        type: "INTEGER"
+        synonyms: ["insured age", "policyholder age"]
+      - name: "gender"
+        business_name: "Gender"
+        type: "VARCHAR"
+        synonyms: ["insured gender", "sex"]
+      - name: "education_level"
+        business_name: "Education Level"
+        type: "VARCHAR"
+        synonyms: ["education", "qualification"]
+      - name: "occupation"
+        business_name: "Occupation"
+        type: "VARCHAR"
+        synonyms: ["job", "profession", "employment"]
+      - name: "hobbies"
+        business_name: "Hobbies"
+        type: "VARCHAR"
+        synonyms: ["hobby", "interests"]
+      - name: "relationship"
+        business_name: "Relationship Status"
+        type: "VARCHAR"
+        synonyms: ["marital status", "family relationship"]
+      - name: "capital_gains"
+        business_name: "Capital Gains"
+        type: "INTEGER"
+        synonyms: ["investment gain", "financial gain"]
+      - name: "capital_loss"
+        business_name: "Capital Loss"
+        type: "INTEGER"
+        synonyms: ["investment loss", "financial loss"]
+ 
+  - entity_name: "policy"
+    business_name: "Insurance Policy"
+    business_description: "Insurance policy issued to an insured customer."
+    primary_key: "policy_number"
+    synonyms:
+      - "policy"
+      - "insurance policy"
+      - "coverage"
+      - "contract"
+    attributes:
+      - name: "policy_number"
+        business_name: "Policy Number"
+        type: "BIGINT"
+        synonyms: ["policy id", "policy reference", "contract number"]
+      - name: "insured_id"
+        business_name: "Customer Identifier"
+        type: "BIGINT"
+        synonyms: ["customer id", "insured id", "policyholder id"]
+      - name: "months_as_customer"
+        business_name: "Customer Tenure in Months"
+        type: "INTEGER"
+        synonyms: ["customer tenure", "policyholder tenure", "months insured"]
+      - name: "policy_bind_date"
+        business_name: "Policy Start Date"
+        type: "DATE"
+        synonyms: ["policy issue date", "policy inception date", "coverage start date", "bind date"]
+      - name: "policy_state"
+        business_name: "Policy State"
+        type: "VARCHAR"
+        synonyms: ["policy jurisdiction", "issuing state"]
+      - name: "policy_csl"
+        business_name: "Combined Single Limit"
+        type: "VARCHAR"
+        synonyms: ["CSL", "liability limit", "combined coverage limit"]
+        semantic_note: "Stored as source text such as 250/500; do not treat it as a single numeric amount."
+      - name: "policy_deductible"
+        business_name: "Deductible Amount"
+        type: "INTEGER"
+        synonyms: ["deductible", "excess amount", "customer contribution"]
+      - name: "policy_annual_premium"
+        business_name: "Annual Premium"
+        type: "DECIMAL(12,2)"
+        synonyms: ["premium", "yearly premium", "annual policy cost"]
+      - name: "umbrella_limit"
+        business_name: "Umbrella Coverage Limit"
+        type: "BIGINT"
+        synonyms:
+          - "coverage limit"
+          - "policy coverage"
+          - "maximum coverage"
+          - "umbrella coverage"
+          - "coverage amount"
+          - "maximum payout"
+        semantic_note: "When the user asks for the coverage limit without specifying CSL, use umbrella_limit."
+ 
+  - entity_name: "vehicle"
+    business_name: "Covered Vehicle"
+    business_description: "Vehicle covered under the insurance policy."
+    primary_key: "vehicle_id"
+    synonyms:
+      - "vehicle"
+      - "insured vehicle"
+      - "automobile"
+      - "car"
+    attributes:
+      - name: "vehicle_id"
+        business_name: "Vehicle Identifier"
+        type: "BIGINT"
+        synonyms: ["vehicle id", "car id"]
+      - name: "policy_number"
+        business_name: "Policy Number"
+        type: "BIGINT"
+        synonyms: ["policy id", "policy reference"]
+      - name: "auto_make"
+        business_name: "Vehicle Manufacturer"
+        type: "VARCHAR"
+        synonyms: ["vehicle make", "car make", "manufacturer", "brand"]
+      - name: "auto_model"
+        business_name: "Vehicle Model"
+        type: "VARCHAR"
+        synonyms: ["car model", "model"]
+      - name: "auto_year"
+        business_name: "Vehicle Manufacturing Year"
+        type: "INTEGER"
+        synonyms: ["vehicle year", "model year", "manufacturing year"]
+ 
+  - entity_name: "incident"
+    business_name: "Claim Incident"
+    business_description: "Event that triggered an insurance claim."
+    primary_key: "incident_id"
+    synonyms:
+      - "incident"
+      - "accident"
+      - "loss event"
+      - "claim event"
+    attributes:
+      - name: "incident_id"
+        business_name: "Incident Identifier"
+        type: "BIGINT"
+        synonyms: ["incident id", "event id"]
+      - name: "policy_number"
+        business_name: "Policy Number"
+        type: "BIGINT"
+        synonyms: ["policy id", "policy reference"]
+      - name: "incident_date"
+        business_name: "Incident Date"
+        type: "DATE"
+        synonyms: ["accident date", "loss date", "event date", "claim occurrence date"]
+      - name: "incident_type"
+        business_name: "Incident Type"
+        type: "VARCHAR"
+        synonyms: ["accident type", "loss type", "event type"]
+      - name: "collision_type"
+        business_name: "Collision Type"
+        type: "VARCHAR"
+        synonyms: ["impact type", "collision category"]
+      - name: "incident_severity"
+        business_name: "Incident Severity"
+        type: "VARCHAR"
+        synonyms: ["damage severity", "loss severity", "severity"]
+      - name: "authorities_contacted"
+        business_name: "Authority Contacted"
+        type: "VARCHAR"
+        synonyms: ["emergency service", "police contacted", "authority involved"]
+      - name: "incident_state"
+        business_name: "Incident State"
+        type: "VARCHAR"
+        synonyms: ["accident state", "loss state", "event state"]
+      - name: "incident_city"
+        business_name: "Incident City"
+        type: "VARCHAR"
+        synonyms: ["accident city", "loss city", "event city"]
+      - name: "incident_location"
+        business_name: "Incident Location"
+        type: "VARCHAR"
+        synonyms: ["accident location", "loss address", "event location"]
+      - name: "incident_hour_of_day"
+        business_name: "Incident Hour of Day"
+        type: "INTEGER"
+        synonyms: ["incident time", "accident hour", "event hour"]
+      - name: "vehicles_involved"
+        business_name: "Number of Vehicles Involved"
+        type: "INTEGER"
+        synonyms: ["vehicle count", "cars involved"]
+      - name: "property_damage"
+        business_name: "Property Damage Indicator"
+        type: "VARCHAR"
+        synonyms: ["property damaged", "property loss"]
+      - name: "bodily_injuries"
+        business_name: "Number of Bodily Injuries"
+        type: "INTEGER"
+        synonyms: ["injuries", "people injured", "injury count"]
+      - name: "witnesses"
+        business_name: "Number of Witnesses"
+        type: "INTEGER"
+        synonyms: ["witness count", "eyewitnesses"]
+      - name: "police_report_available"
+        business_name: "Police Report Availability"
+        type: "VARCHAR"
+        synonyms: ["police report", "police documentation", "incident report available"]
+ 
+  - entity_name: "claim"
+    business_name: "Insurance Claim"
+    business_description: "Insurance claim raised for an incident."
+    primary_key: "claim_id"
+    synonyms:
+      - "claim"
+      - "insurance claim"
+      - "claim request"
+      - "loss claim"
+    attributes:
+      - name: "claim_id"
+        business_name: "Claim Number"
+        type: "BIGINT"
+        synonyms: ["claim id", "claim number", "claim reference"]
+      - name: "incident_id"
+        business_name: "Incident Identifier"
+        type: "BIGINT"
+        synonyms: ["incident id", "event id"]
+      - name: "total_claim_amount"
+        business_name: "Total Claim Amount"
+        type: "DECIMAL(14,2)"
+        synonyms: ["claim amount", "total loss amount", "requested amount", "claim value"]
+      - name: "injury_claim"
+        business_name: "Injury Claim Amount"
+        type: "DECIMAL(14,2)"
+        synonyms: ["injury amount", "bodily injury claim"]
+      - name: "property_claim"
+        business_name: "Property Claim Amount"
+        type: "DECIMAL(14,2)"
+        synonyms: ["property damage amount", "property loss claim"]
+      - name: "vehicle_claim"
+        business_name: "Vehicle Claim Amount"
+        type: "DECIMAL(14,2)"
+        synonyms: ["vehicle damage amount", "auto claim amount", "car claim amount"]
+      - name: "fraud_reported"
+        business_name: "Source Fraud Indicator"
+        type: "VARCHAR"
+        synonyms: ["fraud flag", "fraud status", "fraudulent claim", "reported fraud"]
+        semantic_note: >
+          This is a label from the source dataset. Y means reported as fraud and N means
+          not reported as fraud. It is not an LLM-generated fraud prediction.
+ 
+relationships:
+  - relationship_id: "REL001"
+    name: "Insured owns policy"
+    source: "policy.insured_id"
+    target: "insured.insured_id"
+    cardinality: "many_to_one"
+    join_type: "INNER JOIN"
+    sql_join: "policy.insured_id = insured.insured_id"
+  - relationship_id: "REL002"
+    name: "Vehicle covered by policy"
+    source: "vehicle.policy_number"
+    target: "policy.policy_number"
+    cardinality: "many_to_one"
+    join_type: "INNER JOIN"
+    sql_join: "vehicle.policy_number = policy.policy_number"
+  - relationship_id: "REL003"
+    name: "Incident belongs to policy"
+    source: "incident.policy_number"
+    target: "policy.policy_number"
+    cardinality: "many_to_one"
+    join_type: "INNER JOIN"
+    sql_join: "incident.policy_number = policy.policy_number"
+  - relationship_id: "REL004"
+    name: "Claim belongs to incident"
+    source: "claim.incident_id"
+    target: "incident.incident_id"
+    cardinality: "many_to_one"
+    join_type: "INNER JOIN"
+    sql_join: "claim.incident_id = incident.incident_id"
+ 
+business_rules:
+  - rule_id: "BR001"
+    name: "Policy Ownership Integrity"
+    category: "referential_integrity"
+    description: "A policy must belong to one insured customer."
+    severity: "error"
+    tables: ["policy", "insured"]
+    logic: "policy.insured_id must match insured.insured_id"
+ 
+  - rule_id: "BR002"
+    name: "Claim Incident Integrity"
+    category: "referential_integrity"
+    description: "Every claim must be associated with an incident."
+    severity: "error"
+    tables: ["claim", "incident"]
+    logic: "claim.incident_id must match incident.incident_id"
+ 
+  - rule_id: "BR003"
+    name: "Fraud Flag Validation"
+    category: "data_validation"
+    description: "The source fraud indicator must contain Y or N."
+    severity: "error"
+    tables: ["claim"]
+    logic: "claim.fraud_reported IN ('Y', 'N')"
+ 
+  - rule_id: "BR004"
+    name: "Claim Amount Reconciliation"
+    category: "financial_validation"
+    description: "Total claim amount should equal injury, property, and vehicle claim amounts combined."
+    severity: "warning"
+    tables: ["claim"]
+    logic: "claim.total_claim_amount = claim.injury_claim + claim.property_claim + claim.vehicle_claim"
+ 
+  - rule_id: "BR005"
+    name: "Vehicle Theft Collision Applicability"
+    category: "data_interpretation"
+    description: "Collision type may be absent for vehicle theft because no collision is required."
+    severity: "information"
+    tables: ["incident"]
+    logic: "incident.incident_type = 'Vehicle Theft' permits incident.collision_type IS NULL"
+ 
+  - rule_id: "BR006"
+    name: "High-Value Claim Review"
+    category: "investigation"
+    description: "Claims above INR 1,000,000 require manual review."
+    severity: "warning"
+    tables: ["claim"]
+    parameters:
+      threshold_amount: 1000000
+      currency: "INR"
+    logic: "claim.total_claim_amount > 1000000"
+    recommended_action: "Route the claim for manual high-value review."
+ 
+  - rule_id: "BR007"
+    name: "Repeat Incident Investigation"
+    category: "investigation"
+    description: "Multiple incidents for the same insured customer within six months should be investigated."
+    severity: "warning"
+    tables: ["insured", "policy", "incident", "claim"]
+    parameters:
+      lookback_months: 6
+      minimum_incident_count: 2
+    logic: >
+      Group incidents by insured.insured_id and investigate when at least two incidents
+      occur within a rolling six-month period.
+    data_limit_note: >
+      This rule requires multiple historical incident records for the same insured.
+      If the repository contains only one incident per insured, the rule cannot identify repeat behavior.
+    recommended_action: "Review previous incident and claim history for the insured."
+ 
+  - rule_id: "BR008"
+    name: "Early Claim Verification"
+    category: "investigation"
+    description: "Claims associated with incidents occurring within 30 days after policy issuance require verification."
+    severity: "warning"
+    tables: ["policy", "incident", "claim"]
+    parameters:
+      threshold_days: 30
+    logic: "date_diff('day', policy.policy_bind_date, incident.incident_date) BETWEEN 0 AND 30"
+    recommended_action: "Verify policy inception, incident evidence, and supporting documentation."
+ 
+  - rule_id: "BR009"
+    name: "Suspicious High-Value Claim Warning"
+    category: "investigation"
+    description: "High-value claims that also contain one or more suspicious indicators should be classified as warnings."
+    severity: "warning"
+    tables: ["claim", "incident"]
+    parameters:
+      high_value_threshold: 50000
+      currency: "INR"
+      minimum_indicator_count: 1
+    suspicious_indicators:
+      - "incident.police_report_available IS NULL OR incident.police_report_available = 'NO'"
+      - "incident.authorities_contacted IS NULL"
+      - "incident.witnesses = 0"
+    logic: >
+      claim.total_claim_amount > 50000 and at least one documented suspicious indicator is present.
+    recommended_action: "Classify as a warning and route for supporting-document review."
+    interpretation_note: "This warning is an investigation trigger and does not establish fraud."
+ 
+investigation_categories:
+  - category_id: "IC001"
+    name: "High-Value Claim"
+    rule_ids: ["BR006"]
+    synonyms: ["large claim", "high amount claim", "expensive claim"]
+  - category_id: "IC002"
+    name: "Early Policy Claim"
+    rule_ids: ["BR008"]
+    synonyms: ["early claim", "new policy claim", "claim shortly after issuance"]
+  - category_id: "IC003"
+    name: "Repeat Incident"
+    rule_ids: ["BR007"]
+    synonyms: ["multiple claims", "repeat claim", "frequent incidents"]
+  - category_id: "IC004"
+    name: "Suspicious Documentation Pattern"
+    rule_ids: ["BR009"]
+    synonyms: ["missing police report", "missing authority information", "limited evidence"]
+ 
+reference_values:
+  fraud_reported:
+    Y: "Reported as fraud in the source dataset"
+    N: "Not reported as fraud in the source dataset"
+  property_damage:
+    YES: "Property damage was reported"
+    NO: "Property damage was not reported"
+    NULL: "Property damage status is unknown"
+  police_report_available:
+    YES: "Police report is available"
+    NO: "Police report is not available"
+    NULL: "Police report availability is unknown"
+  incident_severity:
+    - "Trivial Damage"
+    - "Minor Damage"
+    - "Major Damage"
+    - "Total Loss"
+  incident_type:
+    - "Vehicle Theft"
+    - "Single Vehicle Collision"
+    - "Multi-vehicle Collision"
+    - "Parked Car"
+ 
+# These cleanup rules describe source-to-DuckDB normalization.
+data_quality_rules:
+  - rule_id: "DQ001"
+    field: "incident.collision_type"
+    rule: "Replace source value '?' with NULL."
+  - rule_id: "DQ002"
+    field: "incident.property_damage"
+    rule: "Replace source value '?' with NULL."
+  - rule_id: "DQ003"
+    field: "incident.police_report_available"
+    rule: "Replace source value '?' with NULL."
+  - rule_id: "DQ004"
+    field: "incident.authorities_contacted"
+    rule: "Allow NULL values but retain them as potential investigation evidence."
+  - rule_id: "DQ005"
+    field: "policy.policy_bind_date, incident.incident_date"
+    rule: "Flag an incident date earlier than the policy bind date as a date inconsistency."
+  - rule_id: "DQ006"
+    field: "claim.total_claim_amount"
+    rule: "Reconcile total claim amount with injury, property, and vehicle claim components."
+ 
+analytics_metrics:
+  - metric_id: "M001"
+    metric_name: "Fraud Rate"
+    definition: "Percentage of claims marked Y in the source fraud indicator."
+    source_tables: ["claim"]
+    sql_expression: >
+      100.0 * SUM(CASE WHEN fraud_reported = 'Y' THEN 1 ELSE 0 END) / NULLIF(COUNT(*), 0)
+    format: "percentage"
+ 
+  - metric_id: "M002"
+    metric_name: "Average Claim Amount"
+    definition: "Average total claim amount across selected claims."
+    source_tables: ["claim"]
+    sql_expression: "AVG(total_claim_amount)"
+    format: "currency"
+ 
+  - metric_id: "M003"
+    metric_name: "High-Risk State"
+    definition: "Incident state with the highest source fraud percentage."
+    source_tables: ["claim", "incident"]
+    group_by: "incident.incident_state"
+    sql_expression: >
+      100.0 * SUM(CASE WHEN claim.fraud_reported = 'Y' THEN 1 ELSE 0 END) / NULLIF(COUNT(*), 0)
+    format: "percentage"
+ 
+  - metric_id: "M004"
+    metric_name: "Fraud Rate by Vehicle Make"
+    definition: "Source fraud percentage grouped by vehicle manufacturer."
+    source_tables: ["claim", "incident", "policy", "vehicle"]
+    group_by: "vehicle.auto_make"
+    sql_expression: >
+      100.0 * SUM(CASE WHEN claim.fraud_reported = 'Y' THEN 1 ELSE 0 END) / NULLIF(COUNT(*), 0)
+    format: "percentage"
+ 
+  - metric_id: "M005"
+    metric_name: "Major Damage Fraud Rate"
+    definition: "Source fraud percentage for claims involving major damage incidents."
+    source_tables: ["claim", "incident"]
+    filter: "incident.incident_severity = 'Major Damage'"
+    sql_expression: >
+      100.0 * SUM(CASE WHEN claim.fraud_reported = 'Y' THEN 1 ELSE 0 END) / NULLIF(COUNT(*), 0)
+    format: "percentage"
+ 
+  - metric_id: "M006"
+    metric_name: "Early Claim Count"
+    definition: "Number of claims associated with incidents occurring within 30 days after policy binding."
+    source_tables: ["claim", "incident", "policy"]
+    sql_expression: >
+      SUM(CASE WHEN date_diff('day', policy.policy_bind_date, incident.incident_date) BETWEEN 0 AND 30 THEN 1 ELSE 0 END)
+    format: "integer"
+ 
+question_patterns:
+  - pattern_id: "QP001"
+    example_question: "Investigate claim number 5"
+    intent: "claim_investigation"
+    required_entities: ["claim", "incident", "policy", "vehicle", "insured"]
+    evidence_fields:
+      - "claim.claim_id"
+      - "claim.total_claim_amount"
+      - "claim.fraud_reported"
+      - "incident.incident_type"
+      - "incident.incident_date"
+      - "incident.police_report_available"
+      - "policy.policy_bind_date"
+      - "vehicle.auto_make"
+      - "vehicle.auto_model"
+ 
+  - pattern_id: "QP002"
+    example_question: "What type of claims should be investigated?"
+    intent: "explain_investigation_rules"
+    required_rule_ids: ["BR006", "BR007", "BR008", "BR009"]
+ 
+  - pattern_id: "QP003"
+    example_question: "Which claims should be escalated for review?"
+    intent: "investigation_screening"
+    required_rule_ids: ["BR006", "BR007", "BR008", "BR009"]
+    required_entities: ["claim", "incident", "policy", "insured"]
+ 
+  - pattern_id: "QP004"
+    example_question: "What is the coverage limit for policy 558938?"
+    intent: "policy_coverage_lookup"
+    required_entities: ["policy"]
+    field_mapping:
+      "coverage limit": "policy.umbrella_limit"
+ 
+  - pattern_id: "QP005"
+    example_question: "Show all claims filed within 30 days of policy issuance"
+    intent: "early_claim_analysis"
+    required_rule_ids: ["BR008"]
+    required_entities: ["claim", "incident", "policy"]
+ 
+  - pattern_id: "QP006"
+    example_question: "Which vehicle makes have the highest fraud percentage?"
+    intent: "fraud_rate_by_vehicle_make"
+    required_metric_ids: ["M004"]
+    required_entities: ["claim", "incident", "policy", "vehicle"]
+ 
+  - pattern_id: "QP007"
+    example_question: "Which states have the highest fraud rates?"
+    intent: "fraud_rate_by_incident_state"
+    required_metric_ids: ["M003"]
+    required_entities: ["claim", "incident"]
+ 
+  - pattern_id: "QP008"
+    example_question: "Show claims with missing police reports"
+    intent: "missing_police_report_analysis"
+    required_entities: ["claim", "incident"]
+    filter_logic: "incident.police_report_available IS NULL OR incident.police_report_available = 'NO'"
+ 
+  - pattern_id: "QP009"
+    example_question: "Explain the investigation decision in simple business language"
+    intent: "explain_investigation_decision"
+    explanation_style: "business_friendly"
+    requirements:
+      - "Reference evidence retrieved from DuckDB."
+      - "Reference applicable business rule IDs."
+      - "Do not state that a claim is fraudulent unless claim.fraud_reported = 'Y'."
+      - "Do not state that an investigation warning proves fraud."
+ 
+sql_generation_guidance:
+  dialect: "DuckDB"
+  allowed_statement_types: ["SELECT", "WITH"]
+  forbidden_statement_types: ["INSERT", "UPDATE", "DELETE", "DROP", "ALTER", "CREATE", "TRUNCATE"]
+  default_row_limit: 100
+  aggregation_guidance:
+    - "Use NULLIF(COUNT(*), 0) to protect percentage calculations from division by zero."
+    - "Use 100.0 rather than 100 to preserve decimal precision in percentages."
+    - "Group fraud analytics by the requested business dimension."
+  join_paths:
+    claim_to_incident: "claim JOIN incident ON claim.incident_id = incident.incident_id"
+    incident_to_policy: "incident JOIN policy ON incident.policy_number = policy.policy_number"
+    policy_to_insured: "policy JOIN insured ON policy.insured_id = insured.insured_id"
+    policy_to_vehicle: "policy JOIN vehicle ON policy.policy_number = vehicle.policy_number"
+ 
+explainability:
+  evidence_priority:
+    - "claim"
+    - "incident"
+    - "policy"
+    - "vehicle"
+    - "insured"
+  response_sections:
+    - "Initial Answer"
+    - "Applied Business Rules"
+    - "Evidence"
+    - "Generated DuckDB SQL"
+  explanation_style:
+    - "business-friendly"
+    - "concise"
+    - "evidence-based"
+    - "rule-referenced"
+  confidence_policy:
+    - "Use high confidence only when the answer is directly supported by retrieved records."
+    - "Use insufficient data when a required attribute or historical record is unavailable."
+    - "Never infer missing values."
+ 
+use_cases:
+  - "Claims Investigation Prioritization"
+  - "Suspicious Pattern Detection"
+  - "Explainable Fraud Analysis"
+  - "Policy Coverage Lookup"
+  - "Claim and Incident Analytics"
+  - "Natural-Language-to-SQL"
+  - "GenAI Natural Language Querying"
+ 
+sensitive_columns:
+  - "insured.insured_zip"

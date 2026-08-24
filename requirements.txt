@@ -12,6 +12,8 @@ langchain-huggingface
 pinecone
 langchain-pinecone
 pyyaml
+langchain-google-genai 
+google-generativeai
 
 
 #For duck db data base requirements

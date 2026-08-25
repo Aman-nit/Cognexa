@@ -1,13 +1,22 @@
 """Classify insurance questions into SQL, semantic, or hybrid search."""
-
+import os
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_ollama import ChatOllama
+from langchain_openrouter import ChatOpenRouter
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 # Load local Phi-3.
-model = ChatOllama(
-    model="phi3",
+# model = ChatOllama(
+#     model="phi3",
+#     temperature=0,
+# )
+model = ChatOpenRouter(
+    model="openai/gpt-oss-20b",
+    openrouter_api_key=os.getenv("OPENROUTER_API_KEY"),
     temperature=0,
 )
 

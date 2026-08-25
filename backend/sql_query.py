@@ -22,20 +22,17 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DATABASE_PATH = PROJECT_ROOT / "insurance.duckdb"
 
 
-# Create the LLM.
-# model = ChatOpenRouter(
-#     model="z-ai/glm-5.2:free",
-#     openrouter_api_key=os.getenv("OPENROUTER_API_KEY"),
-#     temperature=0,
-# )
-
-
-model = ChatOllama(
-    model="phi3",
-    base_url="http://localhost:11434",
-    max_tokens=512,
-    timeout=120
+model = ChatOpenRouter(
+    model="openai/gpt-oss-20b",
+    openrouter_api_key=os.getenv("OPENROUTER_API_KEY"),
+    temperature=0,
 )
+# model = ChatOllama(
+#     model="phi3",
+#     base_url="http://localhost:11434",
+#     max_tokens=512,
+#     timeout=120
+# )
 
 
 

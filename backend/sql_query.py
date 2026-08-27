@@ -9,7 +9,6 @@ from dotenv import load_dotenv
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_openrouter import ChatOpenRouter
-from langchain_ollama import ChatOllama
 
 
 
@@ -581,23 +580,24 @@ def generate_sql_and_execute(question: str):
         read_only=True,
     ) as connection:
 
-        # Check the query before execution.
-        try:
-            connection.execute(
-                "EXPLAIN " + sql
-            )
+        max_attempts = 3
+        for attempt in range(max_attempts):
+            # Check the query before execution.
+            try:
+                connection.execute(
+                    "EXPLAIN " + sql
+                )
+                break  # If explain succeeds, query is valid
 
-        except Exception as error:
+            except Exception as error:
+                if attempt == max_attempts - 1:
+                    raise  # Raise error on final attempt
 
-            sql = fix_sql(
-                question,
-                sql,
-                error,
-            )
-
-            connection.execute(
-                "EXPLAIN " + sql
-            )
+                sql = fix_sql(
+                    question,
+                    sql,
+                    error,
+                )
 
         # Execute the final query.
         results = connection.execute(

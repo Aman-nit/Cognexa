@@ -92,7 +92,7 @@ def classify_query(user_query: str) -> str:
     label = response.strip().lower()
 
     for valid_label in VALID_LABELS:
-        if label == valid_label:
+        if valid_label in label:
             return valid_label
 
     raise ValueError(

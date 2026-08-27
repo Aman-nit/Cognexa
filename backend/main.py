@@ -33,6 +33,14 @@ model = ChatOpenRouter(
     temperature=0,
 )
 
+# model = ChatOllama(
+#     model="phi3",
+#     base_url="http://localhost:11434",
+#     max_tokens=512,
+#     timeout=120
+# )
+
+
 
 # Create final answer prompt
 ANSWER_PROMPT = ChatPromptTemplate.from_template(
@@ -60,6 +68,8 @@ Rules:
 - Do not assume missing information.
 - If the required information is not available, say so.
 - Keep the answer clear and concise.
+- ALWAYS cite specific rule IDs (e.g., BR007, BR008) if you use them.
+- ALWAYS format currency amounts in INR (₹) and NEVER in Dollars ($).
 """
 )
 
@@ -132,9 +142,12 @@ if st.button("🔍 Ask Cognexa"):
             sql_data = "No matching database records were found."
 
         else:
-            sql_data = sql_result.to_json(
+            limited_result = sql_result.head(15)
+            sql_data = limited_result.to_json(
                 orient="records"
             )
+            if len(sql_result) > 15:
+                sql_data += f"\n\n(Note: Showing 15 out of {len(sql_result)} records. The full list is displayed below.)"
 
 
     # Run semantic search

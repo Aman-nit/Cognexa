@@ -2,9 +2,8 @@
 
 from pathlib import Path
 
+import streamlit as st
 import yaml
-
-from sentence_transformers import SentenceTransformer, util
 
 
 # YAML knowledge base path.
@@ -13,10 +12,6 @@ YAML_PATH = (
     / "data"
     / "semantic_insurance_business_rules.yaml"
 )
-
-
-# Load embedding model.
-EMBED_MODEL = SentenceTransformer("all-MiniLM-L6-v2")
 
 
 # Load YAML file.
@@ -28,6 +23,11 @@ def load_yaml():
 # Convert important YAML sections into passages.
 def create_passages(data):
     passages = []
+
+    # Create a dictionary of rules for easy lookup.
+    rules_dict = {
+        rule.get('rule_id'): rule for rule in data.get("business_rules", [])
+    }
 
     # Add business rules.
     for rule in data.get("business_rules", []):
@@ -46,11 +46,20 @@ def create_passages(data):
 
     # Add question patterns.
     for pattern in data.get("question_patterns", []):
+        required_rules = pattern.get('required_rule_ids', [])
+        rule_texts = []
+        for r_id in required_rules:
+            if r_id in rules_dict:
+                r = rules_dict[r_id]
+                rule_texts.append(f"  - {r_id}: {r.get('name')} ({r.get('description')})")
+        rule_info = "\n" + "\n".join(rule_texts) if rule_texts else " None"
+
         text = (
             f"Question Pattern: {pattern.get('pattern_id')}\n"
             f"Example Question: {pattern.get('example_question')}\n"
             f"Intent: {pattern.get('intent')}\n"
             f"Required Rules: {pattern.get('required_rule_ids', [])}\n"
+            f"Rule Definitions:{rule_info}\n"
             f"Requirements: {pattern.get('requirements', [])}"
         )
 
@@ -58,10 +67,19 @@ def create_passages(data):
 
     # Add investigation categories.
     for category in data.get("investigation_categories", []):
+        cat_rules = category.get('rule_ids', [])
+        rule_texts = []
+        for r_id in cat_rules:
+            if r_id in rules_dict:
+                r = rules_dict[r_id]
+                rule_texts.append(f"  - {r_id}: {r.get('name')} ({r.get('description')})")
+        rule_info = "\n" + "\n".join(rule_texts) if rule_texts else " None"
+
         text = (
             f"Investigation Category: {category.get('category_id')}\n"
             f"Name: {category.get('name')}\n"
             f"Rules: {category.get('rule_ids')}\n"
+            f"Rule Definitions:{rule_info}\n"
             f"Synonyms: {category.get('synonyms')}"
         )
 
@@ -82,27 +100,31 @@ def create_passages(data):
     return passages
 
 
-# Load YAML data.
-DATA = load_yaml()
+@st.cache_resource
+def get_search_index():
+    from sentence_transformers import SentenceTransformer
 
+    model = SentenceTransformer("all-MiniLM-L6-v2")
+    data = load_yaml()
+    passages = create_passages(data)
+    embeddings = model.encode(
+        passages,
+        convert_to_tensor=True,
+        show_progress_bar=False,
+    )
 
-# Create searchable passages.
-PASSAGES = create_passages(DATA)
-
-
-# Create embeddings.
-EMBEDDINGS = EMBED_MODEL.encode(
-    PASSAGES,
-    convert_to_tensor=True,
-    show_progress_bar=False,
-)
+    return model, passages, embeddings
 
 
 # Search YAML knowledge.
 def semantic_search(query, top_k=5):
 
+    from sentence_transformers import util
+
+    model, passages, embeddings = get_search_index()
+
     # Convert question to embedding.
-    query_embedding = EMBED_MODEL.encode(
+    query_embedding = model.encode(
         query,
         convert_to_tensor=True,
     )
@@ -110,12 +132,12 @@ def semantic_search(query, top_k=5):
     # Calculate similarity.
     scores = util.cos_sim(
         query_embedding,
-        EMBEDDINGS,
+        embeddings,
     )[0]
 
     # Get best results.
     top_results = scores.topk(
-        min(top_k, len(PASSAGES))
+        min(top_k, len(passages))
     )
 
     results = []
@@ -126,7 +148,7 @@ def semantic_search(query, top_k=5):
         top_results.indices.tolist(),
     ):
         if score >= 0.30:
-            results.append(PASSAGES[index])
+            results.append(passages[index])
 
     return results
 
